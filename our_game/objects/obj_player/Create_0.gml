@@ -9,6 +9,7 @@ tick_start_x = actual_x;
 tick_start_y = actual_y;
 
 player_speed = 9;
+player_angle = image_angle;
 
 function tick() {
 	var _move_x_amount = keyboard_check(vk_right) - keyboard_check(vk_left);
