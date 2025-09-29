@@ -16,4 +16,6 @@ player_angle = image_angle;
 shoot_cooldown = 0;
 shoot_cooldown_max = 6;
 
+player_bullet_capacity = 30; 
+player_mag_storage = player_bullet_capacity;
 global.bullet_entities = [];
