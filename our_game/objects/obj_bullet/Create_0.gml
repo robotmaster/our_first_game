@@ -1,4 +1,8 @@
-function forward() {
-	x += lengthdir_x(image_angle, 5);
-	y += lengthdir_y(image_angle, 5);
-} 
+/// @description Insert description here
+// You can write your code in this editor
+actual_x = 0;
+actual_y = 0;
+tick_start_x = 0;
+tick_start_y = 0;
+bullet_angle = 0;
+bullet_speed = 30;
