@@ -5,4 +5,4 @@ actual_y = 0;
 tick_start_x = 0;
 tick_start_y = 0;
 bullet_angle = 0;
-bullet_speed = 30;
+bullet_speed = 90;
