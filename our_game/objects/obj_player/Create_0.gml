@@ -10,5 +10,6 @@ tick_start_y = actual_y;
 
 player_speed = 9;
 player_angle = image_angle;
-
+player_bullet_capacity = 30; 
+player_mag_storage = player_bullet_capacity;
 global.bullet_entities = [];
