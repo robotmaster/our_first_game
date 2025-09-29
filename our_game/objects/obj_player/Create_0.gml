@@ -3,24 +3,20 @@
 tick_timer_max = 1;
 tick_timer = 0;
 
-
-
 actual_x = x;
 actual_y = y;
 tick_start_x = actual_x;
 tick_start_y = actual_y;
 
+player_speed = 9;
+
 function tick() {
-	if (keyboard_check(vk_left)) {
-		actual_x -= 10;
-	}
-	if (keyboard_check(vk_right)) {
-		actual_x += 10;
-	}
-	if (keyboard_check(vk_up)) {
-		actual_y -= 10;
-	}
-	if (keyboard_check(vk_down)) {
-		actual_y += 10;
+	var _move_x_amount = keyboard_check(vk_right) - keyboard_check(vk_left);
+	var _move_y_amount = keyboard_check(vk_down) - keyboard_check(vk_up);
+	if (_move_x_amount != 0 || _move_y_amount != 0) {
+		var _dir = point_direction(0, 0, _move_x_amount, _move_y_amount);
+	
+		actual_x += lengthdir_x(player_speed, _dir);
+		actual_y += lengthdir_y(player_speed, _dir);
 	}
 }
