@@ -1,4 +1,4 @@
 function forward() {
-	x += cos(image_angle);
-	y += sin(image_angle); 
+	x += lengthdir_x(image_angle, 5);
+	y += lengthdir_y(image_angle, 5);
 } 
