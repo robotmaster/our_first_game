@@ -11,4 +11,7 @@ tick_start_y = actual_y;
 player_speed = 9;
 player_angle = image_angle;
 
+shoot_cooldown = 0;
+shoot_cooldown_max = 6;
+
 global.bullet_entities = [];

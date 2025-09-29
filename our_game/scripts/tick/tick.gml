@@ -12,7 +12,9 @@ function tick() {
 		actual_x += lengthdir_x(player_speed, _dir);
 		actual_y += lengthdir_y(player_speed, _dir);
 	}
-	if (mouse_check_button(mb_left)) {
+	shoot_cooldown = timer(shoot_cooldown, 1);
+	if (mouse_check_button(mb_left) && shoot_cooldown <= 0) {
+		shoot_cooldown = shoot_cooldown_max;
 		shoot();
 	}
 	for (var _bullet = 0; _bullet < array_length(global.bullet_entities); _bullet++) {
