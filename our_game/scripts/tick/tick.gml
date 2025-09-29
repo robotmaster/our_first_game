@@ -2,6 +2,8 @@
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function tick() {
 	//only use with obj_player
+	tick_start_x = actual_x;
+	tick_start_y = actual_y;
 	var _move_x_amount = (keyboard_check(vk_right) || keyboard_check(ord("D"))) - (keyboard_check(vk_left) || keyboard_check(ord("A")));
 	var _move_y_amount = (keyboard_check(vk_down) || keyboard_check(ord("S"))) - (keyboard_check(vk_up) || keyboard_check(ord("W")));
 	if (_move_x_amount != 0 || _move_y_amount != 0) {
@@ -12,5 +14,10 @@ function tick() {
 	}
 	if (mouse_check_button(mb_left)) {
 		shoot();
+	}
+	for (var _bullet = 0; _bullet < array_length(global.bullet_entities); _bullet++) {
+		with (global.bullet_entities[_bullet]) {
+			event_perform(ev_other, ev_user0);
+		}
 	}
 }

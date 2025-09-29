@@ -3,5 +3,11 @@
 function shoot() {
 	//only use with obj_player
 	var _bullet = instance_create_layer(actual_x, actual_y, "bullets", obj_bullet);
+	_bullet.bullet_angle = player_angle;
 	_bullet.image_angle = player_angle;
+	_bullet.tick_start_x = actual_x;
+	_bullet.tick_start_y = actual_y;
+	_bullet.actual_x = actual_x;
+	_bullet.actual_y = actual_y;
+	array_push(global.bullet_entities, _bullet);
 }
