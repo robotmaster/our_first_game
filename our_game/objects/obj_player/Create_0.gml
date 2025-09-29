@@ -7,8 +7,14 @@ actual_x = x;
 actual_y = y;
 tick_start_x = actual_x;
 tick_start_y = actual_y;
+camera_x = 0;
+camera_y = 0;
 
 player_speed = 9;
 player_angle = image_angle;
+
+shoot_cooldown = 0;
+shoot_cooldown_max = 6;
+
 player_bullet_capacity = 30; 
 global.bullet_entities = [];
