@@ -20,5 +20,4 @@ function tick() {
 		actual_x += lengthdir_x(player_speed, _dir);
 		actual_y += lengthdir_y(player_speed, _dir);
 	}
-	image_angle = point_direction(x, y, mouse_x, mouse_y) - 90;
 }
