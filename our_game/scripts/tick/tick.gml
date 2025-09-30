@@ -12,6 +12,15 @@ function tick() {
 		actual_x += lengthdir_x(player_speed, _dir);
 		actual_y += lengthdir_y(player_speed, _dir);
 	}
+		
+	var _packet_info = [
+	[buffer_u8, networking.ticks],
+	[buffer_u8, obj_client.id_player],
+	[buffer_s32, actual_x],
+	[buffer_s32, actual_y],
+	[buffer_u16, player_angle],
+	];
+	
 	reload_cooldown = timer(reload_cooldown, 1);
 	if (player_mag_capacity <= 0 && reload_cooldown <= 0) { 
 		player_mag_capacity = player_bullet_capacity;
@@ -47,4 +56,7 @@ function tick() {
 			event_perform(ev_other, ev_user0);
 		}
 	}
+		
+	send_packet(obj_client.client_socket, _packet_info);
+	
 }

@@ -35,16 +35,18 @@ switch (_packet_id) {
 	break;
 	case networking.create_player:
 		var _player_id = read_packet(_packet, buffer_u8);
-		var _player_x = 0;
-		var _player_y = 0;
+		var _player_x = read_packet(_packet, buffer_s32);
+		var _player_y = read_packet(_packet, buffer_s32);
+		var _player_angle = read_packet(_packet, buffer_u16);
 		if (_player_id == id_player) {
 		}
 		else {
-			var _player = instance_create_layer(0, 0, "other_players", obj_other_player);
+			var _player = instance_create_layer(_player_x, _player_y, "other_players", obj_other_player);
 			_player.actual_x = _player_x;
 			_player.actual_y = _player_y;
 			_player.x = _player_x;
 			_player.y = _player_y;
+			_player.player_angle = _player_angle;
 			_player.id_player = _player_id;
 			ds_list_add(player_ids, _player_id);
 			ds_map_add(players_to_id, _player_id, _player);
@@ -60,20 +62,11 @@ switch (_packet_id) {
 		destroy_player(_player_id);
 	break;
 	case networking.ticks:
-		/*
+		
 		var _player_id = read_packet(_packet, buffer_u8);
-		var _player_x = read_packet(_packet, buffer_s16);
-		var _player_y = read_packet(_packet, buffer_s16);
-		var _aim_x = read_packet(_packet, buffer_s16);
-		var _aim_y = read_packet(_packet, buffer_s16);
-		var _is_hitting = read_packet(_packet, buffer_bool);
-		var _hit = read_packet(_packet, buffer_bool);
-		var _player_hit_id = read_packet(_packet, buffer_u8);
-		var _new_health = read_packet(_packet, buffer_u16);
-		var _died = read_packet(_packet, buffer_bool);
-		if (_is_hitting) {
-			gun_animation(_player_id);
-		}
+		var _player_x = read_packet(_packet, buffer_s32);
+		var _player_y = read_packet(_packet, buffer_s32);
+		var _player_angle = read_packet(_packet, buffer_u16);
 		var _player = ds_map_find_value(players_to_id, _player_id);
 		if (_player_id == id_player) {
 			_player = obj_player.id;
@@ -87,68 +80,7 @@ switch (_packet_id) {
 			_player.y = _player_y;
 			_player.actual_x = _player_x;
 			_player.actual_y = _player_y;
-			_player.aim_x = _aim_x;
-			_player.aim_y = _aim_y;
-		}
-		
-		
-		
-		if (_is_hitting && _hit) {
-			var _player_hit = ds_map_find_value(players_to_id, _player_hit_id);
-			if (_player_hit_id == id_player) {
-				obj_player.screen_shake_effect = 5;
-				_player_hit = obj_player.id;
-			}
-			if (is_undefined(_player_hit) || !instance_exists(_player_hit)) {
-				break;
-			}
-
-			_player_hit.player_health = _new_health;
-			var _shoot_direction = point_direction(_player.x, _player.y, _player_hit.x, _player_hit.y);
-			//show_debug_message(_shoot_direction)
-			var _amplifier = 5;
-			var _shoot_x = lengthdir_x(_amplifier, _shoot_direction);
-			var _shoot_y = lengthdir_y(_amplifier, _shoot_direction);
-			for (var _i = 0; _i < 3; _i ++) {
-				var _particle = instance_create_layer(_player_hit.x, _player_hit.y, "particles", obj_particle_blood);
-				_particle.actual_x = _player_hit.x;
-				_particle.actual_y = _player_hit.y;
-				_particle.speed_x = _shoot_x + random_range(-4, 4);
-				_particle.speed_y = _shoot_y + random_range(-10, -5);
-				if (_player_hit_id == id_player) {
-					array_push(global.particles_skip_shader, _particle);
-				}
-				else {
-					array_push(global.particles, _particle);
-				}
-			}
-			if (_died) {
-				if (_player_id == id_player) {
-					obj_player.kills ++;
-				}
-				_player.player_health += global.max_health * global.kill_heal_amount_multiplier;
-				if (_player.player_health > global.max_health) {
-					_player.player_health = global.max_health;
-				}
-				if (_player_hit_id == id_player) {
-					
-					show_debug_message("Died");
-					died = true;
-					died_text = died_text_possibilities[irandom(array_length(died_text_possibilities) - 1)];
-					reset_game();
-					break;
-				}
-				for (var _i = 0; _i < 30; _i ++) {
-					var _particle = instance_create_layer(_player_hit.x, _player_hit.y, "particles", obj_particle_blood);
-					_particle.actual_x = _player_hit.x;
-					_particle.actual_y = _player_hit.y;
-					_particle.speed_x = random_range(-4, 4);
-					_particle.speed_y = random_range(-10, -5);
-					array_push(global.particles, _particle);
-				}
-		
-				destroy_player(_player_hit_id);
-			}
+			_player.player_angle = _player_angle;
 		}
 	break;
 	/*
