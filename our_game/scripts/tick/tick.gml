@@ -15,8 +15,25 @@ function tick() {
 	shoot_cooldown = timer(shoot_cooldown, 1);
 	if (mouse_check_button(mb_left) && shoot_cooldown <= 0) {
 		shoot_cooldown = shoot_cooldown_max;
-		shoot();
+		array_push(bullet_spawn, {time: 6, rot: player_angle, x_pos: actual_x, y_pos: actual_y});
+		//shoot();
 	}
+	
+	
+	for (var _bullet = 0; _bullet < array_length(bullet_spawn); _bullet++) {
+		var _actual_bullet = bullet_spawn[_bullet];
+		_actual_bullet.time -= 1;
+		if (_actual_bullet.time <= 0) {
+			shoot(_actual_bullet.x_pos, _actual_bullet.y_pos, actual_x, actual_y, _actual_bullet.rot);
+			array_delete(bullet_spawn, _bullet, 1);
+			_bullet -= 1;
+		}
+	}
+	
+	
+	
+	
+	
 	for (var _bullet = 0; _bullet < array_length(global.bullet_entities); _bullet++) {
 		with (global.bullet_entities[_bullet]) {
 			event_perform(ev_other, ev_user0);
