@@ -26,3 +26,14 @@ reload_cooldown = 0;
 
 player_bullet_capacity = 30; 
 player_mag_capacity = player_bullet_capacity;
+
+function draw_reload_text() {
+	draw_text(camera_x + 10, camera_y + 0,"Reloading...");
+}
+
+function draw_ammo_textIcon() {
+	for (var _i = 0; _i < max(player_mag_capacity, 0); _i++) {
+			draw_sprite(BulletIcon, 0, camera_x + 32 * _i, camera_y + camera_get_view_height(view_camera[0]));
+	}
+
+}

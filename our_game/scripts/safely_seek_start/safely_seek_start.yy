@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"safely_seek_start",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"safely_seek_start",
+  "parent":{
+    "name":"packet_functions",
+    "path":"folders/packet_functions.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

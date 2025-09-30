@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"send_packet",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"send_packet",
+  "parent":{
+    "name":"packet_functions",
+    "path":"folders/packet_functions.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}
