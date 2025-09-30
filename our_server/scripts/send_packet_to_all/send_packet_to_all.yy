@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"send_packet_to_all",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"send_packet_to_all",
+  "parent":{
+    "name":"our_server",
+    "path":"our_server.yyp",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}
