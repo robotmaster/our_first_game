@@ -12,13 +12,23 @@ function tick() {
 		actual_x += lengthdir_x(player_speed, _dir);
 		actual_y += lengthdir_y(player_speed, _dir);
 	}
+	reload_cooldown = timer(reload_cooldown, 1);
+	if (player_mag_capacity <= 0 && reload_cooldown <= 0) { 
+		player_mag_capacity = player_bullet_capacity;
+	}
+	
 	shoot_cooldown = timer(shoot_cooldown, 1);
 	if (mouse_check_button(mb_left) && shoot_cooldown <= 0) {
 		shoot_cooldown = shoot_cooldown_max;
-		array_push(bullet_spawn, {time: 6, rot: player_angle, x_pos: actual_x, y_pos: actual_y});
+		player_mag_capacity--;
+		if (player_mag_capacity <= 0) {
+			reload_cooldown = reload_cooldown_max;
+		}
+		else {
+			array_push(bullet_spawn, {time: 6, rot: player_angle, x_pos: actual_x, y_pos: actual_y});
+		}
 		//shoot();
 	}
-	
 	
 	for (var _bullet = 0; _bullet < array_length(bullet_spawn); _bullet++) {
 		var _actual_bullet = bullet_spawn[_bullet];
@@ -29,9 +39,6 @@ function tick() {
 			_bullet -= 1;
 		}
 	}
-	
-	
-	
 	
 	
 	for (var _bullet = 0; _bullet < array_length(global.bullet_entities); _bullet++) {
