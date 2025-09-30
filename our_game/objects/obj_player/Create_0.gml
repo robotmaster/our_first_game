@@ -26,3 +26,10 @@ reload_cooldown = 0;
 
 player_bullet_capacity = 30; 
 player_mag_capacity = player_bullet_capacity;
+
+enum firemode {
+	machineGun,
+	sniperRifle,
+	shotgun,
+	
+}
