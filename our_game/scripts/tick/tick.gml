@@ -22,7 +22,8 @@ function tick() {
 		shoot_cooldown = shoot_cooldown_max;
 		player_mag_capacity--;
 		if (player_mag_capacity <= 0) {
-			reload_cooldown = reload_cooldown_max;
+			if (reload_cooldown <= 0)
+				reload_cooldown = reload_cooldown_max;
 		}
 		else {
 			array_push(bullet_spawn, {time: 6, rot: player_angle, x_pos: actual_x, y_pos: actual_y});
