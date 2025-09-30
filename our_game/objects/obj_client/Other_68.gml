@@ -57,9 +57,7 @@ switch (_packet_id) {
 			reset_game();
 			break;
 		}
-		
-		
-		//destroy_player(_player_id);
+		destroy_player(_player_id);
 	break;
 	case networking.ticks:
 		/*

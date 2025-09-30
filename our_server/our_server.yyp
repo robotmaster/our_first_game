@@ -21,6 +21,7 @@
   "resources":[
     {"id":{"name":"obj_server","path":"objects/obj_server/obj_server.yy",},},
     {"id":{"name":"rm_server","path":"rooms/rm_server/rm_server.yy",},},
+    {"id":{"name":"disconnect_player","path":"scripts/disconnect_player/disconnect_player.yy",},},
     {"id":{"name":"read_packet","path":"scripts/read_packet/read_packet.yy",},},
     {"id":{"name":"safely_seek_start","path":"scripts/safely_seek_start/safely_seek_start.yy",},},
     {"id":{"name":"send_packet_to_all","path":"scripts/send_packet_to_all/send_packet_to_all.yy",},},

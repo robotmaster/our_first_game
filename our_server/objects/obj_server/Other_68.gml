@@ -48,9 +48,9 @@ switch (_data_type) {
 		
 	break;
 	case network_type_disconnect:
-	/*
+	
 		var _player_socket = async_load[? "socket"];
-		disconnect_player(_player_socket);*/
+		disconnect_player(_player_socket);
 	break;
 	case network_type_data:
 		//handle_data();
