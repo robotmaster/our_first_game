@@ -30,33 +30,22 @@ switch (_data_type) {
 		[buffer_u8, networking.connection],
 		[buffer_u8, _new_id],
 		]);
-		/*
-		for (var _player = 0; _player < array_length(player_positions); _player++) {
+		
+		for (var _player = 0; _player < array_length(player_infos); _player++) {
 			send_packet(_player_socket, [
 			[buffer_u8, networking.create_player],
-			[buffer_u8, player_positions[_player].this_id],
-			[buffer_s16, player_positions[_player].x_pos],
-			[buffer_s16, player_positions[_player].y_pos],
-			[buffer_u16, player_healths[_player].this_health],
-			]);
-			send_packet(_player_socket, [
-			[buffer_u8, networking.change_name],
-			[buffer_u8, player_healths[_player].this_id],
-			[buffer_string, ds_map_find_value(player_names, player_healths[_player].this_id)],
+			[buffer_u8, player_infos[_player].this_id]
 			]);
 		}
 		
+		
 		send_packet_to_all([
 		[buffer_u8, networking.create_player],
-		[buffer_u8, _new_id],
-		[buffer_s16, _new_player_x],
-		[buffer_s16, _new_player_y],
-		[buffer_u16, global.max_health],
+		[buffer_u8, _new_id]
 		]);
 		
+		array_push(player_infos, {this_id: _new_id, x_pos: 0, y_pos: 0, angle: 0});
 		
-		array_push(player_positions, {this_id: _new_id, x_pos: _new_player_x, y_pos: _new_player_y});
-		array_push(player_healths, {this_id: _new_id, this_health: global.max_health});*/
 	break;
 	case network_type_disconnect:
 	/*

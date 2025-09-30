@@ -35,20 +35,17 @@ switch (_packet_id) {
 	break;
 	case networking.create_player:
 		var _player_id = read_packet(_packet, buffer_u8);
-		var _player_x = read_packet(_packet, buffer_s16);
-		var _player_y = read_packet(_packet, buffer_s16);
-		var _player_health = read_packet(_packet, buffer_u16);
+		var _player_x = 0;
+		var _player_y = 0;
 		if (_player_id == id_player) {
 		}
 		else {
-			var _player = instance_create_layer(_player_x, _player_y, "client", obj_other_player);
-			array_push(global.other_players_list, _player);
+			var _player = instance_create_layer(0, 0, "other_players", obj_other_player);
 			_player.actual_x = _player_x;
 			_player.actual_y = _player_y;
 			_player.x = _player_x;
 			_player.y = _player_y;
 			_player.id_player = _player_id;
-			_player.player_health = _player_health;
 			ds_list_add(player_ids, _player_id);
 			ds_map_add(players_to_id, _player_id, _player);
 		}
@@ -62,9 +59,10 @@ switch (_packet_id) {
 		}
 		
 		
-		destroy_player(_player_id);
+		//destroy_player(_player_id);
 	break;
 	case networking.ticks:
+		/*
 		var _player_id = read_packet(_packet, buffer_u8);
 		var _player_x = read_packet(_packet, buffer_s16);
 		var _player_y = read_packet(_packet, buffer_s16);

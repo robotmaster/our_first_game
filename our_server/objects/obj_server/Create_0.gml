@@ -24,4 +24,6 @@ player_list = ds_map_create();
 player_ids = [];
 player_ids_to_ping = ds_map_create();
 
+player_infos = [];
+
 ping_timer_max = 120;
