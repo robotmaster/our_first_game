@@ -15,7 +15,6 @@ function shoot() {
 	player_mag_capacity--;
 	if (player_mag_capacity <= 0) {
 		reload_cooldown = reload_cooldown_max;
-		show_debug_message(reload_cooldown);
 	}
 	array_push(global.bullet_entities, _bullet);
 }

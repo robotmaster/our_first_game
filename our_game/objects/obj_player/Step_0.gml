@@ -32,3 +32,7 @@ var _track_speed = 1 - power(1 - _tick_track_speed, _delta);
 camera_x = camera_x - (camera_x + camera_get_view_width(view_camera[0]) / 2 - x) * _track_speed;
 camera_y = camera_y - (camera_y + camera_get_view_height(view_camera[0]) / 2 - y) * _track_speed;
 camera_set_view_pos(view_camera[0], camera_x, camera_y);
+
+function draw_reload_text() {
+	draw_text(camera_x + 10, camera_y + 0,"Reloading...");
+}

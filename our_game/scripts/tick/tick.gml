@@ -12,7 +12,6 @@ function tick() {
 		actual_x += lengthdir_x(player_speed, _dir);
 		actual_y += lengthdir_y(player_speed, _dir);
 	}
-	
 	reload_cooldown = timer(reload_cooldown, 1);
 	if (player_mag_capacity <= 0 && reload_cooldown <= 0) { 
 		player_mag_capacity = player_bullet_capacity;
@@ -23,8 +22,6 @@ function tick() {
 		shoot_cooldown = shoot_cooldown_max;
 		shoot();
 	}
-	
-	show_debug_message(reload_cooldown);
 	
 	for (var _bullet = 0; _bullet < array_length(global.bullet_entities); _bullet++) {
 		with (global.bullet_entities[_bullet]) {
