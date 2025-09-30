@@ -16,6 +16,9 @@ player_angle = image_angle;
 shoot_cooldown = 0;
 shoot_cooldown_max = 6;
 
+reload_cooldown_max = 120;
+reload_cooldown = reload_cooldown_max; 
+
 player_bullet_capacity = 30; 
 player_mag_capacity = player_bullet_capacity;
 

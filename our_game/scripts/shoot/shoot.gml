@@ -2,7 +2,9 @@
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function shoot() {
 	//only use with obj_player
-
+	if (player_mag_capacity <= 0) {
+		return; 
+	}
 	var _bullet = instance_create_layer(actual_x, actual_y, "bullets", obj_bullet);
 	_bullet.bullet_angle = player_angle;
 	_bullet.image_angle = player_angle;
@@ -10,6 +12,10 @@ function shoot() {
 	_bullet.tick_start_y = actual_y;
 	_bullet.actual_x = actual_x;
 	_bullet.actual_y = actual_y;
-	
+	player_mag_capacity--;
+	if (player_mag_capacity <= 0) {
+		reload_cooldown = reload_cooldown_max;
+		show_debug_message(reload_cooldown);
+	}
 	array_push(global.bullet_entities, _bullet);
 }
