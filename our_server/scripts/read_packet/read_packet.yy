@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"read_packet",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"read_packet",
+  "parent":{
+    "name":"our_server",
+    "path":"our_server.yyp",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}
