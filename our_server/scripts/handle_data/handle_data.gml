@@ -29,7 +29,6 @@ function handle_data() {
 					player_infos[_player].x_pos = _player_x;
 					player_infos[_player].y_pos = _player_y;
 					player_infos[_player].angle = _player_angle;
-					send_packet_to_all(_list_of_info)
 					
 					break;
 				}

@@ -34,20 +34,14 @@ switch (_data_type) {
 		for (var _player = 0; _player < array_length(player_infos); _player++) {
 			send_packet(_player_socket, [
 			[buffer_u8, networking.create_player],
-			[buffer_u8, player_infos[_player].this_id],
-			[buffer_s32, player_infos[_player].x_pos],
-			[buffer_s32, player_infos[_player].y_pos],
-			[buffer_u16, player_infos[_player].angle],
+			[buffer_u8, player_infos[_player].this_id]
 			]);
 		}
 		
 		
 		send_packet_to_all([
 		[buffer_u8, networking.create_player],
-		[buffer_u8, _new_id],
-		[buffer_s32, 0],
-		[buffer_s32, 0],
-		[buffer_u16, 0],
+		[buffer_u8, _new_id]
 		]);
 		
 		array_push(player_infos, {this_id: _new_id, x_pos: 0, y_pos: 0, angle: 0});

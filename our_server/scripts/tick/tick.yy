@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"tick",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"tick",
+  "parent":{
+    "name":"our_server",
+    "path":"our_server.yyp",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

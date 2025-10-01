@@ -9,6 +9,10 @@ enum networking {
 	//set_health,
 	//kill
 }
+
+global.tick_timer_max = 1;
+global.tick_timer = 0;
+
 text = "";
 text_timer = 0;
 text_timer_max = 180;
@@ -25,5 +29,6 @@ player_ids = [];
 player_ids_to_ping = ds_map_create();
 
 player_infos = [];
+bullet_infos = [];
 
 ping_timer_max = 120;

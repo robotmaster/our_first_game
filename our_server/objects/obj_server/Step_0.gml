@@ -9,7 +9,19 @@ if (game_server < 0) {
 		text_timer = text_timer_max;
 	}
 	server_creation_timer -= _delta;
+	exit;
 }
+
+
+global.tick_timer += _delta;
+
+while (global.tick_timer > global.tick_timer_max) {
+	global.tick_timer -= global.tick_timer_max;
+	tick();
+}
+
+
+
 
 for (var _i = 0; _i < array_length(player_ids); _i++) {
 	var _id = player_ids[_i];
