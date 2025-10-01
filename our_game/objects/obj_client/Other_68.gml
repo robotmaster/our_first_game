@@ -79,7 +79,7 @@ switch (_packet_id) {
 			var _bullet_id = _bullet_info[_bullet_index].this_id;
 			var _bullet = ds_map_find_value(bullets_to_id, _bullet_id);
 			if (is_undefined(_bullet) || !instance_exists(_bullet)) {
-				_bullet = instance_create_layer(0, 0, "bullets", obj_bullet);
+				_bullet = instance_create_layer(_bullet_info[_bullet_index].x_pos, _bullet_info[_bullet_index].y_pos, "bullets", obj_bullet);
 				_bullet.id_player = _bullet_id;
 				ds_list_add(bullet_ids, _bullet_id);
 				ds_map_add(bullets_to_id, _bullet_id, _bullet);
@@ -94,7 +94,7 @@ switch (_packet_id) {
 			var _enemy_id = _enemy_info[_enemy_index].this_id;
 			var _enemy = ds_map_find_value(enemies_to_id, _enemy_id);
 			if (is_undefined(_enemy) || !instance_exists(_enemy)) {
-				_enemy = instance_create_layer(0, 0, "enemies", obj_enemy);
+				_enemy = instance_create_layer(_enemy_info[_enemy_index].x_pos, _enemy_info[_enemy_index].y_pos, "enemies", obj_enemy);
 				_enemy.id_player = _enemy_id;
 				ds_list_add(enemy_ids, _enemy_id);
 				ds_map_add(enemies_to_id, _enemy_id, _enemy);
