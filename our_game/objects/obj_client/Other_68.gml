@@ -101,6 +101,7 @@ switch (_packet_id) {
 			}
 			_enemy.actual_x = _enemy_info[_enemy_index].x_pos;
 			_enemy.actual_y = _enemy_info[_enemy_index].y_pos;
+			_enemy.rotation_ = _enemy_info[_enemy_index].rot; 
 		}
 	break;
 	default:
