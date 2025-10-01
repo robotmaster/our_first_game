@@ -68,12 +68,25 @@ switch (_packet_id) {
 				break;
 			}
 			if (_player_id != id_player) {
-				_player.x = _player_info[_player_index].x_pos;
-				_player.y = _player_info[_player_index].y_pos;
 				_player.actual_x = _player_info[_player_index].x_pos;
 				_player.actual_y = _player_info[_player_index].y_pos;
 				_player.player_angle = _player_info[_player_index].angle;
 			}
+		}
+			
+		var _bullet_info = json_parse(read_packet(_packet, buffer_string));
+		for (var _bullet_index = 0; _bullet_index < array_length(_bullet_info); _bullet_index++) {
+			var _bullet_id = _bullet_info[_bullet_index].this_id;
+			var _bullet = ds_map_find_value(bullets_to_id, _bullet_id);
+			if (is_undefined(_bullet) || !instance_exists(_bullet)) {
+				_bullet = instance_create_layer(0, 0, "bullets", obj_bullet);
+				_bullet.id_player = _bullet_id;
+				ds_list_add(bullet_ids, _bullet_id);
+				ds_map_add(bullets_to_id, _bullet_id, _bullet);
+			}
+			_bullet.actual_x = _bullet_info[_bullet_index].x_pos;
+			_bullet.actual_y = _bullet_info[_bullet_index].y_pos;
+			_bullet.bullet_angle = _bullet_info[_bullet_index].angle;
 		}
 	break;
 	default:

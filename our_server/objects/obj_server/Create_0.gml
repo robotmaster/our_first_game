@@ -25,10 +25,12 @@ game_server = -1;
 player_socket_list = ds_list_create();
 player_list = ds_map_create();
 
-player_ids = [];
+
 player_ids_to_ping = ds_map_create();
 
+player_ids = [];
 player_infos = [];
+bullet_ids = [];
 bullet_infos = [];
 
 ping_timer_max = 120;

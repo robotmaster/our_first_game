@@ -36,25 +36,12 @@ function tick() {
 				reload_cooldown = reload_cooldown_max;
 		}
 		else {
-			if (obj_client.force_connected_debug) {
-				shoot(actual_x, actual_y, actual_x, actual_y, player_angle);
-			}
-			else {
-				_packet_info[5][1] = true;
-			}
+			_packet_info[5][1] = true;
 
 		}
 		//shoot();
 	}
 	
-	
-	
-	for (var _bullet = 0; _bullet < array_length(global.bullet_entities); _bullet++) {
-		with (global.bullet_entities[_bullet]) {
-			event_perform(ev_other, ev_user0);
-		}
-	}
-		
 	send_packet(obj_client.client_socket, _packet_info);
 	
 }

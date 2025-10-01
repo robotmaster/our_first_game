@@ -1,12 +1,12 @@
 {
   "$GMScript":"v1",
-  "%Name":"shoot",
+  "%Name":"handle_shooting",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"shoot",
+  "name":"handle_shooting",
   "parent":{
-    "name":"other_scripts",
-    "path":"folders/other_scripts.yy",
+    "name":"our_server",
+    "path":"our_server.yyp",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

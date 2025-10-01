@@ -27,3 +27,6 @@ ping_timer_max = 120;
 id_player = -1;
 player_ids = ds_list_create();
 players_to_id = ds_map_create();
+
+bullet_ids = ds_list_create();
+bullets_to_id = ds_map_create();

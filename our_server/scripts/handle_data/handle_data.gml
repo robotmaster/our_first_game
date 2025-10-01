@@ -19,6 +19,7 @@ function handle_data() {
 			[buffer_u16, _player_angle],
 			[buffer_bool, _will_shoot],
 			]
+			
 			ds_map_replace(player_ids_to_ping, _player_id, 0);
 			
 			
@@ -34,6 +35,10 @@ function handle_data() {
 				}
 			}
 			
+			if (_will_shoot) {
+				handle_shooting(_player_x, _player_y, _player_angle);
+				
+			}
 		break;
 		/*
 		case networking.miss:
