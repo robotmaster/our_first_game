@@ -19,6 +19,7 @@ function tick() {
 	[buffer_s32, actual_x],
 	[buffer_s32, actual_y],
 	[buffer_u16, player_angle],
+	[buffer_bool, false],
 	];
 	
 	reload_cooldown = timer(reload_cooldown, 1);
@@ -39,7 +40,7 @@ function tick() {
 				shoot(actual_x, actual_y, actual_x, actual_y, player_angle);
 			}
 			else {
-				shoot(actual_x, actual_y, actual_x, actual_y, player_angle);
+				_packet_info[5][1] = true;
 			}
 
 		}

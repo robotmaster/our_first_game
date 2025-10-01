@@ -67,6 +67,7 @@ switch (_packet_id) {
 		var _player_x = read_packet(_packet, buffer_s32);
 		var _player_y = read_packet(_packet, buffer_s32);
 		var _player_angle = read_packet(_packet, buffer_u16);
+		var _will_shoot = read_packet(_packet, buffer_bool);
 		var _player = ds_map_find_value(players_to_id, _player_id);
 		if (_player_id == id_player) {
 			_player = obj_player.id;
@@ -81,6 +82,14 @@ switch (_packet_id) {
 			_player.actual_x = _player_x;
 			_player.actual_y = _player_y;
 			_player.player_angle = _player_angle;
+		}
+		if (_will_shoot) {
+			if (_player_id == id_player) {
+				shoot(_player_x, _player_y, obj_player.actual_x, obj_player.actual_y, _player_angle);
+			}
+			else {
+				shoot(_player_x, _player_y, _player_x, _player_y, _player_angle);
+			}
 		}
 	break;
 	/*

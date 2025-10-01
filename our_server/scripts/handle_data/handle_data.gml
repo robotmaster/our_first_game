@@ -10,12 +10,14 @@ function handle_data() {
 			var _player_x = read_packet(_packet, buffer_s32);
 			var _player_y = read_packet(_packet, buffer_s32);
 			var _player_angle = read_packet(_packet, buffer_u16);
+			var _will_shoot = read_packet(_packet, buffer_bool);
 			var _list_of_info = [
 			[buffer_u8, networking.ticks],
 			[buffer_u8, _player_id],
 			[buffer_s32, _player_x],
 			[buffer_s32, _player_y],
 			[buffer_u16, _player_angle],
+			[buffer_bool, _will_shoot],
 			]
 			ds_map_replace(player_ids_to_ping, _player_id, 0);
 			
