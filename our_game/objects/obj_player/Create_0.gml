@@ -15,6 +15,8 @@ camera_y = 0;
 player_speed = 9;
 player_angle = image_angle;
 
+player_health = 100;
+
 shoot_cooldown = 0;
 shoot_cooldown_max = 3;
 global.bullet_entities = [];
@@ -38,4 +40,8 @@ function draw_ammo_textIcon() {
 	for (var _i = 0; _i < max(player_mag_capacity, 0); _i++) {
 		draw_sprite(BulletIcon, 0, camera_x + 32 * _i, camera_y + camera_get_view_height(view_camera[0]) - 75);
 	}
+}
+
+function draw_health() {
+	draw_rectangle(camera_x + 20, camera_y + camera_get_view_height(view_camera[0]) - 90, camera_x + 20 + (player_health * 5), camera_y + camera_get_view_height(view_camera[0]) - 120, true);
 }
