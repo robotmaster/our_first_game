@@ -11,7 +11,7 @@ enum networking {
 randomize();
 room_goto(rm_game);
 client_socket = -1;
-force_connected_debug = false;
+force_connected_debug = true;
 
 
 connected = force_connected_debug;
