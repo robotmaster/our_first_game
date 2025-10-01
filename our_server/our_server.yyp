@@ -30,6 +30,7 @@
     {"id":{"name":"send_packet","path":"scripts/send_packet/send_packet.yy",},},
     {"id":{"name":"simulate_bullets","path":"scripts/simulate_bullets/simulate_bullets.yy",},},
     {"id":{"name":"tick","path":"scripts/tick/tick.yy",},},
+    {"id":{"name":"timer","path":"scripts/timer/timer.yy",},},
   ],
   "resourceType":"GMProject",
   "resourceVersion":"2.0",

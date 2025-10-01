@@ -1,10 +1,3 @@
-enemy_health = 10
-x = 0;
-y = 0; 
-function fire() {
-
-}
-
-function get_players() {
-
-}
+enemy_health = 10;
+actual_x = 0;
+actual_y = 0;

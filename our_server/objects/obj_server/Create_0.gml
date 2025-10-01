@@ -32,5 +32,7 @@ player_ids = [];
 player_infos = [];
 bullet_ids = [];
 bullet_infos = [];
+enemy_ids = [];
+enemy_infos = [];
 
 ping_timer_max = 120;

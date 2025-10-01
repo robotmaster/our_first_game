@@ -12,5 +12,6 @@ function handle_shooting(_x, _y, _angle) {
 		return;
 	}
 	array_push(bullet_ids, _new_id);
-	array_push(bullet_infos, {this_id: _new_id, x_pos: _x, y_pos: _y, angle: _angle});
+	var _despawn_time = 120;
+	array_push(bullet_infos, {this_id: _new_id, x_pos: _x, y_pos: _y, angle: _angle, despawn_timer: _despawn_time});
 }
