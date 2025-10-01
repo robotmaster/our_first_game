@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"simulate_enemies",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"simulate_enemies",
+  "parent":{
+    "name":"our_server",
+    "path":"our_server.yyp",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

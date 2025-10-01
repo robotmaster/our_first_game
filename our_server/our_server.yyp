@@ -29,6 +29,8 @@
     {"id":{"name":"send_packet_to_all","path":"scripts/send_packet_to_all/send_packet_to_all.yy",},},
     {"id":{"name":"send_packet","path":"scripts/send_packet/send_packet.yy",},},
     {"id":{"name":"simulate_bullets","path":"scripts/simulate_bullets/simulate_bullets.yy",},},
+    {"id":{"name":"simulate_enemies","path":"scripts/simulate_enemies/simulate_enemies.yy",},},
+    {"id":{"name":"summon_enemy","path":"scripts/summon_enemy/summon_enemy.yy",},},
     {"id":{"name":"tick","path":"scripts/tick/tick.yy",},},
     {"id":{"name":"timer","path":"scripts/timer/timer.yy",},},
   ],

@@ -34,5 +34,7 @@ bullet_ids = [];
 bullet_infos = [];
 enemy_ids = [];
 enemy_infos = [];
+enemy_spawn_timer = 0;
+enemy_spawn_timer_max = 120;
 
 ping_timer_max = 120;
