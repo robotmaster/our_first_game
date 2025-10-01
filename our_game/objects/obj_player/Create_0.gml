@@ -36,7 +36,6 @@ function draw_reload_text() {
 
 function draw_ammo_textIcon() {
 	for (var _i = 0; _i < max(player_mag_capacity, 0); _i++) {
-		draw_sprite(BulletIcon, 0, camera_x + 32 * _i, camera_y + camera_get_view_height(view_camera[0]));
+		draw_sprite(BulletIcon, 0, camera_x + 32 * _i, camera_y + camera_get_view_height(view_camera[0]) - 75);
 	}
-
 }
