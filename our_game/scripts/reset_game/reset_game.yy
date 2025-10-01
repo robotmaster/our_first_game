@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"reset_game",
   "parent":{
-    "name":"our_game",
-    "path":"our_game.yyp",
+    "name":"packet_functions",
+    "path":"folders/packet_functions.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

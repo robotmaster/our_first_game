@@ -14,12 +14,10 @@ if (!connected) {
 	}
 	exit;
 }
-/*
+
 connection_timer = 180;
 ping_timer += global.delta;
 if (ping_timer >= ping_timer_max && !force_connected_debug) {
 	reset_game();
 	exit;
 }
-var _player_ids = [];
-*/

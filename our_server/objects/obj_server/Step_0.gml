@@ -10,7 +10,7 @@ if (game_server < 0) {
 	}
 	server_creation_timer -= _delta;
 }
-/*
+
 for (var _i = 0; _i < array_length(player_ids); _i++) {
 	var _id = player_ids[_i];
 	if (ds_map_exists(player_ids_to_ping, _id)) {
@@ -29,18 +29,9 @@ for (var _i = 0; _i < array_length(player_ids); _i++) {
 			
 			break;
 		}
-		ds_map_replace(player_ids_to_ping, _id, _elapsed_time + global.delta);
+		ds_map_replace(player_ids_to_ping, _id, _elapsed_time + _delta);
 	}
 	else {
 		show_debug_message("Mismatch between player_ids_to_ping and player_ids, id: " + string(_id));
 	}
 }
-	
-for (var _i = 0; _i < array_length(player_healths); _i++) {
-	var _health = player_healths[_i].this_health;
-	_health += global.health_regen_rate * global.delta;
-	if (_health > global.max_health) {
-		_health = global.max_health;
-	}
-	player_healths[_i].this_health = _health;
-}*/

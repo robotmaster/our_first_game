@@ -35,20 +35,17 @@ function tick() {
 				reload_cooldown = reload_cooldown_max;
 		}
 		else {
-			array_push(bullet_spawn, {time: 6, rot: player_angle, x_pos: actual_x, y_pos: actual_y});
+			if (obj_client.force_connected_debug) {
+				shoot(actual_x, actual_y, actual_x, actual_y, player_angle);
+			}
+			else {
+				shoot(actual_x, actual_y, actual_x, actual_y, player_angle);
+			}
+
 		}
 		//shoot();
 	}
 	
-	for (var _bullet = 0; _bullet < array_length(bullet_spawn); _bullet++) {
-		var _actual_bullet = bullet_spawn[_bullet];
-		_actual_bullet.time -= 1;
-		if (_actual_bullet.time <= 0) {
-			shoot(_actual_bullet.x_pos, _actual_bullet.y_pos, actual_x, actual_y, _actual_bullet.rot);
-			array_delete(bullet_spawn, _bullet, 1);
-			_bullet -= 1;
-		}
-	}
 	
 	
 	for (var _bullet = 0; _bullet < array_length(global.bullet_entities); _bullet++) {

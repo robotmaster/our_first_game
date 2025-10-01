@@ -22,7 +22,6 @@ shoot_cooldown_max = 3;
 global.bullet_entities = [];
 
 
-bullet_spawn = [];
 reload_cooldown_max = 120;
 reload_cooldown = 0; 
 

@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"shoot",
   "parent":{
-    "name":"our_game",
-    "path":"our_game.yyp",
+    "name":"other_scripts",
+    "path":"folders/other_scripts.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",
