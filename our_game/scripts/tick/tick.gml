@@ -12,7 +12,7 @@ function tick() {
 		actual_x += lengthdir_x(player_speed, _dir);
 		actual_y += lengthdir_y(player_speed, _dir);
 		var _dir_spawn_to_pos = point_direction(0, 0, actual_x, actual_y);
-		if (_dir_spawn_to_pos > area_radius) {
+		if (point_distance(0, 0, actual_x, actual_y) > area_radius) {
 			actual_x = lengthdir_x(area_radius, _dir_spawn_to_pos);
 			actual_y = lengthdir_y(area_radius, _dir_spawn_to_pos);
 		}
