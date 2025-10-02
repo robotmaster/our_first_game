@@ -37,6 +37,22 @@ function disconnect_player(_player_socket) {
 			
 		ds_map_delete(player_list, _player_socket);
 	}
+	
+	if (ds_list_size(player_socket_list) == 0) {
+		player_ids = [];
+		player_infos = [];
+		bullet_ids = [];
+		bullet_infos = [];
+		enemy_ids = [];
+		enemy_infos = [];
+
+
+		players_to_id = ds_map_create();
+
+		bullets_to_id = ds_map_create();
+
+		enemies_to_id = ds_map_create();
+	}
 	network_destroy(_player_socket);
 		
 		

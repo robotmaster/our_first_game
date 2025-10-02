@@ -28,16 +28,17 @@ player_list = ds_map_create();
 
 player_ids_to_ping = ds_map_create();
 
+enemy_spawn_timer = 0;
+enemy_spawn_timer_max = 150;
+
+ping_timer_max = 120;
+
 player_ids = [];
 player_infos = [];
 bullet_ids = [];
 bullet_infos = [];
 enemy_ids = [];
 enemy_infos = [];
-enemy_spawn_timer = 0;
-enemy_spawn_timer_max = 150;
-
-ping_timer_max = 120;
 
 
 players_to_id = ds_map_create();

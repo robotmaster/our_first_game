@@ -10,7 +10,7 @@ if (!connected) {
 		show_debug_message("Tried connecting");
 		client_socket = network_create_socket(network_socket_ws);
 		//network_connect_async(client_socket, "127.0.0.1", 5359);
-		network_connect_async(client_socket, "127.0.0.1", 5359);
+		network_connect_async(client_socket, "71.202.88.160", 5359);
 	}
 	exit;
 }
