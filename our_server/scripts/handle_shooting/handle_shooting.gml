@@ -3,7 +3,7 @@
 function handle_shooting(_x, _y, _angle) {
 	var _new_id = -1;
 	for (var _i = 0; _i < 1000; _i++) {
-		if (ds_map_exists(bullets_to_id, _id)) {
+		if (ds_map_exists(bullets_to_id, _i)) {
 			var _new_id = _i;
 			break;
 		}

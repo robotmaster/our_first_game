@@ -17,6 +17,8 @@ player_angle = image_angle;
 
 player_health = 100;
 
+area_radius = 3000;
+
 shoot_cooldown = 0;
 shoot_cooldown_max = 3;
 global.bullet_entities = [];
