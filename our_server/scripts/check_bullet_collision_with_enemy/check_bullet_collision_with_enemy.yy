@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"check_bullet_collision_with_enemy",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"check_bullet_collision_with_enemy",
+  "parent":{
+    "name":"our_server",
+    "path":"our_server.yyp",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

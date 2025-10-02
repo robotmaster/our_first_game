@@ -25,8 +25,8 @@
   "nineSlice":null,
   "origin":4,
   "parent":{
-    "name":"our_game",
-    "path":"our_game.yyp",
+    "name":"our_server",
+    "path":"our_server.yyp",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

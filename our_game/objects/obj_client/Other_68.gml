@@ -73,7 +73,7 @@ switch (_packet_id) {
 				_player.player_angle = _player_info[_player_index].angle;
 			}
 		}
-			
+		
 		var _bullet_info = json_parse(read_packet(_packet, buffer_string));
 		for (var _bullet_index = 0; _bullet_index < array_length(_bullet_info); _bullet_index++) {
 			var _bullet_id = _bullet_info[_bullet_index].this_id;
@@ -88,7 +88,6 @@ switch (_packet_id) {
 			_bullet.actual_y = _bullet_info[_bullet_index].y_pos;
 			_bullet.bullet_angle = _bullet_info[_bullet_index].angle;
 		}
-		
 		var _enemy_info = json_parse(read_packet(_packet, buffer_string));
 		for (var _enemy_index = 0; _enemy_index < array_length(_enemy_info); _enemy_index++) {
 			var _enemy_id = _enemy_info[_enemy_index].this_id;

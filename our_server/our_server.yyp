@@ -33,6 +33,8 @@
     {"id":{"name":"summon_enemy","path":"scripts/summon_enemy/summon_enemy.yy",},},
     {"id":{"name":"tick","path":"scripts/tick/tick.yy",},},
     {"id":{"name":"timer","path":"scripts/timer/timer.yy",},},
+    {"id":{"name":"spr_bullet","path":"sprites/spr_bullet/spr_bullet.yy",},},
+    {"id":{"name":"spr_enemy","path":"sprites/spr_enemy/spr_enemy.yy",},},
   ],
   "resourceType":"GMProject",
   "resourceVersion":"2.0",

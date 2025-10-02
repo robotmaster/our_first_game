@@ -16,7 +16,7 @@ function simulate_enemies() {
 	for (var _enemy_index = 0; _enemy_index < array_length(enemy_infos); _enemy_index++) {
 		var _enemy = enemy_infos[_enemy_index];
 		
-		var _enemy_speed = 20;
+		var _enemy_speed = 8;
 		var _dist_to_stop = 150; 		
 		var _lowest_dist = infinity;
 		var _lowest_direction = -1;

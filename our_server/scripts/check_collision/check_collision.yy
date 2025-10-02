@@ -1,12 +1,12 @@
 {
   "$GMScript":"v1",
-  "%Name":"tick",
+  "%Name":"check_collision",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"tick",
+  "name":"check_collision",
   "parent":{
-    "name":"our_game",
-    "path":"our_game.yyp",
+    "name":"our_server",
+    "path":"our_server.yyp",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

@@ -7,7 +7,6 @@ if (!instance_exists(obj_client) || !obj_client.connected) {
 }
 global.tick_timer += _delta;
 
-
 while (global.tick_timer > global.tick_timer_max) {
 	player_angle = point_direction(actual_x, actual_y, mouse_x, mouse_y);
 	global.tick_timer -= global.tick_timer_max;

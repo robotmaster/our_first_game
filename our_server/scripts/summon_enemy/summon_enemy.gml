@@ -12,5 +12,5 @@ function summon_enemy(_x, _y) {
 		return;
 	}
 	array_push(enemy_ids, _new_id);
-	array_push(enemy_infos, {this_id: _new_id, x_pos: _x, y_pos: _y, rot: 0});
+	array_push(enemy_infos, {this_id: _new_id, x_pos: _x, y_pos: _y, rot: 0, this_health: 5});
 }
