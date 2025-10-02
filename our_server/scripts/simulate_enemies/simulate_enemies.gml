@@ -35,4 +35,5 @@ function simulate_enemies() {
 		_enemy.y_pos -= lengthdir_y(_enemy_speed, _lowest_direction);
 
 	}
+	handle_enemies(enemy_infos);
 }

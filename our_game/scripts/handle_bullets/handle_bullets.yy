@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"handle_bullets",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"handle_bullets",
+  "parent":{
+    "name":"our_game",
+    "path":"our_game.yyp",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

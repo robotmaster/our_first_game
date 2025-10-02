@@ -30,6 +30,8 @@
     {"id":{"name":"obj_player","path":"objects/obj_player/obj_player.yy",},},
     {"id":{"name":"rm_game","path":"rooms/rm_game/rm_game.yy",},},
     {"id":{"name":"destroy_player","path":"scripts/destroy_player/destroy_player.yy",},},
+    {"id":{"name":"handle_bullets","path":"scripts/handle_bullets/handle_bullets.yy",},},
+    {"id":{"name":"handle_enemies","path":"scripts/handle_enemies/handle_enemies.yy",},},
     {"id":{"name":"read_packet","path":"scripts/read_packet/read_packet.yy",},},
     {"id":{"name":"reset_game","path":"scripts/reset_game/reset_game.yy",},},
     {"id":{"name":"safely_seek_start","path":"scripts/safely_seek_start/safely_seek_start.yy",},},

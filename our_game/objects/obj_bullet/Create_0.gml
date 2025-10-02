@@ -11,3 +11,5 @@ recover_time = 10;
 recover_timer = recover_time;
 
 bullet_angle = 0;
+
+exists = true;

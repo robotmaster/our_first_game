@@ -73,35 +73,10 @@ switch (_packet_id) {
 				_player.player_angle = _player_info[_player_index].angle;
 			}
 		}
-		
 		var _bullet_info = json_parse(read_packet(_packet, buffer_string));
-		for (var _bullet_index = 0; _bullet_index < array_length(_bullet_info); _bullet_index++) {
-			var _bullet_id = _bullet_info[_bullet_index].this_id;
-			var _bullet = ds_map_find_value(bullets_to_id, _bullet_id);
-			if (is_undefined(_bullet) || !instance_exists(_bullet)) {
-				_bullet = instance_create_layer(_bullet_info[_bullet_index].x_pos, _bullet_info[_bullet_index].y_pos, "bullets", obj_bullet);
-				_bullet.id_player = _bullet_id;
-				ds_list_add(bullet_ids, _bullet_id);
-				ds_map_add(bullets_to_id, _bullet_id, _bullet);
-			}
-			_bullet.actual_x = _bullet_info[_bullet_index].x_pos;
-			_bullet.actual_y = _bullet_info[_bullet_index].y_pos;
-			_bullet.bullet_angle = _bullet_info[_bullet_index].angle;
-		}
+		handle_bullets(_bullet_info);
 		var _enemy_info = json_parse(read_packet(_packet, buffer_string));
-		for (var _enemy_index = 0; _enemy_index < array_length(_enemy_info); _enemy_index++) {
-			var _enemy_id = _enemy_info[_enemy_index].this_id;
-			var _enemy = ds_map_find_value(enemies_to_id, _enemy_id);
-			if (is_undefined(_enemy) || !instance_exists(_enemy)) {
-				_enemy = instance_create_layer(_enemy_info[_enemy_index].x_pos, _enemy_info[_enemy_index].y_pos, "enemies", obj_enemy);
-				_enemy.id_player = _enemy_id;
-				ds_list_add(enemy_ids, _enemy_id);
-				ds_map_add(enemies_to_id, _enemy_id, _enemy);
-			}
-			_enemy.actual_x = _enemy_info[_enemy_index].x_pos;
-			_enemy.actual_y = _enemy_info[_enemy_index].y_pos;
-			_enemy.rotation_ = _enemy_info[_enemy_index].rot; 
-		}
+		handle_enemies(_enemy_info);
 	break;
 	default:
 		show_debug_message("Invalid packet.");

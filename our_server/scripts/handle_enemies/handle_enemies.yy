@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"handle_enemies",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"handle_enemies",
+  "parent":{
+    "name":"our_server",
+    "path":"our_server.yyp",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}
