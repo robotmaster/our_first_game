@@ -14,6 +14,8 @@ function handle_enemies(_enemy_info) {
 		_enemy.actual_x = _enemy_info[_enemy_index].x_pos;
 		_enemy.actual_y = _enemy_info[_enemy_index].y_pos;
 		_enemy.rotation_ = _enemy_info[_enemy_index].rot; 
+		_enemy.enemy_health = _enemy_info[_enemy_index].this_health;
+		_enemy.this_id = _enemy_info[_enemy_index].this_id;
 		_enemy.exists = true;
 	}
 	with (obj_enemy) {

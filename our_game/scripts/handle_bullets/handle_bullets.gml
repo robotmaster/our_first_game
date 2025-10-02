@@ -14,6 +14,7 @@ function handle_bullets(_bullet_info) {
 		_bullet.actual_x = _bullet_info[_bullet_index].x_pos;
 		_bullet.actual_y = _bullet_info[_bullet_index].y_pos;
 		_bullet.bullet_angle = _bullet_info[_bullet_index].angle;
+		_bullet.this_id = _bullet_info[_bullet_index].this_id;
 		_bullet.exists = true;
 	}
 	with (obj_bullet) {

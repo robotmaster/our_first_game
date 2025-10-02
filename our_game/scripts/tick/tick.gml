@@ -41,6 +41,14 @@ function tick() {
 		}
 		//shoot();
 	}
+	with (obj_enemy) {
+		event_perform(ev_other, ev_user0);
+	}
+	if (obj_player.player_health <= 0) {
+		with (obj_client) {
+			reset_game();
+		}
+	}
 	
 	send_packet(obj_client.client_socket, _packet_info);
 	

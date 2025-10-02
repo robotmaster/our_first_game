@@ -35,14 +35,9 @@ bullet_infos = [];
 enemy_ids = [];
 enemy_infos = [];
 enemy_spawn_timer = 0;
-enemy_spawn_timer_max = 240;
+enemy_spawn_timer_max = 150;
 
 ping_timer_max = 120;
-
-
-player_hitbox = {type: "circle", size: 58};
-bullet_hitbox = {type: "points", points: [{x_pos: -30, y_pos: -5}, {x_pos: 30, y_pos: -5}, {x_pos: -30, y_pos: 5}, {x_pos: 30, y_pos: 5}]};
-enemy_hitbox = {type: "circle", size: 64};
 
 
 players_to_id = ds_map_create();
