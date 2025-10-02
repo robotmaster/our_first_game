@@ -3,7 +3,7 @@
 function handle_shooting(_x, _y, _angle) {
 	var _new_id = -1;
 	for (var _i = 0; _i < 1000; _i++) {
-		if (!array_contains(bullet_ids, _i)) {
+		if (ds_map_exists(bullets_to_id, _id)) {
 			var _new_id = _i;
 			break;
 		}
@@ -11,7 +11,6 @@ function handle_shooting(_x, _y, _angle) {
 	if (_new_id == -1) {
 		return;
 	}
-	array_push(bullet_ids, _new_id);
 	var _despawn_time = 120;
 	array_push(bullet_infos, {this_id: _new_id, x_pos: _x, y_pos: _y, angle: _angle, despawn_timer: _despawn_time});
 }

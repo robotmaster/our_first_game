@@ -3,7 +3,7 @@
 function summon_enemy(_x, _y) {
 	var _new_id = -1;
 	for (var _i = 0; _i < 1000; _i++) {
-		if (!array_contains(enemy_ids, _i)) {
+		if (ds_map_exists(enemies_to_id, _id)) {
 			var _new_id = _i;
 			break;
 		}
@@ -11,6 +11,5 @@ function summon_enemy(_x, _y) {
 	if (_new_id == -1) {
 		return;
 	}
-	array_push(enemy_ids, _new_id);
 	array_push(enemy_infos, {this_id: _new_id, x_pos: _x, y_pos: _y, rot: 0, this_health: 15});
 }
