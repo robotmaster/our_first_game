@@ -1,3 +1,9 @@
+if (invincibility_frames > 0) {
+	image_alpha = 0.8;
+}
+else {
+	image_alpha = 1;
+}
 draw_self();
 
 draw_ammo_textIcon();

@@ -30,6 +30,7 @@ if (!connected && _packet_id != networking.connection) {
 switch (_packet_id) {
 	case networking.connection:
 		connected = true;
+		obj_player.invincibility_frames = 120;
 		id_player = read_packet(_packet, buffer_u8);
 		show_debug_message("Connected as player " + string(id_player));
 	break;

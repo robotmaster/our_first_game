@@ -46,9 +46,14 @@ function tick() {
 		}
 		//shoot();
 	}
-	with (obj_enemy) {
-		event_perform(ev_other, ev_user0);
+	invincibility_frames = timer(invincibility_frames, 1);
+	if (invincibility_frames <= 0) {
+		with (obj_enemy) {
+			event_perform(ev_other, ev_user0);
+		}
 	}
+	
+	
 	if (obj_player.player_health <= 0) {
 		with (obj_client) {
 			reset_game();
