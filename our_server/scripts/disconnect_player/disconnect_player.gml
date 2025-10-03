@@ -41,6 +41,8 @@ function disconnect_player(_player_socket) {
 	if (ds_list_size(player_socket_list) == 0) {
 		bullet_infos = [];
 		enemy_infos = [];
+		enemy_spawn_timer = 0;
+		enemy_spawn_timer_max = 150;
 
 
 		players_to_id = ds_map_create();
