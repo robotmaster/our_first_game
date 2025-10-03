@@ -47,3 +47,9 @@ for (var _i = 0; _i < array_length(player_ids); _i++) {
 		show_debug_message("Mismatch between player_ids_to_ping and player_ids, id: " + string(_id));
 	}
 }
+if (array_length(bullet_infos) != ds_map_size(bullets_to_id)) {
+	show_debug_message("Broken bullets")
+}
+if (array_length(enemy_infos) != ds_map_size(enemies_to_id)) {
+	show_debug_message("Broken enemies")
+}

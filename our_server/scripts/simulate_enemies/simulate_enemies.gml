@@ -26,6 +26,7 @@ function simulate_enemies() {
 			if (_dist < _lowest_dist) {
 				_lowest_dist = _dist;
 				_lowest_direction = point_direction(_enemy.x_pos, _enemy.y_pos, player_infos[_player_index].x_pos, player_infos[_player_index].y_pos);
+				
 			}
 		}
 		_enemy.rot = _lowest_direction;

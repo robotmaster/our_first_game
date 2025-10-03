@@ -8,8 +8,7 @@ function handle_enemies(_enemy_info) {
 		var _enemy_id = _enemy_info[_enemy_index].this_id;
 		var _enemy = ds_map_find_value(enemies_to_id, _enemy_id);
 		if (is_undefined(_enemy) || !instance_exists(_enemy)) {
-			_enemy = instance_create_layer(_enemy_info[_enemy_index].x_pos, _enemy_info[_enemy_index].y_pos, "collision_check", obj_enemy);
-			ds_map_add(enemies_to_id, _enemy_id, _enemy);
+			show_debug_message("Broken enemies in handle_enemies");
 		}
 		_enemy.x = _enemy_info[_enemy_index].x_pos;
 		_enemy.y = _enemy_info[_enemy_index].y_pos;

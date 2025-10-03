@@ -13,4 +13,6 @@ function handle_shooting(_x, _y, _angle) {
 	}
 	var _despawn_time = 120;
 	array_push(bullet_infos, {this_id: _new_id, x_pos: _x, y_pos: _y, angle: _angle, despawn_timer: _despawn_time});
+	var _bullet = instance_create_layer(_x, _y, "collision_check", obj_bullet);
+	ds_map_add(bullets_to_id, _new_id, _bullet);
 }

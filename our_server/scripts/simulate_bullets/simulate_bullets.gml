@@ -9,6 +9,7 @@ function simulate_bullets() {
 		_bullet.y_pos += lengthdir_y(_bullet_speed, _bullet.angle);
 		_bullet.despawn_timer = timer(_bullet.despawn_timer, 1);
 		if (_bullet.despawn_timer <= 0) {
+			ds_map_delete(bullets_to_id, _bullet.this_id);
 			array_delete(bullet_infos, _bullet_index, 1);
 			_bullet_index -= 1;
 		}
@@ -22,6 +23,7 @@ function simulate_bullets() {
 				if (other.enemy_infos[_enemy_index].this_id == _obj.this_id) {
 					other.enemy_infos[_enemy_index].this_health -= 1;
 					if (other.enemy_infos[_enemy_index].this_health <= 0) {
+						ds_map_delete(other.enemies_to_id, _obj.this_id);
 						array_delete(other.enemy_infos, _enemy_index, 1);
 					}
 					break;
@@ -29,6 +31,7 @@ function simulate_bullets() {
 			}
 			for (var _bullet_index = 0; _bullet_index < array_length(other.bullet_infos); _bullet_index++) {
 				if (other.bullet_infos[_bullet_index].this_id == this_id) {
+					ds_map_delete(other.bullets_to_id, this_id);
 					array_delete(other.bullet_infos, _bullet_index, 1);
 					instance_destroy();
 					break;

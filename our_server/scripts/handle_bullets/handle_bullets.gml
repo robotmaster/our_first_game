@@ -8,8 +8,7 @@ function handle_bullets(_bullet_info) {
 		var _bullet_id = _bullet_info[_bullet_index].this_id;
 		var _bullet = ds_map_find_value(bullets_to_id, _bullet_id);
 		if (is_undefined(_bullet) || !instance_exists(_bullet)) {
-			_bullet = instance_create_layer(_bullet_info[_bullet_index].x_pos, _bullet_info[_bullet_index].y_pos, "collision_check", obj_bullet);
-			ds_map_add(bullets_to_id, _bullet_id, _bullet);
+			show_debug_message("Broken bullets in handle_bullets")
 		}
 		_bullet.x = _bullet_info[_bullet_index].x_pos;
 		_bullet.y = _bullet_info[_bullet_index].y_pos;
