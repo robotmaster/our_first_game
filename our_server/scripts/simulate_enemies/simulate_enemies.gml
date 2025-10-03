@@ -2,15 +2,19 @@
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 
 function simulate_enemies() {
-	enemy_spawn_timer = timer(enemy_spawn_timer, 1);
-	if (enemy_spawn_timer <= 0) {
-		enemy_spawn_timer += enemy_spawn_timer_max;
-		var _dist = 3000;
-		for (var _player_index = 0; _player_index < array_length(player_infos); _player_index++) {
-			var _dir = random(360);
-			var _offset_x = lengthdir_x(_dist, _dir);
-			var _offset_y = lengthdir_y(_dist, _dir);
-			summon_enemy(player_infos[_player_index].x_pos + _offset_x, player_infos[_player_index].y_pos + _offset_y);
+	if (ds_list_size(player_socket_list) > 0) {
+		enemy_spawn_timer -= 1;
+		while (enemy_spawn_timer <= 0) {
+			enemy_spawn_timer_max *= enemy_spawn_multiplier;
+			show_debug_message(enemy_spawn_timer_max)
+			enemy_spawn_timer += enemy_spawn_timer_max;
+			var _dist = 3000;
+			for (var _player_index = 0; _player_index < array_length(player_infos); _player_index++) {
+				var _dir = random(360);
+				var _offset_x = lengthdir_x(_dist, _dir);
+				var _offset_y = lengthdir_y(_dist, _dir);
+				summon_enemy(player_infos[_player_index].x_pos + _offset_x, player_infos[_player_index].y_pos + _offset_y);
+			}
 		}
 	}
 	
