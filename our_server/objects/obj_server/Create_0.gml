@@ -34,10 +34,10 @@ enemy_spawn_timer_max = 150;
 ping_timer_max = 120;
 
 player_ids = [];
-
-
 player_infos = [];
+bullet_ids = [];
 bullet_infos = [];
+enemy_ids = [];
 enemy_infos = [];
 
 

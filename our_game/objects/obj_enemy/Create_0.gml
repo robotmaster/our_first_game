@@ -1,5 +1,5 @@
-max_health = 5; 
-enemy_health = 5;
+max_health = 15; 
+enemy_health = 15;
 hpbar_length = 60; 
 actual_x = 0;
 actual_y = 0;
