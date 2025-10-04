@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"disconnect_player",
   "parent":{
-    "name":"our_server",
-    "path":"our_server.yyp",
+    "name":"networking",
+    "path":"folders/networking.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

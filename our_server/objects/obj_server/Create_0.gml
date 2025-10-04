@@ -35,10 +35,10 @@ enemy_spawn_multiplier = 0.99;
 ping_timer_max = 120;
 
 player_ids = [];
+
+
 player_infos = [];
-bullet_ids = [];
 bullet_infos = [];
-enemy_ids = [];
 enemy_infos = [];
 
 
@@ -47,3 +47,5 @@ players_to_id = ds_map_create();
 bullets_to_id = ds_map_create();
 
 enemies_to_id = ds_map_create();
+
+survived = 0;

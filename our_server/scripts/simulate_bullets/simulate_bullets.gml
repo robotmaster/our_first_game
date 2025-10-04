@@ -15,7 +15,7 @@ function simulate_bullets() {
 		}
 		
 	}
-	handle_bullets(bullet_infos);
+	move_bullets(bullet_infos);
 	with (obj_bullet) {
 		var _obj = instance_place(x, y, obj_enemy);
 		if (_obj != noone) {

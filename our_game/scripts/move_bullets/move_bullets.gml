@@ -1,6 +1,6 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
-function handle_bullets(_bullet_info) {
+function move_bullets(_bullet_info) {
 	with (obj_bullet) {
 		exists = false;
 	}

@@ -1,12 +1,12 @@
 {
   "$GMScript":"v1",
-  "%Name":"read_packet",
+  "%Name":"move_bullets",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"read_packet",
+  "name":"move_bullets",
   "parent":{
-    "name":"networking",
-    "path":"folders/networking.yy",
+    "name":"our_game",
+    "path":"our_game.yyp",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

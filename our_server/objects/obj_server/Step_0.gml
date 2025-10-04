@@ -11,6 +11,7 @@ if (game_server < 0) {
 	server_creation_timer -= _delta;
 	exit;
 }
+survived += _delta;
 
 
 global.tick_timer += _delta;

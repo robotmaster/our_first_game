@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"safely_seek_start",
   "parent":{
-    "name":"our_server",
-    "path":"our_server.yyp",
+    "name":"networking",
+    "path":"folders/networking.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

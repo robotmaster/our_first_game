@@ -1,12 +1,12 @@
 {
   "$GMScript":"v1",
-  "%Name":"handle_bullets",
+  "%Name":"handle_player_movement",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"handle_bullets",
+  "name":"handle_player_movement",
   "parent":{
-    "name":"our_server",
-    "path":"our_server.yyp",
+    "name":"our_game",
+    "path":"our_game.yyp",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

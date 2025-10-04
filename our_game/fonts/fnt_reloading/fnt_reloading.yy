@@ -119,8 +119,8 @@
   "maintainGms1Font":false,
   "name":"fnt_reloading",
   "parent":{
-    "name":"our_game",
-    "path":"our_game.yyp",
+    "name":"fonts",
+    "path":"folders/fonts.yy",
   },
   "pointRounding":0,
   "ranges":[

@@ -6,7 +6,6 @@ function simulate_enemies() {
 		enemy_spawn_timer -= 1;
 		while (enemy_spawn_timer <= 0) {
 			enemy_spawn_timer_max *= enemy_spawn_multiplier;
-			show_debug_message(enemy_spawn_timer_max)
 			enemy_spawn_timer += enemy_spawn_timer_max;
 			var _dist = 3000;
 			for (var _player_index = 0; _player_index < array_length(player_infos); _player_index++) {
@@ -35,10 +34,9 @@ function simulate_enemies() {
 		}
 		_enemy.rot = _lowest_direction;
 		//if (sqrt(sqr(_enemy.x_pos-player_position[0])+sqr(_enemy.y_pos-player_position[1])) < _dist_to_stop) continue; 
-	
 		_enemy.x_pos += lengthdir_x(_enemy_speed, _lowest_direction);
 		_enemy.y_pos += lengthdir_y(_enemy_speed, _lowest_direction);
 
 	}
-	handle_enemies(enemy_infos);
+	move_enemies(enemy_infos);
 }

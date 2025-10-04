@@ -1,12 +1,12 @@
 {
   "$GMScript":"v1",
-  "%Name":"read_packet",
+  "%Name":"handle_damage",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"read_packet",
+  "name":"handle_damage",
   "parent":{
-    "name":"networking",
-    "path":"folders/networking.yy",
+    "name":"our_game",
+    "path":"our_game.yyp",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

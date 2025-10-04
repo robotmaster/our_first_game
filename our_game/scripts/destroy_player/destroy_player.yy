@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"destroy_player",
   "parent":{
-    "name":"packet_functions",
-    "path":"folders/packet_functions.yy",
+    "name":"networking",
+    "path":"folders/networking.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

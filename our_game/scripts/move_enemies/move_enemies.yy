@@ -1,12 +1,12 @@
 {
   "$GMScript":"v1",
-  "%Name":"handle_enemies",
+  "%Name":"move_enemies",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"handle_enemies",
+  "name":"move_enemies",
   "parent":{
-    "name":"our_server",
-    "path":"our_server.yyp",
+    "name":"our_game",
+    "path":"our_game.yyp",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

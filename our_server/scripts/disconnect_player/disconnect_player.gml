@@ -39,6 +39,7 @@ function disconnect_player(_player_socket) {
 	}
 	
 	if (ds_list_size(player_socket_list) == 0) {
+		show_debug_message("Died, survied for " + string(survived / 60));
 		bullet_infos = [];
 		enemy_infos = [];
 		enemy_spawn_timer = 0;

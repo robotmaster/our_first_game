@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"reset_game",
   "parent":{
-    "name":"packet_functions",
-    "path":"folders/packet_functions.yy",
+    "name":"networking",
+    "path":"folders/networking.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

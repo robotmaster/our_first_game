@@ -1,4 +1,5 @@
 var _delta = delta_time / 1000000 * 60;
+//connections
 if (!connected) {
 	ping_timer = 0;
 	connection_timer -= _delta;
@@ -15,8 +16,9 @@ if (!connected) {
 	exit;
 }
 
+//if not received server update for 2 secs, disconnect
 connection_timer = 180;
-ping_timer += global.delta;
+ping_timer += _delta;
 if (ping_timer >= ping_timer_max && !force_connected_debug) {
 	reset_game();
 	exit;

@@ -24,7 +24,6 @@ shoot_cooldown = 0;
 shoot_cooldown_max = 3;
 global.bullet_entities = [];
 
-
 reload_cooldown_max = 120;
 reload_cooldown = 0; 
 
