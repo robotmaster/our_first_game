@@ -12,7 +12,8 @@ function tick() {
 	[buffer_s32, actual_x],
 	[buffer_s32, actual_y],
 	[buffer_u16, player_angle],
-	[buffer_bool, false],
+	[buffer_bool, false],//shoot
+	[buffer_bool, false],//died
 	];
 	if (handle_shooting()) {
 		_packet_info[5][1] = true;
@@ -21,7 +22,15 @@ function tick() {
 	
 	handle_damage();
 
-	
-	send_packet(obj_client.client_socket, _packet_info);
+	if (obj_player.player_health <= 0) {
+		with (obj_client) {
+			_packet_info[6][1] = true;
+			send_packet(obj_client.client_socket, _packet_info);
+			reset_game();
+		}
+	}
+	else {
+		send_packet(obj_client.client_socket, _packet_info);
+	}
 	
 }

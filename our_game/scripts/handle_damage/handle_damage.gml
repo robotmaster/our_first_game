@@ -9,11 +9,4 @@ function handle_damage(){
 			}
 		}
 	}
-	
-	
-	if (obj_player.player_health <= 0) {
-		with (obj_client) {
-			reset_game();
-		}
-	}
 }
