@@ -19,18 +19,17 @@ function tick() {
 		_packet_info[5][1] = true;
 	}
 	
-	
-	handle_damage();
+	if (!ghost) {
+		handle_damage();
+	}
 
-	if (obj_player.player_health <= 0) {
-		with (obj_client) {
-			_packet_info[6][1] = true;
-			send_packet(obj_client.client_socket, _packet_info);
-			reset_game();
-		}
+	if (obj_player.player_health <= 0 && !ghost) {
+		_packet_info[6][1] = true;
+		obj_player.player_health = 0;
+		ghost = true;
+		actual_x = 0;
+		actual_y = 0;
 	}
-	else {
-		send_packet(obj_client.client_socket, _packet_info);
-	}
+	send_packet(obj_client.client_socket, _packet_info);
 	
 }

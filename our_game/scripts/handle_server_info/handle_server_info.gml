@@ -17,6 +17,7 @@ function handle_server_info(_packet) {
 				_player.actual_x = _player_info[_player_index].x_pos;
 				_player.actual_y = _player_info[_player_index].y_pos;
 				_player.player_angle = _player_info[_player_index].angle;
+				_player.ghost = _player_info[_player_index].ghost;
 			}
 		}
 		var _bullet_info = json_parse(read_packet(_packet, buffer_string));

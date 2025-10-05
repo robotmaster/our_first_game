@@ -1,4 +1,4 @@
-if (invincibility_frames > 0) {
+if (invincibility_frames > 0 || ghost) {
 	image_alpha = 0.8;
 }
 else {

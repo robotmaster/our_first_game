@@ -9,4 +9,8 @@ actual_y = y;
 tick_start_x = actual_x;
 tick_start_y = actual_y;
 
+invincibility_frames = 0;
+
+ghost = false;
+
 player_angle = image_angle;

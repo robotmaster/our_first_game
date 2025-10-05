@@ -12,6 +12,6 @@ function summon_enemy(_x, _y) {
 		return;
 	}
 	array_push(enemy_infos, {this_id: _new_id, x_pos: _x, y_pos: _y, rot: 0, this_health: 15});
-	var _enemy = instance_create_layer(_x, _y, "collision_check", obj_enemy);
+	var _enemy = instance_create_layer(_x, _y, "collision_check", obj_enemy_basic);
 	ds_map_add(enemies_to_id, _new_id, _enemy);
 }

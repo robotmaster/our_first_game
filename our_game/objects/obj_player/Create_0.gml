@@ -6,6 +6,8 @@ global.tick_timer = 0;
 actual_x = x;
 actual_y = y;
 
+ghost = false;
+
 tick_start_x = actual_x;
 tick_start_y = actual_y;
 invincibility_frames = 0;

@@ -1,7 +1,7 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function move_enemies(_enemy_info) {
-	with (obj_enemy) {
+	with (obj_enemybasic) {
 		exists = false;
 	}
 	for (var _enemy_index = 0; _enemy_index < array_length(_enemy_info); _enemy_index++) {
@@ -16,7 +16,7 @@ function move_enemies(_enemy_info) {
 		_enemy.this_id = _enemy_info[_enemy_index].this_id;
 		_enemy.exists = true;
 	}
-	with (obj_enemy) {
+	with (obj_enemybasic) {
 		if (!exists) {
 			instance_destroy();
 		}

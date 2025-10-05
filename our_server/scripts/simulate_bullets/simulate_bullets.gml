@@ -17,7 +17,7 @@ function simulate_bullets() {
 	}
 	move_bullets(bullet_infos);
 	with (obj_bullet) {
-		var _obj = instance_place(x, y, obj_enemy);
+		var _obj = instance_place(x, y, obj_enemy_basic);
 		if (_obj != noone) {
 			for (var _enemy_index = 0; _enemy_index < array_length(other.enemy_infos); _enemy_index++) {
 				if (other.enemy_infos[_enemy_index].this_id == _obj.this_id) {

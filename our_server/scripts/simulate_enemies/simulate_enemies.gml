@@ -25,6 +25,9 @@ function simulate_enemies() {
 		var _lowest_dist = infinity;
 		var _lowest_direction = -1;
 		for (var _player_index = 0; _player_index < array_length(player_infos); _player_index++) {
+			if (player_infos[_player_index].ghost) {
+				continue;
+			}
 			var _dist = point_distance(player_infos[_player_index].x_pos, player_infos[_player_index].y_pos, _enemy.x_pos, _enemy.y_pos);
 			if (_dist < _lowest_dist) {
 				_lowest_dist = _dist;

@@ -4,15 +4,23 @@ function disconnect_player(_player_socket) {
 		
 		
 	if (ds_map_exists(player_list, _player_socket)) {
+		
+		
 			
-			
+		var _id = ds_map_find_value(player_list, _player_socket);
+		
+		send_packet_to_all([
+		[buffer_u8, networking.delete_player],
+		[buffer_u8, _id],
+		]);
+		
+		
+		show_debug_message("Deleted player " + string(_id));
+		
 		var _index = ds_list_find_index(player_socket_list, _player_socket);
 			
 			
 		ds_list_delete(player_socket_list, _index);
-		var _id = ds_map_find_value(player_list, _player_socket);
-		
-		show_debug_message("Deleted player " + string(_id));
 			
 			
 		
@@ -29,28 +37,9 @@ function disconnect_player(_player_socket) {
 			}
 		}
 			
-			
-		send_packet_to_all([
-		[buffer_u8, networking.delete_player],
-		[buffer_u8, _id],
-		]);
+		
 			
 		ds_map_delete(player_list, _player_socket);
-	}
-	
-	if (ds_list_size(player_socket_list) == 0) {
-		show_debug_message("Died, survied for " + string(survived / 60));
-		bullet_infos = [];
-		enemy_infos = [];
-		enemy_spawn_timer = 0;
-		enemy_spawn_timer_max = 150;
-
-
-		players_to_id = ds_map_create();
-
-		bullets_to_id = ds_map_create();
-
-		enemies_to_id = ds_map_create();
 	}
 	network_destroy(_player_socket);
 		

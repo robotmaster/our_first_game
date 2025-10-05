@@ -23,7 +23,10 @@ function handle_data() {
 					player_infos[_player].x_pos = _player_x;
 					player_infos[_player].y_pos = _player_y;
 					player_infos[_player].angle = _player_angle;
-					
+					if (_died) {
+						player_infos[_player].ghost = true;
+						handle_loss();
+					}
 					break;
 				}
 			}
@@ -33,17 +36,6 @@ function handle_data() {
 				
 			}
 				
-			if (_died) {
-				
-				for (var _i = 0; _i < ds_list_size(player_socket_list); _i++) {
-					var _socket = ds_list_find_value(player_socket_list, _i);
-					if (ds_map_find_value(player_list, _socket) == _player_id) {
-						disconnect_player(_socket);
-						break;
-					}
-				}
-				
-			}
 		break;
 		default:
 			show_debug_message("Invalid packet.");
