@@ -12,7 +12,12 @@ function simulate_enemies() {
 				var _dir = random(360);
 				var _offset_x = lengthdir_x(_dist, _dir);
 				var _offset_y = lengthdir_y(_dist, _dir);
-				summon_enemy(player_infos[_player_index].x_pos + _offset_x, player_infos[_player_index].y_pos + _offset_y, obj_enemy_basic, -1);
+				if (true){//&& random_range(1, 20) == 1) {
+					summon_enemy(player_infos[_player_index].x_pos + _offset_x, player_infos[_player_index].y_pos + _offset_y, obj_enemy_tank, -1);
+				}
+				else {
+					summon_enemy(player_infos[_player_index].x_pos + _offset_x, player_infos[_player_index].y_pos + _offset_y, obj_enemy_basic, -1);
+				}
 			}
 		}
 	}
@@ -25,7 +30,7 @@ function simulate_enemies() {
 			break;
 			case 1:
 				var _enemy_speed = 7;
-				var _dist_to_stop = 150; 		
+				//var _dist_to_stop = 150; 		
 				var _lowest_dist = infinity;
 				var _lowest_direction = -1;
 				for (var _player_index = 0; _player_index < array_length(player_infos); _player_index++) {
@@ -40,7 +45,28 @@ function simulate_enemies() {
 					}
 				}
 				_enemy.rot = _lowest_direction;
-				if (_lowest_dist < _dist_to_stop) continue;
+				//if (_lowest_dist < _dist_to_stop) continue;
+				_enemy.x_pos += lengthdir_x(_enemy_speed, _lowest_direction);
+				_enemy.y_pos += lengthdir_y(_enemy_speed, _lowest_direction);
+			break;
+			case 2: 
+			var _enemy_speed = 3;
+				//var _dist_to_stop = 150; 		
+				var _lowest_dist = infinity;
+				var _lowest_direction = -1;
+				for (var _player_index = 0; _player_index < array_length(player_infos); _player_index++) {
+					if (player_infos[_player_index].ghost) {
+						continue;
+					}
+					var _dist = point_distance(player_infos[_player_index].x_pos, player_infos[_player_index].y_pos, _enemy.x_pos, _enemy.y_pos);
+					if (_dist < _lowest_dist) {
+						_lowest_dist = _dist;
+						_lowest_direction = point_direction(_enemy.x_pos, _enemy.y_pos, player_infos[_player_index].x_pos, player_infos[_player_index].y_pos);
+				
+					}
+				}
+				_enemy.rot = _lowest_direction;
+				//if (_lowest_dist < _dist_to_stop) continue;
 				_enemy.x_pos += lengthdir_x(_enemy_speed, _lowest_direction);
 				_enemy.y_pos += lengthdir_y(_enemy_speed, _lowest_direction);
 			break;

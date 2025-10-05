@@ -18,7 +18,7 @@
   "isEcma":false,
   "LibraryEmitters":[],
   "MetaData":{
-    "IDEVersion":"2024.1400.0.901",
+    "IDEVersion":"2024.1400.0.904",
   },
   "name":"our_server",
   "resources":[
@@ -27,6 +27,7 @@
     {"id":{"name":"obj_enemy_basic","path":"objects/obj_enemy_basic/obj_enemy_basic.yy",},},
     {"id":{"name":"obj_enemy_no_death_parent","path":"objects/obj_enemy_no_death_parent/obj_enemy_no_death_parent.yy",},},
     {"id":{"name":"obj_enemy_parent","path":"objects/obj_enemy_parent/obj_enemy_parent.yy",},},
+    {"id":{"name":"obj_enemy_tank","path":"objects/obj_enemy_tank/obj_enemy_tank.yy",},},
     {"id":{"name":"obj_player","path":"objects/obj_player/obj_player.yy",},},
     {"id":{"name":"obj_server","path":"objects/obj_server/obj_server.yy",},},
     {"id":{"name":"rm_server","path":"rooms/rm_server/rm_server.yy",},},
@@ -48,8 +49,11 @@
     {"id":{"name":"timer","path":"scripts/timer/timer.yy",},},
     {"id":{"name":"spr_bullet","path":"sprites/spr_bullet/spr_bullet.yy",},},
     {"id":{"name":"spr_death","path":"sprites/spr_death/spr_death.yy",},},
+    {"id":{"name":"spr_enemy_tank","path":"sprites/spr_enemy_tank/spr_enemy_tank.yy",},},
     {"id":{"name":"spr_enemy","path":"sprites/spr_enemy/spr_enemy.yy",},},
     {"id":{"name":"spr_player","path":"sprites/spr_player/spr_player.yy",},},
+    {"id":{"name":"Sprite5","path":"sprites/Sprite5/Sprite5.yy",},},
+    {"id":{"name":"Sprite6","path":"sprites/Sprite6/Sprite6.yy",},},
   ],
   "resourceType":"GMProject",
   "resourceVersion":"2.0",

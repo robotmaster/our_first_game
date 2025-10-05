@@ -18,6 +18,8 @@ function move_enemies(_enemy_info) {
 				case 1:
 					_enemy = instance_create_layer(_x_pos, _y_pos, "enemies", obj_enemy_basic);
 				break;
+				case 2:
+					_enemy = instance_create_layer(_x_pos, _y_pos, "enemies", obj_enemy_tank);
 				default:
 				return;
 			}
@@ -33,6 +35,7 @@ function move_enemies(_enemy_info) {
 		_enemy.rotation_ = _enemy_info[_enemy_index].rot;
 		_enemy.enemy_health = _enemy_info[_enemy_index].this_health;
 		_enemy.this_id = _enemy_info[_enemy_index].this_id;
+		_enemy.max_health = _enemy_info[_enemy_index].max_health; 
 		_enemy.exists = true;
 	}
 	with (obj_enemy_parent) {
