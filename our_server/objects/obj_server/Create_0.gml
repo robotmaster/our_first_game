@@ -3,7 +3,7 @@ enum networking {
 	connection,
 	create_player,
 	delete_player,
-	ticks,
+	ticks
 	//miss,
 	///subtract_health,
 	//set_health,

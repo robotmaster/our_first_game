@@ -13,6 +13,16 @@ function handle_server_info(_packet) {
 			if (is_undefined(_player) || !instance_exists(_player)) {
 				break;
 			}
+			if (_player_id == id_player) {
+				if (_player.ghost && !_player_info[_player_index].ghost) {
+					obj_player.actual_x = _player_info[_player_index].revive_x;
+					obj_player.actual_y = _player_info[_player_index].revive_y;
+					obj_player.player_health = obj_player.max_health;
+				}
+			}
+			_player.ghost = _player_info[_player_index].ghost;
+			
+			
 			if (_player_id != id_player) {
 				_player.actual_x = _player_info[_player_index].x_pos;
 				_player.actual_y = _player_info[_player_index].y_pos;

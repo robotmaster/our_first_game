@@ -11,8 +11,8 @@ function handle_loss() {
 	
 	if (_lost) {
 		show_debug_message("Lost, survied for " + string(survived / 60));
-		for (var _player_index = 0; _player_index < ds_list_size(player_socket_list); _player_index++) {
-			disconnect_player(ds_list_find_value(player_socket_list, _player_index));
+		while (ds_list_size(player_socket_list) > 0) {
+			disconnect_player(ds_list_find_value(player_socket_list, 0));
 		}
 		
 		bullet_infos = [];

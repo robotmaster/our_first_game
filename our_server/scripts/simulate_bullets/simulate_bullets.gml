@@ -17,12 +17,18 @@ function simulate_bullets() {
 	}
 	move_bullets(bullet_infos);
 	with (obj_bullet) {
-		var _obj = instance_place(x, y, obj_enemy_basic);
+		var _obj = instance_place(x, y, obj_enemy_parent);
 		if (_obj != noone) {
 			for (var _enemy_index = 0; _enemy_index < array_length(other.enemy_infos); _enemy_index++) {
-				if (other.enemy_infos[_enemy_index].this_id == _obj.this_id) {
-					other.enemy_infos[_enemy_index].this_health -= 1;
-					if (other.enemy_infos[_enemy_index].this_health <= 0) {
+				var _enemy = other.enemy_infos[_enemy_index];
+				if (_enemy.this_id == _obj.this_id) {
+					_enemy.this_health -= 1;
+					if (_enemy.this_health <= 0) {
+						if (_enemy.type == 0) {
+							with (obj_server) {
+								revive_player(_enemy.owner);
+							}
+						}
 						ds_map_delete(other.enemies_to_id, _obj.this_id);
 						array_delete(other.enemy_infos, _enemy_index, 1);
 					}

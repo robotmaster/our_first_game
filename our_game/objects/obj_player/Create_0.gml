@@ -6,6 +6,9 @@ global.tick_timer = 0;
 actual_x = x;
 actual_y = y;
 
+revive_x = 0;
+revive_y = 0;
+
 ghost = false;
 
 tick_start_x = actual_x;
@@ -18,7 +21,8 @@ camera_y = 0;
 player_speed = 9;
 player_angle = image_angle;
 
-player_health = 100;
+max_health = 150;
+player_health = max_health;
 
 area_radius = 2000;
 

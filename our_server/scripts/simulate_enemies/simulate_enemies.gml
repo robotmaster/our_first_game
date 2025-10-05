@@ -12,7 +12,7 @@ function simulate_enemies() {
 				var _dir = random(360);
 				var _offset_x = lengthdir_x(_dist, _dir);
 				var _offset_y = lengthdir_y(_dist, _dir);
-				summon_enemy(player_infos[_player_index].x_pos + _offset_x, player_infos[_player_index].y_pos + _offset_y);
+				summon_enemy(player_infos[_player_index].x_pos + _offset_x, player_infos[_player_index].y_pos + _offset_y, obj_enemy_basic, -1);
 			}
 		}
 	}
@@ -20,26 +20,31 @@ function simulate_enemies() {
 	for (var _enemy_index = 0; _enemy_index < array_length(enemy_infos); _enemy_index++) {
 		var _enemy = enemy_infos[_enemy_index];
 		
-		var _enemy_speed = 8;
-		var _dist_to_stop = 150; 		
-		var _lowest_dist = infinity;
-		var _lowest_direction = -1;
-		for (var _player_index = 0; _player_index < array_length(player_infos); _player_index++) {
-			if (player_infos[_player_index].ghost) {
-				continue;
-			}
-			var _dist = point_distance(player_infos[_player_index].x_pos, player_infos[_player_index].y_pos, _enemy.x_pos, _enemy.y_pos);
-			if (_dist < _lowest_dist) {
-				_lowest_dist = _dist;
-				_lowest_direction = point_direction(_enemy.x_pos, _enemy.y_pos, player_infos[_player_index].x_pos, player_infos[_player_index].y_pos);
+		switch (_enemy.type) {
+			case 0:
+			break;
+			case 1:
+				var _enemy_speed = 7;
+				var _dist_to_stop = 150; 		
+				var _lowest_dist = infinity;
+				var _lowest_direction = -1;
+				for (var _player_index = 0; _player_index < array_length(player_infos); _player_index++) {
+					if (player_infos[_player_index].ghost) {
+						continue;
+					}
+					var _dist = point_distance(player_infos[_player_index].x_pos, player_infos[_player_index].y_pos, _enemy.x_pos, _enemy.y_pos);
+					if (_dist < _lowest_dist) {
+						_lowest_dist = _dist;
+						_lowest_direction = point_direction(_enemy.x_pos, _enemy.y_pos, player_infos[_player_index].x_pos, player_infos[_player_index].y_pos);
 				
-			}
+					}
+				}
+				_enemy.rot = _lowest_direction;
+				if (_lowest_dist < _dist_to_stop) continue; 
+				_enemy.x_pos += lengthdir_x(_enemy_speed, _lowest_direction);
+				_enemy.y_pos += lengthdir_y(_enemy_speed, _lowest_direction);
+			break;
 		}
-		_enemy.rot = _lowest_direction;
-		//if (sqrt(sqr(_enemy.x_pos-player_position[0])+sqr(_enemy.y_pos-player_position[1])) < _dist_to_stop) continue; 
-		_enemy.x_pos += lengthdir_x(_enemy_speed, _lowest_direction);
-		_enemy.y_pos += lengthdir_y(_enemy_speed, _lowest_direction);
-
 	}
 	move_enemies(enemy_infos);
 }

@@ -1,13 +1,17 @@
 {
   "$GMObject":"",
-  "%Name":"obj_enemy_basic",
-  "eventList":[],
+  "%Name":"obj_death",
+  "eventList":[
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+  ],
   "managed":true,
-  "name":"obj_enemy_basic",
+  "name":"obj_death",
   "overriddenProperties":[],
   "parent":{
-    "name":"our_server",
-    "path":"our_server.yyp",
+    "name":"our_game",
+    "path":"our_game.yyp",
   },
   "parentObjectId":{
     "name":"obj_enemy_parent",

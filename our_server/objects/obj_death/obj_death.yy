@@ -1,9 +1,9 @@
 {
   "$GMObject":"",
-  "%Name":"obj_enemy_basic",
+  "%Name":"obj_death",
   "eventList":[],
   "managed":true,
-  "name":"obj_enemy_basic",
+  "name":"obj_death",
   "overriddenProperties":[],
   "parent":{
     "name":"our_server",
@@ -31,8 +31,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_death",
-    "path":"sprites/spr_death/spr_death.yy",
+    "name":"spr_enemy",
+    "path":"sprites/spr_enemy/spr_enemy.yy",
   },
   "spriteMaskId":null,
   "visible":true,

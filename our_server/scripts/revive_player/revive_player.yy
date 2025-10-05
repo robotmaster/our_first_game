@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"revive_player",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"revive_player",
+  "parent":{
+    "name":"our_server",
+    "path":"our_server.yyp",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

@@ -1,18 +1,15 @@
 {
   "$GMObject":"",
-  "%Name":"obj_enemy_basic",
+  "%Name":"obj_enemy_parent",
   "eventList":[],
   "managed":true,
-  "name":"obj_enemy_basic",
+  "name":"obj_enemy_parent",
   "overriddenProperties":[],
   "parent":{
     "name":"our_server",
     "path":"our_server.yyp",
   },
-  "parentObjectId":{
-    "name":"obj_enemy_parent",
-    "path":"objects/obj_enemy_parent/obj_enemy_parent.yy",
-  },
+  "parentObjectId":null,
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,
@@ -30,10 +27,7 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":{
-    "name":"spr_death",
-    "path":"sprites/spr_death/spr_death.yy",
-  },
+  "spriteId":null,
   "spriteMaskId":null,
   "visible":true,
 }

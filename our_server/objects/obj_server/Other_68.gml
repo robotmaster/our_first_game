@@ -44,7 +44,15 @@ switch (_data_type) {
 		[buffer_u8, _new_id]
 		]);
 		
-		array_push(player_infos, {this_id: _new_id, x_pos: 0, y_pos: 0, angle: 0, ghost: false});
+		array_push(player_infos, {
+			this_id: _new_id, 
+			x_pos: 0, 
+			y_pos: 0, 
+			angle: 0, 
+			ghost: false, 
+			revive_x: 0, 
+			revive_y: 0
+		});
 		
 	break;
 	case network_type_disconnect:

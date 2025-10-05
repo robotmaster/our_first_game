@@ -23,8 +23,11 @@ function handle_data() {
 					player_infos[_player].x_pos = _player_x;
 					player_infos[_player].y_pos = _player_y;
 					player_infos[_player].angle = _player_angle;
-					if (_died) {
+					if (_died && !player_infos[_player].ghost) {
 						player_infos[_player].ghost = true;
+						player_infos[_player].revive_x = _player_x;
+						player_infos[_player].revive_y = _player_y;
+						summon_enemy(_player_x, _player_y, obj_death, _player_id);
 						handle_loss();
 					}
 					break;

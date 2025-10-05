@@ -13,7 +13,10 @@
     "name":"our_game",
     "path":"our_game.yyp",
   },
-  "parentObjectId":null,
+  "parentObjectId":{
+    "name":"obj_enemy_parent",
+    "path":"objects/obj_enemy_parent/obj_enemy_parent.yy",
+  },
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,
@@ -35,6 +38,9 @@
     "name":"spr_enemy",
     "path":"sprites/spr_enemy/spr_enemy.yy",
   },
-  "spriteMaskId":null,
+  "spriteMaskId":{
+    "name":"spr_enemy_hitbox",
+    "path":"sprites/spr_enemy_hitbox/spr_enemy_hitbox.yy",
+  },
   "visible":true,
 }

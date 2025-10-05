@@ -19,6 +19,7 @@ function tick() {
 		_packet_info[5][1] = true;
 	}
 	
+	invincibility_frames = timer(invincibility_frames, 1);
 	if (!ghost) {
 		handle_damage();
 	}
@@ -26,7 +27,6 @@ function tick() {
 	if (obj_player.player_health <= 0 && !ghost) {
 		_packet_info[6][1] = true;
 		obj_player.player_health = 0;
-		ghost = true;
 		actual_x = 0;
 		actual_y = 0;
 	}
