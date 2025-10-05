@@ -12,7 +12,7 @@ function simulate_enemies() {
 				var _dir = random(360);
 				var _offset_x = lengthdir_x(_dist, _dir);
 				var _offset_y = lengthdir_y(_dist, _dir);
-				if (true){//&& random_range(1, 20) == 1) {
+				if (enemy_spawn_timer_max < 115 && random_range(1, 10) == 1) {
 					summon_enemy(player_infos[_player_index].x_pos + _offset_x, player_infos[_player_index].y_pos + _offset_y, obj_enemy_tank, -1);
 				}
 				else {
