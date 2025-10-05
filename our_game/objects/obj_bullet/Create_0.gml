@@ -3,6 +3,8 @@
 actual_x = 0;
 actual_y = 0;
 
+ghost = false;
+
 start_difference_x = 0;
 start_difference_y = 0;
 

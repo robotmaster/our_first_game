@@ -40,7 +40,7 @@ function simulate_enemies() {
 					}
 				}
 				_enemy.rot = _lowest_direction;
-				if (_lowest_dist < _dist_to_stop) continue; 
+				if (_lowest_dist < _dist_to_stop) continue;
 				_enemy.x_pos += lengthdir_x(_enemy_speed, _lowest_direction);
 				_enemy.y_pos += lengthdir_y(_enemy_speed, _lowest_direction);
 			break;

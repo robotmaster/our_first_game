@@ -15,9 +15,6 @@ function tick() {
 	[buffer_bool, false],//shoot
 	[buffer_bool, false],//died
 	];
-	if (handle_shooting()) {
-		_packet_info[5][1] = true;
-	}
 	
 	invincibility_frames = timer(invincibility_frames, 1);
 	if (!ghost) {
@@ -29,6 +26,11 @@ function tick() {
 		obj_player.player_health = 0;
 		actual_x = 0;
 		actual_y = 0;
+	}
+	else {
+		if (handle_shooting()) {
+			_packet_info[5][1] = true;
+		}
 	}
 	send_packet(obj_client.client_socket, _packet_info);
 	

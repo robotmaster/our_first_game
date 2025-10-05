@@ -17,7 +17,17 @@ function simulate_bullets() {
 	}
 	move_bullets(bullet_infos);
 	with (obj_bullet) {
-		var _obj = instance_place(x, y, obj_enemy_parent);
+		for (var _bullet_index = 0; _bullet_index < array_length(other.bullet_infos); _bullet_index++) {
+			if (other.bullet_infos[_bullet_index].this_id == this_id) {
+				var _bullet_info_index = _bullet_index;
+			}
+		}
+		if (other.bullet_infos[_bullet_info_index].ghost) {
+			var _obj = instance_place(x, y, obj_enemy_no_death_parent);
+		}
+		else {
+			var _obj = instance_place(x, y, obj_enemy_parent);
+		}
 		if (_obj != noone) {
 			for (var _enemy_index = 0; _enemy_index < array_length(other.enemy_infos); _enemy_index++) {
 				var _enemy = other.enemy_infos[_enemy_index];
@@ -35,14 +45,11 @@ function simulate_bullets() {
 					break;
 				}
 			}
-			for (var _bullet_index = 0; _bullet_index < array_length(other.bullet_infos); _bullet_index++) {
-				if (other.bullet_infos[_bullet_index].this_id == this_id) {
-					ds_map_delete(other.bullets_to_id, this_id);
-					array_delete(other.bullet_infos, _bullet_index, 1);
-					instance_destroy();
-					break;
-				}
-			}
+			
+			ds_map_delete(other.bullets_to_id, this_id);
+			array_delete(other.bullet_infos, _bullet_info_index, 1);
+			instance_destroy();
+			break;
 		}
 	}
 	

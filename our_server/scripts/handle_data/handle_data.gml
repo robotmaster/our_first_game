@@ -30,14 +30,14 @@ function handle_data() {
 						summon_enemy(_player_x, _player_y, obj_death, _player_id);
 						handle_loss();
 					}
+					if (_will_shoot) {
+						handle_shooting(_player_x, _player_y, _player_angle, player_infos[_player].ghost);
+				
+					}
 					break;
 				}
 			}
 			
-			if (_will_shoot) {
-				handle_shooting(_player_x, _player_y, _player_angle);
-				
-			}
 				
 		break;
 		default:
