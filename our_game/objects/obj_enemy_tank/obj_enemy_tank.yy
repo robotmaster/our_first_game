@@ -14,8 +14,8 @@
     "path":"our_game.yyp",
   },
   "parentObjectId":{
-    "name":"obj_enemy_parent",
-    "path":"objects/obj_enemy_parent/obj_enemy_parent.yy",
+    "name":"obj_enemy_no_death_parent",
+    "path":"objects/obj_enemy_no_death_parent/obj_enemy_no_death_parent.yy",
   },
   "persistent":false,
   "physicsAngularDamping":0.1,
@@ -39,8 +39,8 @@
     "path":"sprites/spr_enemy_tank/spr_enemy_tank.yy",
   },
   "spriteMaskId":{
-    "name":"spr_enemy_hitbox",
-    "path":"sprites/spr_enemy_hitbox/spr_enemy_hitbox.yy",
+    "name":"spr_enemy_tank_hitbox",
+    "path":"sprites/spr_enemy_tank_hitbox/spr_enemy_tank_hitbox.yy",
   },
   "visible":true,
 }

@@ -50,7 +50,7 @@ function simulate_enemies() {
 				_enemy.y_pos += lengthdir_y(_enemy_speed, _lowest_direction);
 			break;
 			case 2: 
-			var _enemy_speed = 3;
+				var _enemy_speed = 3;
 				//var _dist_to_stop = 150; 		
 				var _lowest_dist = infinity;
 				var _lowest_direction = -1;

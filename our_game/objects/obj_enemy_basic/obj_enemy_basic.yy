@@ -14,8 +14,8 @@
     "path":"our_game.yyp",
   },
   "parentObjectId":{
-    "name":"obj_enemy_parent",
-    "path":"objects/obj_enemy_parent/obj_enemy_parent.yy",
+    "name":"obj_enemy_no_death_parent",
+    "path":"objects/obj_enemy_no_death_parent/obj_enemy_no_death_parent.yy",
   },
   "persistent":false,
   "physicsAngularDamping":0.1,

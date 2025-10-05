@@ -20,6 +20,7 @@ function move_enemies(_enemy_info) {
 				break;
 				case 2:
 					_enemy = instance_create_layer(_x_pos, _y_pos, "enemies", obj_enemy_tank);
+				break;
 				default:
 				return;
 			}
@@ -30,11 +31,11 @@ function move_enemies(_enemy_info) {
 			}
 			ds_map_add(enemies_to_id, _enemy_id, _enemy);
 		}
+		_enemy.this_id = _enemy_info[_enemy_index].this_id;
 		_enemy.actual_x = _enemy_info[_enemy_index].x_pos;
 		_enemy.actual_y = _enemy_info[_enemy_index].y_pos;
 		_enemy.rotation_ = _enemy_info[_enemy_index].rot;
 		_enemy.enemy_health = _enemy_info[_enemy_index].this_health;
-		_enemy.this_id = _enemy_info[_enemy_index].this_id;
 		_enemy.max_health = _enemy_info[_enemy_index].max_health; 
 		_enemy.exists = true;
 	}

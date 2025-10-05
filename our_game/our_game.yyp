@@ -19,7 +19,7 @@
   "isEcma":false,
   "LibraryEmitters":[],
   "MetaData":{
-    "IDEVersion":"2024.1400.0.904",
+    "IDEVersion":"2024.1400.0.901",
   },
   "name":"our_game",
   "resources":[
@@ -29,6 +29,7 @@
     {"id":{"name":"obj_client","path":"objects/obj_client/obj_client.yy",},},
     {"id":{"name":"obj_death","path":"objects/obj_death/obj_death.yy",},},
     {"id":{"name":"obj_enemy_basic","path":"objects/obj_enemy_basic/obj_enemy_basic.yy",},},
+    {"id":{"name":"obj_enemy_no_death_parent","path":"objects/obj_enemy_no_death_parent/obj_enemy_no_death_parent.yy",},},
     {"id":{"name":"obj_enemy_parent","path":"objects/obj_enemy_parent/obj_enemy_parent.yy",},},
     {"id":{"name":"obj_enemy_tank","path":"objects/obj_enemy_tank/obj_enemy_tank.yy",},},
     {"id":{"name":"obj_other_player","path":"objects/obj_other_player/obj_other_player.yy",},},
@@ -52,6 +53,7 @@
     {"id":{"name":"spr_bullet","path":"sprites/spr_bullet/spr_bullet.yy",},},
     {"id":{"name":"spr_death","path":"sprites/spr_death/spr_death.yy",},},
     {"id":{"name":"spr_enemy_hitbox","path":"sprites/spr_enemy_hitbox/spr_enemy_hitbox.yy",},},
+    {"id":{"name":"spr_enemy_tank_hitbox","path":"sprites/spr_enemy_tank_hitbox/spr_enemy_tank_hitbox.yy",},},
     {"id":{"name":"spr_enemy_tank","path":"sprites/spr_enemy_tank/spr_enemy_tank.yy",},},
     {"id":{"name":"spr_enemy","path":"sprites/spr_enemy/spr_enemy.yy",},},
     {"id":{"name":"spr_player","path":"sprites/spr_player/spr_player.yy",},},

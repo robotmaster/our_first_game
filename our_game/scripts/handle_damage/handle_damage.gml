@@ -3,7 +3,7 @@
 function handle_damage(){
 	invincibility_frames = timer(invincibility_frames, 1);
 	if (invincibility_frames <= 0) {
-		with (obj_enemy_basic) {
+		with (obj_enemy_no_death_parent) {
 			if (place_meeting(x, y, obj_player)) {
 				obj_player.player_health -= 1;
 			}
