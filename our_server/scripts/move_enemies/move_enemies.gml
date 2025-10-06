@@ -10,9 +10,9 @@ function move_enemies(_enemy_info) {
 		if (is_undefined(_enemy) || !instance_exists(_enemy)) {
 			show_debug_message("Broken enemies in move_enemies");
 		}
-		_enemy.x = _enemy_info[_enemy_index].x_pos;
-		_enemy.y = _enemy_info[_enemy_index].y_pos;
-		_enemy.image_angle = _enemy_info[_enemy_index].rot;
+		//_enemy.x = _enemy_info[_enemy_index].x_pos;
+		//_enemy.y = _enemy_info[_enemy_index].y_pos;
+		//_enemy.image_angle = _enemy_info[_enemy_index].rot;
 		_enemy.this_id = _enemy_info[_enemy_index].this_id;
 		_enemy.exists = true;
 	}

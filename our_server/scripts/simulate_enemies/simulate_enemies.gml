@@ -12,7 +12,7 @@ function simulate_enemies() {
 				var _dir = random(360);
 				var _offset_x = lengthdir_x(_dist, _dir);
 				var _offset_y = lengthdir_y(_dist, _dir);
-				if (enemy_spawn_timer_max <= 230 && random_range(1, 10) == 1) {
+				if (enemy_spawn_timer_max <= 230 && irandom_range(1, 6) == 1) {
 					summon_enemy(player_infos[_player_index].x_pos + _offset_x, player_infos[_player_index].y_pos + _offset_y, obj_enemy_tank, -1);
 				}
 				else {
@@ -24,7 +24,10 @@ function simulate_enemies() {
 	
 	for (var _enemy_index = 0; _enemy_index < array_length(enemy_infos); _enemy_index++) {
 		var _enemy = enemy_infos[_enemy_index];
-		
+		var _enemy_instance = ds_map_find_value(enemies_to_id, _enemy.this_id);
+		_enemy.x_pos = _enemy_instance.x;
+		_enemy.y_pos = _enemy_instance.y;
+		_enemy.rot = _enemy_instance.image_angle;
 		switch (_enemy.type) {
 			case 0:
 			break;
@@ -44,12 +47,12 @@ function simulate_enemies() {
 				
 					}
 				}
-				_enemy.rot = _lowest_direction;
-				//if (_lowest_dist < _dist_to_stop) continue;
-				_enemy.x_pos += lengthdir_x(_enemy_speed, _lowest_direction);
-				_enemy.y_pos += lengthdir_y(_enemy_speed, _lowest_direction);
+				_enemy_instance.phy_fixed_rotation = true;
+				_enemy_instance.phy_rotation = -_lowest_direction;
+				_enemy_instance.phy_speed_x = lengthdir_x(_enemy_speed, _lowest_direction);
+				_enemy_instance.phy_speed_y = lengthdir_y(_enemy_speed, _lowest_direction);
 			break;
-			case 2: 
+			case 2:
 				var _enemy_speed = 3;
 				//var _dist_to_stop = 150; 		
 				var _lowest_dist = infinity;
@@ -65,12 +68,13 @@ function simulate_enemies() {
 				
 					}
 				}
-				_enemy.rot = _lowest_direction;
-				//if (_lowest_dist < _dist_to_stop) continue;
-				_enemy.x_pos += lengthdir_x(_enemy_speed, _lowest_direction);
-				_enemy.y_pos += lengthdir_y(_enemy_speed, _lowest_direction);
+				_enemy_instance.phy_fixed_rotation = true;
+				_enemy_instance.phy_rotation = -_lowest_direction;
+				_enemy_instance.phy_speed_x = lengthdir_x(_enemy_speed, _lowest_direction);
+				_enemy_instance.phy_speed_y = lengthdir_y(_enemy_speed, _lowest_direction);
 			break;
 		}
+		
 	}
 	move_enemies(enemy_infos);
 }

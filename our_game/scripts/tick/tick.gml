@@ -18,7 +18,7 @@ function tick() {
 	
 	invincibility_frames = timer(invincibility_frames, 1);
 	if (!ghost) {
-		handle_damage();
+		//handle_damage();
 	}
 
 	if (obj_player.player_health <= 0 && !ghost) {

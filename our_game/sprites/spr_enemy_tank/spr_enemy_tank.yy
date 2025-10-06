@@ -23,7 +23,7 @@
   ],
   "name":"spr_enemy_tank",
   "nineSlice":null,
-  "origin":4,
+  "origin":9,
   "parent":{
     "name":"sprites",
     "path":"folders/sprites.yy",
@@ -77,7 +77,7 @@
     ],
     "visibleRange":null,
     "volume":1.0,
-    "xorigin":64,
+    "xorigin":42,
     "yorigin":64,
   },
   "swatchColours":null,
