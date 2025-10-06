@@ -2,7 +2,7 @@
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function handle_shooting(_x, _y, _angle, _ghost) {
 	var _new_id = -1;
-	for (var _i = 0; _i < 1000; _i++) {
+	for (var _i = 0; _i < 100000; _i++) {
 		if (!ds_map_exists(bullets_to_id, _i)) {
 			var _new_id = _i;
 			break;

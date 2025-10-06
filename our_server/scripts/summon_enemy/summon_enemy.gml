@@ -3,7 +3,7 @@
 function summon_enemy(_x, _y, _enemy_type, _owner) {
 	var _hp; 
 	var _new_id = -1;
-	for (var _i = 0; _i < 1000; _i++) {
+	for (var _i = 0; _i < 100000; _i++) {
 		if (!ds_map_exists(enemies_to_id, _i)) {
 			var _new_id = _i;
 			break;
