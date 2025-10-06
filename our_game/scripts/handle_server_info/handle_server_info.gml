@@ -15,6 +15,7 @@ function handle_server_info(_packet) {
 			}
 			if (_player_id == id_player) {
 				if (_player.ghost && !_player_info[_player_index].ghost) {
+					obj_player.invincibility_frames = 120;
 					obj_player.actual_x = _player_info[_player_index].revive_x;
 					obj_player.actual_y = _player_info[_player_index].revive_y;
 					obj_player.player_health = obj_player.max_health;
