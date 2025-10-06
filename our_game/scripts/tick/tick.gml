@@ -23,7 +23,7 @@ function tick() {
 
 	if (obj_player.player_health <= 0 && !ghost) {
 		_packet_info[6][1] = true;
-		obj_plaxsyer.player_health = 0;
+		obj_player.player_health = 0;
 		actual_x = 0;
 		actual_y = 0;
 	}
