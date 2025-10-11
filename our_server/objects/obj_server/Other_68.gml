@@ -30,6 +30,11 @@ switch (_data_type) {
 		[buffer_u8, networking.connection],
 		[buffer_u8, _new_id],
 		]);
+		if (paused) {
+			send_packet(_player_socket, [
+			[buffer_u8, networking.pause],
+		]);
+		}
 		
 		for (var _player = 0; _player < array_length(player_infos); _player++) {
 			send_packet(_player_socket, [
@@ -59,6 +64,7 @@ switch (_data_type) {
 	
 		var _player_socket = async_load[? "socket"];
 		disconnect_player(_player_socket);
+		handle_loss();
 	break;
 	case network_type_data:
 		handle_data();

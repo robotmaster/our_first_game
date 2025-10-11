@@ -11,14 +11,18 @@ function handle_loss() {
 	
 	if (_lost) {
 		show_debug_message("Lost, survied for " + string(survived / 60));
+		send_packet_to_all([
+		[buffer_u8, networking.lose]
+		]);
 		while (ds_list_size(player_socket_list) > 0) {
 			disconnect_player(ds_list_find_value(player_socket_list, 0));
 		}
 		
 		bullet_infos = [];
 		enemy_infos = [];
+		paused = false;
 		enemy_spawn_timer = 0;
-		enemy_spawn_timer_max = 150;
+		enemy_spawn_timer_max = 240;
 
 
 		players_to_id = ds_map_create();

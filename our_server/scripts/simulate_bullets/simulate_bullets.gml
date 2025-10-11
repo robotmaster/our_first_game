@@ -1,6 +1,9 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function simulate_bullets() {
+	if (paused) {
+		return;
+	}
 	for (var _bullet_index = 0; _bullet_index < array_length(bullet_infos); _bullet_index++) {
 		var _bullet = bullet_infos[_bullet_index];
 		
@@ -39,8 +42,12 @@ function simulate_bullets() {
 								revive_player(_enemy.owner);
 							}
 						}
+						array_push(other.events, {this_id: event.hit, killed: true, bullet: other.bullet_infos[_bullet_info_index], enemy: _enemy});
 						ds_map_delete(other.enemies_to_id, _obj.this_id);
 						array_delete(other.enemy_infos, _enemy_index, 1);
+					}
+					else {
+						array_push(other.events, {this_id: event.hit, killed: false, bullet: other.bullet_infos[_bullet_info_index], enemy: _enemy});
 					}
 					break;
 				}

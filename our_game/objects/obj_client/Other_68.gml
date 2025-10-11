@@ -30,7 +30,6 @@ if (!connected && _packet_id != networking.connection) {
 switch (_packet_id) {
 	case networking.connection:
 		connected = true;
-		obj_player.invincibility_frames = 120;
 		id_player = read_packet(_packet, buffer_u8);
 		show_debug_message("Connected as player " + string(id_player));
 	break;
@@ -57,6 +56,19 @@ switch (_packet_id) {
 	case networking.ticks:
 		
 		handle_server_info(_packet);
+	break;
+	case networking.lose:
+		if (ds_list_size(player_ids) == 0) {
+			audio_play_sound(snd_death, 9999, 0);
+		}
+		else {
+			audio_play_sound(snd_loss, 9999, 0);
+		}
+		reset_game();
+		show_stats = obj_player.stats;
+	break;
+	case networking.pause:
+		paused ^= true;
 	break;
 	default:
 		show_debug_message("Invalid packet.");

@@ -1,3 +1,8 @@
+/// @description Insert description here
+// You can write your code in this editor
+flash_timer = 0;
+flash_timer_max = 2;
+
 max_health = 15; 
 enemy_health = 15;
 hpbar_length = 60; 

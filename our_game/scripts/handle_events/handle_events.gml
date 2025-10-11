@@ -1,0 +1,39 @@
+// Script assets have changed for v2.3.0 see
+// https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
+function handle_events(_events) {
+	for (var _event_index = 0; _event_index < array_length(_events); _event_index++) {
+		var _event = _events[_event_index];
+		switch (_event.this_id) {
+			case event.hit:
+				if (_event.killed && _event.enemy.type != 0) {
+					obj_player.stats.total_killed ++;
+					if (_event.bullet.owner == id_player) {
+						obj_player.stats.my_killed ++;
+					}
+					var _effect = instance_create_layer(_event.enemy.x_pos, _event.enemy.y_pos, "effects", obj_dead_enemy_effect);
+					_effect.image_angle = _event.enemy.rot;
+					switch (_event.enemy.type) {
+						case 0:
+							_effect.sprite_index = spr_death;
+						break;
+						case 1:
+							_effect.sprite_index = spr_enemy;
+						break;
+						case 2:
+							_effect.sprite_index = spr_enemy_tank;
+						break;
+						default:
+							show_debug_message("Got invalid dead enemy in handle_events");
+							_effect.sprite_index = spr_enemy;
+					}
+				}
+			break;
+			default:
+				show_debug_message("Issue with handle_events")
+		}
+	}
+	/*
+	if (object_index != obj_death) {
+		obj_player.stats.total_killed ++;
+	}*/
+}

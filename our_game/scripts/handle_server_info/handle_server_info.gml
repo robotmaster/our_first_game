@@ -14,11 +14,16 @@ function handle_server_info(_packet) {
 				break;
 			}
 			if (_player_id == id_player) {
+				if (!_player.ghost && _player_info[_player_index].ghost) {
+					audio_play_sound(snd_death, 999, 0);
+				}
 				if (_player.ghost && !_player_info[_player_index].ghost) {
-					obj_player.invincibility_frames = 120;
+					audio_play_sound(snd_revive, 999, 0);
+					obj_player.invincibility_frames = 180;
 					obj_player.actual_x = _player_info[_player_index].revive_x;
 					obj_player.actual_y = _player_info[_player_index].revive_y;
 					obj_player.player_health = obj_player.max_health;
+					
 				}
 			}
 			_player.ghost = _player_info[_player_index].ghost;
@@ -35,4 +40,6 @@ function handle_server_info(_packet) {
 		move_bullets(_bullet_info);
 		var _enemy_info = json_parse(read_packet(_packet, buffer_string));
 		move_enemies(_enemy_info);
+		var _events = json_parse(read_packet(_packet, buffer_string));
+		handle_events(_events);
 }

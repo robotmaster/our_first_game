@@ -1,6 +1,12 @@
 var _delta = delta_time / 1000000 * 60;
 //connections
 if (!connected) {
+	if (show_stats != -1) {
+		if (keyboard_check_pressed(vk_anykey)) {
+			show_stats = -1;
+		}
+		exit;
+	}
 	ping_timer = 0;
 	connection_timer -= _delta;
 	if (connection_timer <= 0) {
@@ -16,6 +22,11 @@ if (!connected) {
 	exit;
 }
 
+if (keyboard_check_pressed(vk_escape)) {
+	send_packet(client_socket, [
+	[buffer_u8, networking.pause]
+	]);
+}
 //if not received server update for 2 secs, disconnect
 connection_timer = 180;
 ping_timer += _delta;

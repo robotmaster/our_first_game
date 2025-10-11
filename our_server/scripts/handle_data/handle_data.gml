@@ -31,14 +31,19 @@ function handle_data() {
 						handle_loss();
 					}
 					if (_will_shoot) {
-						handle_shooting(_player_x, _player_y, _player_angle, player_infos[_player].ghost);
+						handle_shooting(_player_x, _player_y, _player_angle, player_infos[_player].ghost, _player_id);
 				
 					}
 					break;
 				}
 			}
-			
 				
+		break;
+		case networking.pause:
+			paused ^= true;
+			send_packet_to_all([
+			[buffer_u8, networking.pause]
+			]);
 		break;
 		default:
 			show_debug_message("Invalid packet.");

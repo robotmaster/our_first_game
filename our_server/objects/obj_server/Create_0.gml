@@ -3,11 +3,16 @@ enum networking {
 	connection,
 	create_player,
 	delete_player,
-	ticks
+	ticks,
+	pause,
+	lose
 	//miss,
 	///subtract_health,
 	//set_health,
 	//kill
+}
+enum event {
+	hit
 }
 
 global.tick_timer_max = 1;
@@ -30,7 +35,7 @@ player_ids_to_ping = ds_map_create();
 
 enemy_spawn_timer = 0;
 enemy_spawn_timer_max = 240;
-enemy_spawn_multiplier = 0.99;
+enemy_spawn_multiplier = 0.99994;
 
 ping_timer_max = 120;
 
@@ -40,7 +45,9 @@ player_ids = [];
 player_infos = [];
 bullet_infos = [];
 enemy_infos = [];
+events = [];
 
+paused = false;
 
 players_to_id = ds_map_create();
 

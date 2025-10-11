@@ -2,6 +2,9 @@
 // You can write your code in this editor
 
 var _delta = delta_time / 1000000 * 60;
+if (_delta > 20) {
+	_delta = 20;
+}
 if (!instance_exists(obj_client) || !obj_client.connected) {
 	exit;
 }

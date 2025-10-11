@@ -7,5 +7,7 @@ function reset_game() {
 	players_to_id = ds_map_create();
 	bullet_ids = ds_list_create();
 	bullets_to_id = ds_map_create();
+	show_stats = -1;
+	paused = false;
 	room_goto(rm_game);
 }

@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"handle_events",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"handle_events",
+  "parent":{
+    "name":"our_game",
+    "path":"our_game.yyp",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

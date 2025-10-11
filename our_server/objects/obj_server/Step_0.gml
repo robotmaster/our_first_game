@@ -1,4 +1,7 @@
 var _delta = delta_time / 1000000 * 60;
+if (_delta > 20) {
+	_delta = 20;
+}
 if (game_server < 0) {
 	text = "Server NOT created.";
 	text_timer = text_timer_max;
@@ -34,6 +37,7 @@ for (var _i = 0; _i < array_length(player_ids); _i++) {
 				var _socket = ds_list_find_value(player_socket_list, _i);
 				if (ds_map_find_value(player_list, _socket) == _id) {
 					disconnect_player(_socket);
+					handle_loss();
 					break;
 				}
 			}

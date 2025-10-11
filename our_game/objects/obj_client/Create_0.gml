@@ -2,16 +2,26 @@ enum networking {
 	connection,
 	create_player,
 	delete_player,
-	ticks
+	ticks,
+	pause,
+	lose
 	//miss,
 	//subtract_health,
 	//set_health,
 	//kill,
 }
+enum event {
+	hit
+}
 randomize();
 room_goto(rm_game);
 client_socket = -1;
 force_connected_debug = false;
+
+paused = false;
+
+
+show_stats = -1;
 
 
 connected = force_connected_debug;

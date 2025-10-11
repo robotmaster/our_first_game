@@ -3,6 +3,14 @@
 global.tick_timer_max = 1;
 global.tick_timer = 0;
 
+stats = {
+total_killed: 0,
+my_killed: 0
+};
+
+hurt_timer = 0;
+hurt_timer_max = 60;
+
 actual_x = x;
 actual_y = y;
 
@@ -18,7 +26,8 @@ invincibility_frames = 0;
 camera_x = 0;
 camera_y = 0;
 
-player_speed = 9;
+player_forward_speed = 13;
+player_backward_speed = 6;
 player_angle = image_angle;
 
 max_health = 150;
@@ -33,14 +42,11 @@ global.bullet_entities = [];
 reload_cooldown_max = 120;
 reload_cooldown = 0; 
 
-player_bullet_capacity = 30; 
+player_bullet_capacity = 40; 
 player_mag_capacity = player_bullet_capacity;
 
 function draw_reload_text() {
-	draw_set_font(fnt_reloading);
-	draw_set_halign(fa_left);
-	draw_set_valign(fa_top);
-	draw_text(camera_x + 10, camera_y + 0, "Reloading...");
+	draw_text(camera_x + 10, camera_y + 980, "Reloading...");
 }
 
 function draw_ammo_textIcon() {
@@ -50,5 +56,6 @@ function draw_ammo_textIcon() {
 }
 
 function draw_health() {
-	draw_rectangle(camera_x + 20, camera_y + camera_get_view_height(view_camera[0]) - 90, camera_x + 20 + (player_health * 5), camera_y + camera_get_view_height(view_camera[0]) - 120, true);
+	draw_rectangle_color(camera_x + 20, camera_y + camera_get_view_height(view_camera[0]) - 90, camera_x + 20 + (max_health * 5), camera_y + camera_get_view_height(view_camera[0]) - 120, c_red, c_red, c_red, c_red, false);
+	draw_rectangle_color(camera_x + 20, camera_y + camera_get_view_height(view_camera[0]) - 90, camera_x + 20 + (player_health * 5), camera_y + camera_get_view_height(view_camera[0]) - 120, c_lime, c_lime, c_lime, c_lime, false);
 }
