@@ -12,6 +12,8 @@ function handle_events(_events) {
 					}
 					var _effect = instance_create_layer(_event.enemy.x_pos, _event.enemy.y_pos, "effects", obj_dead_enemy_effect);
 					_effect.image_angle = _event.enemy.rot;
+					_effect.speed_x = _event.enemy.speed_x;
+					_effect.speed_y = _event.enemy.speed_y;
 					switch (_event.enemy.type) {
 						case 0:
 							_effect.sprite_index = spr_death;
@@ -29,7 +31,7 @@ function handle_events(_events) {
 				}
 			break;
 			default:
-				show_debug_message("Issue with handle_events")
+				show_debug_message("Issue with handle_events");
 		}
 	}
 	/*

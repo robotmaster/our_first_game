@@ -1,9 +1,9 @@
 {
   "$GMScript":"v1",
-  "%Name":"move_enemies",
+  "%Name":"summon_enemies",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"move_enemies",
+  "name":"summon_enemies",
   "parent":{
     "name":"our_server",
     "path":"our_server.yyp",

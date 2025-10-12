@@ -21,6 +21,7 @@ global.tick_timer += _delta;
 
 while (global.tick_timer > global.tick_timer_max) {
 	global.tick_timer -= global.tick_timer_max;
+	simulate_enemies();
 	tick();
 }
 

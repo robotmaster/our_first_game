@@ -14,6 +14,9 @@ enum networking {
 enum event {
 	hit
 }
+game_speed = 60;
+game_set_speed(game_speed, gamespeed_fps);
+physics_world_update_speed(game_speed);
 
 global.tick_timer_max = 1;
 global.tick_timer = 0;

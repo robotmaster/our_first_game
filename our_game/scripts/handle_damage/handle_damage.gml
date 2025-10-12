@@ -1,6 +1,7 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function handle_damage() {
+	return false;
 	var _hurt = false;
 	invincibility_frames = timer(invincibility_frames, 1);
 	if (invincibility_frames <= 0) {
@@ -16,5 +17,5 @@ function handle_damage() {
 			}
 		}
 	}
-	return _hurt
+	return _hurt;
 }

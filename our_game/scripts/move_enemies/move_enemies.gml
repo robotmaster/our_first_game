@@ -22,7 +22,8 @@ function move_enemies(_enemy_info) {
 					_enemy = instance_create_layer(_x_pos, _y_pos, "enemies", obj_enemy_tank);
 				break;
 				default:
-				return;
+					show_debug_message("Received invalid enemy");
+					return;
 			}
 			
 			

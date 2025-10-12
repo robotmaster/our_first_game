@@ -29,8 +29,9 @@ function summon_enemy(_x, _y, _enemy_type, _owner) {
 			return;
 	}
 	
-	array_push(enemy_infos, {this_id: _new_id, x_pos: _x, y_pos: _y, rot: 0, type: _type, this_health: _hp, max_health: _hp, owner: _owner});
+	array_push(enemy_infos, {this_id: _new_id, x_pos: _x, y_pos: _y, speed_x: 0, speed_y: 0, rot: 0, type: _type, this_health: _hp, max_health: _hp, owner: _owner});
 	var _enemy = instance_create_layer(_x, _y, "collision_check", _enemy_type);
+	_enemy.this_id = _new_id;
 	if (_enemy.phy_active) {
 		_enemy.phy_fixed_rotation = true;
 	}

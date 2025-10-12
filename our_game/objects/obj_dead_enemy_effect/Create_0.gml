@@ -8,6 +8,9 @@ flash_timer = flash_timer_max;
 
 hpbar_length = 60;
 
+speed_x = 0;
+speed_y = 0;
+
 function draw_hp_bar() {
 	draw_rectangle(x - hpbar_length/2, y - 50, x + hpbar_length/2, y - 60, true);
 }
