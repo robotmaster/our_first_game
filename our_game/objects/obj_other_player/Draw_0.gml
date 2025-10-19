@@ -7,5 +7,3 @@ else {
 	image_alpha = 1;
 }
 draw_self();
-draw_text(x, y - 30, "Player health: " + string(player_health));
-draw_text(x, y - 50, "Max health: " + string(max_health));
