@@ -55,6 +55,7 @@ switch (_data_type) {
 			y_pos: 0, 
 			angle: 0, 
 			player_health: 0,
+			max_health: 0,
 			ghost: false, 
 			revive_x: 0, 
 			revive_y: 0

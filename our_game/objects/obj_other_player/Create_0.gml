@@ -15,4 +15,5 @@ ghost = false;
 
 player_angle = image_angle;
 
+max_health = 0;
 player_health = 0;

@@ -12,6 +12,7 @@ function handle_data() {
 			var _player_y = read_packet(_packet, buffer_s32);
 			var _player_angle = read_packet(_packet, buffer_u16);
 			var _player_health = read_packet(_packet, buffer_u16);
+			var _max_health = read_packet(_packet, buffer_u16);
 			var _will_shoot = read_packet(_packet, buffer_bool);
 			var _died = read_packet(_packet, buffer_bool);
 			
@@ -26,6 +27,7 @@ function handle_data() {
 					player_infos[_player].y_pos = _player_y;
 					player_infos[_player].angle = _player_angle;
 					player_infos[_player].player_health = _player_health;
+					player_infos[_player].max_health = _max_health;
 					if (_died && !player_infos[_player].ghost) {
 						player_infos[_player].ghost = true;
 						player_infos[_player].revive_x = _player_x;

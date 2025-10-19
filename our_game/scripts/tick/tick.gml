@@ -41,6 +41,7 @@ function tick() {
 	[buffer_s32, actual_y],
 	[buffer_u16, player_angle],
 	[buffer_u16, player_health],
+	[buffer_u16, max_health],
 	[buffer_bool, _shot],
 	[buffer_bool, _died],
 	]);
