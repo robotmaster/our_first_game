@@ -9,6 +9,8 @@ function move_bullets(_bullet_info) {
 		var _bullet = ds_map_find_value(bullets_to_id, _bullet_id);
 		if (is_undefined(_bullet) || !instance_exists(_bullet)) {
 			show_debug_message("Broken bullets in move_bullets")
+			show_debug_message(_bullet_info);
+			show_debug_message(bullets_to_id);
 		}
 		_bullet.x = _bullet_info[_bullet_index].x_pos;
 		_bullet.y = _bullet_info[_bullet_index].y_pos;

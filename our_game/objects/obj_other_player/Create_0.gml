@@ -14,3 +14,5 @@ invincibility_frames = 0;
 ghost = false;
 
 player_angle = image_angle;
+
+player_health = 0;

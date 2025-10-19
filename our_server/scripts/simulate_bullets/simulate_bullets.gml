@@ -18,7 +18,12 @@ function simulate_bullets() {
 		}
 		
 	}
+		
+		
 	move_bullets(bullet_infos);
+	
+	
+	
 	with (obj_bullet) {
 		for (var _bullet_index = 0; _bullet_index < array_length(other.bullet_infos); _bullet_index++) {
 			if (other.bullet_infos[_bullet_index].this_id == this_id) {

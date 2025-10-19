@@ -1,9 +1,9 @@
 {
   "$GMScript":"v1",
-  "%Name":"disconnect_player",
+  "%Name":"reset_game",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"disconnect_player",
+  "name":"reset_game",
   "parent":{
     "name":"our_server",
     "path":"our_server.yyp",

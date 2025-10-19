@@ -38,6 +38,7 @@
     {"id":{"name":"handle_shooting","path":"scripts/handle_shooting/handle_shooting.yy",},},
     {"id":{"name":"move_bullets","path":"scripts/move_bullets/move_bullets.yy",},},
     {"id":{"name":"read_packet","path":"scripts/read_packet/read_packet.yy",},},
+    {"id":{"name":"reset_game","path":"scripts/reset_game/reset_game.yy",},},
     {"id":{"name":"revive_player","path":"scripts/revive_player/revive_player.yy",},},
     {"id":{"name":"safely_seek_start","path":"scripts/safely_seek_start/safely_seek_start.yy",},},
     {"id":{"name":"send_packet_to_all","path":"scripts/send_packet_to_all/send_packet_to_all.yy",},},

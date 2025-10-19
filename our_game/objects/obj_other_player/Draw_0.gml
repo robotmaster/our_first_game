@@ -7,3 +7,4 @@ else {
 	image_alpha = 1;
 }
 draw_self();
+draw_text(x, y - 30, "Player health: " + string(player_health));

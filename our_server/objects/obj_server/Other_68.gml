@@ -54,13 +54,11 @@ switch (_data_type) {
 			x_pos: 0, 
 			y_pos: 0, 
 			angle: 0, 
+			player_health: 0,
 			ghost: false, 
 			revive_x: 0, 
 			revive_y: 0
 		});
-		//for (var _i = 0; _i < 1000; _i++) {
-		//	summon_enemy(random_range(-1000, 1000), random_range(-1000, 1000), obj_enemy_basic, -1);
-		//}
 		
 	break;
 	case network_type_disconnect:

@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"handle_data",
   "parent":{
-    "name":"networking",
-    "path":"folders/networking.yy",
+    "name":"our_server",
+    "path":"our_server.yyp",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

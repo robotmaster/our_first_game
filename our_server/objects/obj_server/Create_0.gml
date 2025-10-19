@@ -11,12 +11,22 @@ enum networking {
 	//set_health,
 	//kill
 }
+enum enemies {
+	death,
+	basic,
+	tank
+}
+
 enum event {
 	hit
 }
+
+
 game_speed = 60;
 game_set_speed(game_speed, gamespeed_fps);
 physics_world_update_speed(game_speed);
+
+
 
 global.tick_timer_max = 1;
 global.tick_timer = 0;
@@ -36,26 +46,13 @@ player_list = ds_map_create();
 
 player_ids_to_ping = ds_map_create();
 
-enemy_spawn_timer = 0;
-enemy_spawn_timer_max = 240;
 enemy_spawn_multiplier = 0.99994;
 
 ping_timer_max = 120;
 
 player_ids = [];
 
+enemy_speed_increase_multiplier = 1;
 
-player_infos = [];
-bullet_infos = [];
-enemy_infos = [];
-events = [];
 
-paused = false;
-
-players_to_id = ds_map_create();
-
-bullets_to_id = ds_map_create();
-
-enemies_to_id = ds_map_create();
-
-survived = 0;
+reset_game();

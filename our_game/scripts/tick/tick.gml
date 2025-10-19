@@ -4,15 +4,6 @@ function tick() {
 	//only use with obj_player
 	tick_start_x = actual_x;
 	tick_start_y = actual_y;
-	var _packet_info = [
-	[buffer_u8, networking.ticks],
-	[buffer_u8, obj_client.id_player],
-	[buffer_s32, actual_x],
-	[buffer_s32, actual_y],
-	[buffer_u16, player_angle],
-	[buffer_bool, false],//shoot
-	[buffer_bool, false],//died
-	];
 	if (obj_client.paused) {
 		send_packet(obj_client.client_socket, _packet_info);
 		return;
@@ -30,18 +21,28 @@ function tick() {
 			audio_sound_pitch(_sound, random_range(0.9, 1.1));
 		}
 	}
-
+	var _died = false;
+	var _shot = false;
 	if (obj_player.player_health <= 0 && !ghost) {
-		_packet_info[6][1] = true;
+		_died = true;
 		obj_player.player_health = 0;
 	}
 	else {
 		if (handle_shooting()) {
-			_packet_info[5][1] = true;
+			_shot = true;
 		}
 	}
 	
 	
-	send_packet(obj_client.client_socket, _packet_info);
+	send_packet(obj_client.client_socket, [
+	[buffer_u8, networking.ticks],
+	[buffer_u8, obj_client.id_player],
+	[buffer_s32, actual_x],
+	[buffer_s32, actual_y],
+	[buffer_u16, player_angle],
+	[buffer_u16, player_health],
+	[buffer_bool, _shot],
+	[buffer_bool, _died],
+	]);
 	
 }
