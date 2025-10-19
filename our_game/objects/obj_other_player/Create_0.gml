@@ -17,4 +17,9 @@ player_angle = image_angle;
 
 max_health = 0;
 player_health = 0;
-healthbar_length = 100;
+hpbar_length = 100;
+
+function draw_hp_bar() {
+	draw_rectangle(actual_x - hpbar_length/2, actual_y - 50, actual_x + hpbar_length/2, actual_y - 60, true);
+	draw_rectangle(actual_x - hpbar_length/2, actual_y - 50, actual_x - hpbar_length/2 + hpbar_length/max_health*player_health, actual_y -60, false)
+}
