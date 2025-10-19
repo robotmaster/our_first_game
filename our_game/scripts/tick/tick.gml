@@ -5,7 +5,17 @@ function tick() {
 	tick_start_x = actual_x;
 	tick_start_y = actual_y;
 	if (obj_client.paused) {
-		send_packet(obj_client.client_socket, _packet_info);
+		send_packet(obj_client.client_socket, [
+	[buffer_u8, networking.ticks],
+	[buffer_u8, obj_client.id_player],
+	[buffer_s32, actual_x],
+	[buffer_s32, actual_y],
+	[buffer_u16, player_angle],
+	[buffer_u16, player_health],
+	[buffer_u16, max_health],
+	[buffer_bool, false],
+	[buffer_bool, false],
+	]);
 		return;
 	}
 	handle_player_movement();

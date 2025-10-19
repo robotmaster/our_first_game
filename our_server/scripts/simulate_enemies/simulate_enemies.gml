@@ -12,8 +12,9 @@ function simulate_enemies() {
 		if (is_undefined(_enemy_instance) || !instance_exists(_enemy_instance)) {
 			show_debug_message("Broken enemies in simulate_enemies");
 			show_debug_message(enemy_infos);
-			show_debug_message(enemies_to_id);
+			show_debug_message(ds_map_size(enemies_to_id));
 		}
+		_enemy_instance.exists = true;
 		if (paused) {
 			if (_enemy_instance.phy_active) {
 				_enemy_instance.phy_position_x = _enemy.x_pos;
@@ -26,7 +27,6 @@ function simulate_enemies() {
 		_enemy.x_pos = _enemy_instance.x;
 		_enemy.y_pos = _enemy_instance.y;
 		_enemy.rot = _enemy_instance.image_angle;
-		_enemy_instance.exists = true;
 		switch (_enemy.type) {
 			case enemies.death:
 			break;
