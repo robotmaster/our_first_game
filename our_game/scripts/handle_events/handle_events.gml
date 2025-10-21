@@ -15,14 +15,17 @@ function handle_events(_events) {
 					_effect.speed_x = _event.enemy.speed_x;
 					_effect.speed_y = _event.enemy.speed_y;
 					switch (_event.enemy.type) {
-						case 0:
+						case enemies.death:
 							_effect.sprite_index = spr_death;
 						break;
-						case 1:
+						case enemies.basic:
 							_effect.sprite_index = spr_enemy;
 						break;
-						case 2:
+						case enemies.tank:
 							_effect.sprite_index = spr_enemy_tank;
+						break;
+						case enemies.rock:
+							_effect.sprite_index = spr_rock;
 						break;
 						default:
 							show_debug_message("Got invalid dead enemy in handle_events");

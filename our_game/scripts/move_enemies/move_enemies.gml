@@ -12,18 +12,24 @@ function move_enemies(_enemy_info) {
 			var _x_pos = _enemy_info[_enemy_index].x_pos;
 			var _y_pos = _enemy_info[_enemy_index].y_pos;
 			switch (_enemy_type) {
-				case 0:
+				case enemies.death:
 					_enemy = instance_create_layer(_x_pos, _y_pos, "death", obj_death);
 				break;
-				case 1:
+				case enemies.basic:
 					_enemy = instance_create_layer(_x_pos, _y_pos, "enemies", obj_enemy_basic);
 				break;
-				case 2:
+				case enemies.tank:
 					_enemy = instance_create_layer(_x_pos, _y_pos, "enemies", obj_enemy_tank);
+				break;
+				case enemies.rock:
+					_enemy = instance_create_layer(_x_pos, _y_pos, "enemies", obj_rock);
 				break;
 				default:
 					show_debug_message("Received invalid enemy");
 					return;
+			}
+			if (_enemy.phy_active) {
+				_enemy.phy_fixed_rotation = true;
 			}
 			
 			
@@ -31,6 +37,10 @@ function move_enemies(_enemy_info) {
 				ds_map_delete(enemies_to_id, _enemy_id);
 			}
 			ds_map_add(enemies_to_id, _enemy_id, _enemy);
+		}
+		if (_enemy.phy_active) {
+			_enemy.phy_position_x = _enemy_info[_enemy_index].x_pos;
+			_enemy.phy_position_y = _enemy_info[_enemy_index].y_pos;
 		}
 		_enemy.this_id = _enemy_info[_enemy_index].this_id;
 		_enemy.actual_x = _enemy_info[_enemy_index].x_pos;

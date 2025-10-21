@@ -24,6 +24,9 @@ function summon_enemy(_x, _y, _enemy_type, _owner) {
 		case obj_enemy_tank:
 			var _type = enemies.tank;
 			_hp = 25; 
+		case obj_rock:
+			var _type = enemies.rock;
+			_hp = 40; 
 		break;
 		default:
 			return;

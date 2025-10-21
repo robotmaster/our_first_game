@@ -73,6 +73,10 @@ function simulate_enemies() {
 				_enemy.speed_x = lengthdir_x(_enemy_speed * _enemy.speed_multiplier, _lowest_direction);
 				_enemy.speed_y = lengthdir_y(_enemy_speed * _enemy.speed_multiplier, _lowest_direction);
 			break;
+			case enemies.rock:
+				_enemy_instance.phy_speed_x = 0;
+				_enemy_instance.phy_speed_y = 0;
+			break;
 		}
 		
 		

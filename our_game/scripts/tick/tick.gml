@@ -2,8 +2,10 @@
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function tick() {
 	//only use with obj_player
-	tick_start_x = actual_x;
-	tick_start_y = actual_y;
+	//tick_start_x = actual_x;
+	//tick_start_y = actual_y;
+	actual_x = x;
+	actual_y = y;
 	if (obj_client.paused) {
 		send_packet(obj_client.client_socket, [
 	[buffer_u8, networking.ticks],

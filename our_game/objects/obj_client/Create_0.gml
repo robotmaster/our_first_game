@@ -10,6 +10,12 @@ enum networking {
 	//set_health,
 	//kill,
 }
+enum enemies {
+	death,
+	rock,
+	basic,
+	tank,
+}
 enum event {
 	hit
 }

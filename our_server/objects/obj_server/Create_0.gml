@@ -13,8 +13,9 @@ enum networking {
 }
 enum enemies {
 	death,
+	rock,
 	basic,
-	tank
+	tank,
 }
 
 enum event {

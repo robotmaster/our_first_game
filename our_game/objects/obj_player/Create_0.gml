@@ -7,6 +7,7 @@ stats = {
 total_killed: 0,
 my_killed: 0
 };
+phy_fixed_rotation = true;
 
 hurt_timer = 0;
 hurt_timer_max = 60;

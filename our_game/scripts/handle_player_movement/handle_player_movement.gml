@@ -1,6 +1,7 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function handle_player_movement() {
+	phy_rotation = -player_angle;
 	var _move_x_amount = (keyboard_check(vk_right) || keyboard_check(ord("D"))) - (keyboard_check(vk_left) || keyboard_check(ord("A")));
 	var _move_y_amount = (keyboard_check(vk_down) || keyboard_check(ord("S"))) - (keyboard_check(vk_up) || keyboard_check(ord("W")));
 	if (_move_x_amount != 0 || _move_y_amount != 0) {
@@ -12,15 +13,20 @@ function handle_player_movement() {
 		var _backward_multiplier = _angle_diff / 180;
 		
 		var _speed = player_forward_speed * _forward_multiplier + player_backward_speed * _backward_multiplier;
+		phy_speed_x = lengthdir_x(_speed, _dir);
+		phy_speed_y = lengthdir_y(_speed, _dir);
 		
-		actual_x += lengthdir_x(_speed, _dir);
-		actual_y += lengthdir_y(_speed, _dir);
 		
-		
-		var _dir_spawn_to_pos = point_direction(0, 0, actual_x, actual_y);
-		if (point_distance(0, 0, actual_x, actual_y) > area_radius) {
+		var _dir_spawn_to_pos = point_direction(0, 0, phy_position_x, phy_position_y);
+		if (point_distance(0, 0, phy_position_x, phy_position_y) > area_radius) {
+			phy_position_x = lengthdir_x(area_radius, _dir_spawn_to_pos);
+			phy_position_y = lengthdir_y(area_radius, _dir_spawn_to_pos);
 			actual_x = lengthdir_x(area_radius, _dir_spawn_to_pos);
 			actual_y = lengthdir_y(area_radius, _dir_spawn_to_pos);
 		}
+	}
+	else {
+		phy_speed_x = 0;
+		phy_speed_y = 0;
 	}
 }

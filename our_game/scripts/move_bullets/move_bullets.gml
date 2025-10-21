@@ -13,6 +13,8 @@ function move_bullets(_bullet_info) {
 				ds_map_delete(bullets_to_id, _bullet_id);
 			}
 			ds_map_add(bullets_to_id, _bullet_id, _bullet);
+			_bullet.start_difference_x = obj_player.phy_position_x - _bullet_info[_bullet_index].x_pos;
+			_bullet.start_difference_y = obj_player.phy_position_y - _bullet_info[_bullet_index].y_pos;
 		}
 		_bullet.actual_x = _bullet_info[_bullet_index].x_pos;
 		_bullet.actual_y = _bullet_info[_bullet_index].y_pos;

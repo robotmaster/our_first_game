@@ -20,6 +20,6 @@ player_health = 0;
 hpbar_length = 100;
 
 function draw_hp_bar() {
-	draw_rectangle(actual_x - hpbar_length/2, actual_y - 50, actual_x + hpbar_length/2, actual_y - 60, true);
-	draw_rectangle(actual_x - hpbar_length/2, actual_y - 50, actual_x - hpbar_length/2 + hpbar_length/max_health*player_health, actual_y -60, false)
+	draw_rectangle_color(actual_x - hpbar_length/2, actual_y - 50, actual_x + hpbar_length/2, actual_y - 60, c_red,  c_red,  c_red,  c_red, false);
+	draw_rectangle_color(actual_x - hpbar_length/2, actual_y - 50, actual_x - hpbar_length/2 + hpbar_length/max_health*player_health, actual_y -60, c_lime, c_lime, c_lime, c_lime, false)
 }
