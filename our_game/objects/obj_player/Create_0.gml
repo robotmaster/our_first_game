@@ -43,8 +43,11 @@ global.bullet_entities = [];
 reload_cooldown_max = 120;
 reload_cooldown = 0; 
 
-player_bullet_capacity = 40; 
+player_bullet_capacity = 30; 
 player_mag_capacity = player_bullet_capacity;
+
+aoe_shot_timer = 0;
+aoe_shot_timer_max = 20;
 
 function draw_reload_text() {
 	draw_text(camera_x + 10, camera_y + 980, "Reloading...");

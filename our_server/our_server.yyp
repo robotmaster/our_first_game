@@ -10,6 +10,7 @@
   },
   "defaultScriptType":0,
   "Folders":[
+    {"$GMFolder":"","%Name":"enemies","folderPath":"folders/enemies.yy","name":"enemies","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"networking","folderPath":"folders/networking.yy","name":"networking","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"sprites","folderPath":"folders/sprites.yy","name":"sprites","resourceType":"GMFolder","resourceVersion":"2.0",},
   ],
@@ -23,6 +24,7 @@
   "name":"our_server",
   "resources":[
     {"id":{"name":"fnt_text","path":"fonts/fnt_text/fnt_text.yy",},},
+    {"id":{"name":"obj_bullet_parent","path":"objects/obj_bullet_parent/obj_bullet_parent.yy",},},
     {"id":{"name":"obj_bullet_pierce","path":"objects/obj_bullet_pierce/obj_bullet_pierce.yy",},},
     {"id":{"name":"obj_bullet","path":"objects/obj_bullet/obj_bullet.yy",},},
     {"id":{"name":"obj_death","path":"objects/obj_death/obj_death.yy",},},
@@ -30,10 +32,10 @@
     {"id":{"name":"obj_enemy_no_death_parent","path":"objects/obj_enemy_no_death_parent/obj_enemy_no_death_parent.yy",},},
     {"id":{"name":"obj_enemy_parent","path":"objects/obj_enemy_parent/obj_enemy_parent.yy",},},
     {"id":{"name":"obj_enemy_tank","path":"objects/obj_enemy_tank/obj_enemy_tank.yy",},},
-    {"id":{"name":"obj_player","path":"objects/obj_player/obj_player.yy",},},
     {"id":{"name":"obj_rock","path":"objects/obj_rock/obj_rock.yy",},},
     {"id":{"name":"obj_server","path":"objects/obj_server/obj_server.yy",},},
     {"id":{"name":"rm_server","path":"rooms/rm_server/rm_server.yy",},},
+    {"id":{"name":"damage_enemy","path":"scripts/damage_enemy/damage_enemy.yy",},},
     {"id":{"name":"disconnect_player","path":"scripts/disconnect_player/disconnect_player.yy",},},
     {"id":{"name":"handle_data","path":"scripts/handle_data/handle_data.yy",},},
     {"id":{"name":"handle_loss","path":"scripts/handle_loss/handle_loss.yy",},},

@@ -1,9 +1,9 @@
 {
   "$GMObject":"",
-  "%Name":"obj_player",
+  "%Name":"obj_bullet_parent",
   "eventList":[],
   "managed":true,
-  "name":"obj_player",
+  "name":"obj_bullet_parent",
   "overriddenProperties":[],
   "parent":{
     "name":"our_server",
@@ -27,10 +27,7 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":{
-    "name":"spr_player",
-    "path":"sprites/spr_player/spr_player.yy",
-  },
+  "spriteId":null,
   "spriteMaskId":null,
   "visible":true,
 }

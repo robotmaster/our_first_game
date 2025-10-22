@@ -1,7 +1,7 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function move_bullets(_bullet_info) {
-	with (obj_bullet) {
+	with (obj_bullet_parent) {
 		exists = false;
 	}
 	for (var _bullet_index = 0; _bullet_index < array_length(_bullet_info); _bullet_index++) {
@@ -16,9 +16,10 @@ function move_bullets(_bullet_info) {
 		_bullet.y = _bullet_info[_bullet_index].y_pos;
 		_bullet.image_angle = _bullet_info[_bullet_index].angle;
 		_bullet.this_id = _bullet_info[_bullet_index].this_id;
+		_bullet.type = _bullet_info[_bullet_index].type;
 		_bullet.exists = true;
 	}
-	with (obj_bullet) {
+	with (obj_bullet_parent) {
 		if (!exists) {
 			instance_destroy();
 		}

@@ -26,6 +26,7 @@
     {"id":{"name":"fnt_connecting","path":"fonts/fnt_connecting/fnt_connecting.yy",},},
     {"id":{"name":"fnt_reloading","path":"fonts/fnt_reloading/fnt_reloading.yy",},},
     {"id":{"name":"fnt_stats","path":"fonts/fnt_stats/fnt_stats.yy",},},
+    {"id":{"name":"obj_bullet_parent","path":"objects/obj_bullet_parent/obj_bullet_parent.yy",},},
     {"id":{"name":"obj_bullet_pierce","path":"objects/obj_bullet_pierce/obj_bullet_pierce.yy",},},
     {"id":{"name":"obj_bullet","path":"objects/obj_bullet/obj_bullet.yy",},},
     {"id":{"name":"obj_client","path":"objects/obj_client/obj_client.yy",},},

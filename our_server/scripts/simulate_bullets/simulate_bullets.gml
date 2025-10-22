@@ -6,7 +6,6 @@ function simulate_bullets() {
 	}
 	for (var _bullet_index = 0; _bullet_index < array_length(bullet_infos); _bullet_index++) {
 		var _bullet = bullet_infos[_bullet_index];
-		
 		var _bullet_speed = 40;
 		_bullet.x_pos += lengthdir_x(_bullet_speed, _bullet.angle);
 		_bullet.y_pos += lengthdir_y(_bullet_speed, _bullet.angle);
@@ -24,45 +23,49 @@ function simulate_bullets() {
 	
 	
 	
-	with (obj_bullet) {
+	with (obj_bullet_parent) {
 		for (var _bullet_index = 0; _bullet_index < array_length(other.bullet_infos); _bullet_index++) {
 			if (other.bullet_infos[_bullet_index].this_id == this_id) {
 				var _bullet_info_index = _bullet_index;
 			}
 		}
+		var _obj_list = ds_list_create();;
 		if (other.bullet_infos[_bullet_info_index].ghost) {
-			var _obj = instance_place(x, y, obj_enemy_no_death_parent);
+			instance_place_list(x, y, obj_enemy_no_death_parent, _obj_list, false);
 		}
 		else {
-			var _obj = instance_place(x, y, obj_enemy_parent);
+			instance_place_list(x, y, obj_enemy_parent, _obj_list, false);
 		}
-		if (_obj != noone) {
-			for (var _enemy_index = 0; _enemy_index < array_length(other.enemy_infos); _enemy_index++) {
-				var _enemy = other.enemy_infos[_enemy_index];
-				if (_enemy.this_id == _obj.this_id) {
-					_enemy.this_health -= 1;
-					if (_enemy.this_health <= 0) {
-						if (_enemy.type == 0) {
-							with (obj_server) {
-								revive_player(_enemy.owner);
+		
+		
+		if (ds_list_size(_obj_list) != 0) {
+			switch (type) {
+				case 0:
+					damage_enemy(ds_list_find_value(_obj_list, 0), _bullet_info_index, 1);
+				break;
+				case 1:
+					for (var _enemy_index = 0; _enemy_index < array_length(other.enemy_infos); _enemy_index++) {
+						var _enemy = other.enemy_infos[_enemy_index];
+						if (!array_contains(other.bullet_infos[_bullet_info_index].hit_enemies, _enemy.this_id)) {
+							if (damage_enemy(ds_map_find_value(other.enemies_to_id, other.enemy_infos[_enemy_index].this_id), _bullet_info_index, 3)) {
+								_enemy_index -= 1;
 							}
+							array_push(other.bullet_infos[_bullet_info_index].hit_enemies, _enemy.this_id);
 						}
-						array_push(other.events, {this_id: event.hit, killed: true, bullet: other.bullet_infos[_bullet_info_index], enemy: _enemy});
-						ds_map_delete(other.enemies_to_id, _obj.this_id);
-						array_delete(other.enemy_infos, _enemy_index, 1);
 					}
-					else {
-						array_push(other.events, {this_id: event.hit, killed: false, bullet: other.bullet_infos[_bullet_info_index], enemy: _enemy});
-					}
-					break;
-				}
-			}
+				break;
+			}	
 			
-			ds_map_delete(other.bullets_to_id, this_id);
-			array_delete(other.bullet_infos, _bullet_info_index, 1);
-			instance_destroy();
+			
+			
+			if (type == 0) {
+				ds_map_delete(other.bullets_to_id, this_id);
+				array_delete(other.bullet_infos, _bullet_info_index, 1);
+				instance_destroy();
+			}
 			break;
 		}
+		ds_list_destroy(_obj_list);
 	}
 	
 }

@@ -9,7 +9,10 @@
     "name":"our_server",
     "path":"our_server.yyp",
   },
-  "parentObjectId":null,
+  "parentObjectId":{
+    "name":"obj_bullet_parent",
+    "path":"objects/obj_bullet_parent/obj_bullet_parent.yy",
+  },
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,

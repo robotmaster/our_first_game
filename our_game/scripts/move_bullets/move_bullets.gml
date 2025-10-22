@@ -1,14 +1,21 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function move_bullets(_bullet_info) {
-	with (obj_bullet) {
+	with (obj_bullet_parent) {
 		exists = false;
 	}
 	for (var _bullet_index = 0; _bullet_index < array_length(_bullet_info); _bullet_index++) {
 		var _bullet_id = _bullet_info[_bullet_index].this_id;
 		var _bullet = ds_map_find_value(bullets_to_id, _bullet_id);
 		if (is_undefined(_bullet) || !instance_exists(_bullet)) {
-			_bullet = instance_create_layer(_bullet_info[_bullet_index].x_pos, _bullet_info[_bullet_index].y_pos, "bullets", obj_bullet);
+			switch (_bullet_info[_bullet_index].type) {
+				case 0:
+					_bullet = instance_create_layer(_bullet_info[_bullet_index].x_pos, _bullet_info[_bullet_index].y_pos, "bullets", obj_bullet);
+				break;
+				case 1:
+					_bullet = instance_create_layer(_bullet_info[_bullet_index].x_pos, _bullet_info[_bullet_index].y_pos, "bullets", obj_bullet_pierce);
+				break;
+			}
 			if (ds_map_exists(bullets_to_id, _bullet_id)) {
 				ds_map_delete(bullets_to_id, _bullet_id);
 			}
@@ -23,7 +30,7 @@ function move_bullets(_bullet_info) {
 		_bullet.ghost = _bullet_info[_bullet_index].ghost;
 		_bullet.exists = true;
 	}
-	with (obj_bullet) {
+	with (obj_bullet_parent) {
 		if (!exists) {
 			instance_destroy();
 		}

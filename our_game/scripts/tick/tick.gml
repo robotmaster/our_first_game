@@ -16,6 +16,7 @@ function tick() {
 	[buffer_u16, player_health],
 	[buffer_u16, max_health],
 	[buffer_bool, false],
+	[buffer_bool, 0],
 	[buffer_bool, false],
 	]);
 		return;
@@ -35,6 +36,7 @@ function tick() {
 	}
 	var _died = false;
 	var _shot = false;
+	var _bullet_type = 0;
 	if (obj_player.player_health <= 0 && !ghost) {
 		_died = true;
 		obj_player.player_health = 0;
@@ -42,6 +44,11 @@ function tick() {
 	else {
 		if (handle_shooting()) {
 			_shot = true;
+			aoe_shot_timer = timer(aoe_shot_timer, 1);
+			if (aoe_shot_timer <= 0) {
+				aoe_shot_timer = aoe_shot_timer_max;
+				_bullet_type = 1;
+			}
 		}
 	}
 	
@@ -55,6 +62,7 @@ function tick() {
 	[buffer_u16, player_health],
 	[buffer_u16, max_health],
 	[buffer_bool, _shot],
+	[buffer_u8, _bullet_type],
 	[buffer_bool, _died],
 	]);
 	
