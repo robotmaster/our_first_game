@@ -3,6 +3,12 @@
 global.tick_timer_max = 1;
 global.tick_timer = 0;
 
+enum Powerup {
+	Bigshot
+}
+
+powerups = [];
+
 stats = {
 total_killed: 0,
 my_killed: 0
