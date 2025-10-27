@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"add_powerup",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"add_powerup",
+  "parent":{
+    "name":"our_game",
+    "path":"our_game.yyp",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

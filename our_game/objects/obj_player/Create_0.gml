@@ -4,13 +4,15 @@ global.tick_timer_max = 1; //how many 60th of a second each tick is
 global.tick_timer = 0; //current timer, set to 0
 
 enum powerup {
-	pierce
+	pierce,
+	attack_damage
 }
+powerup_attack_damage_multiplier = 2;
 
 stats = {
 total_killed: 0,
 my_killed: 0,
-powerups: []
+powerups: ds_map_create()
 };
 
 phy_fixed_rotation = true;

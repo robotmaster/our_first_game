@@ -45,6 +45,7 @@
     {"id":{"name":"obj_player","path":"objects/obj_player/obj_player.yy",},},
     {"id":{"name":"obj_rock","path":"objects/obj_rock/obj_rock.yy",},},
     {"id":{"name":"rm_game","path":"rooms/rm_game/rm_game.yy",},},
+    {"id":{"name":"add_powerup","path":"scripts/add_powerup/add_powerup.yy",},},
     {"id":{"name":"destroy_player","path":"scripts/destroy_player/destroy_player.yy",},},
     {"id":{"name":"handle_damage","path":"scripts/handle_damage/handle_damage.yy",},},
     {"id":{"name":"handle_events","path":"scripts/handle_events/handle_events.yy",},},

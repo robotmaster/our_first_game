@@ -1,6 +1,6 @@
  // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
-function handle_shooting(_x, _y, _type, _angle, _ghost, _owner) {
+function handle_shooting(_x, _y, _damage, _type, _angle, _ghost, _owner) {
 	var _new_id = -1;
 	for (var _i = 0; _i < 100000; _i++) {
 		if (!ds_map_exists(bullets_to_id, _i)) {
@@ -21,6 +21,16 @@ function handle_shooting(_x, _y, _type, _angle, _ghost, _owner) {
 		break;
 	}
 	var _despawn_time = 120;
-	array_push(bullet_infos, {this_id: _new_id, type: _type, x_pos: _x, y_pos: _y, angle: _angle, despawn_timer: _despawn_time, ghost: _ghost, owner: _owner, hit_enemies: []});
+	array_push(bullet_infos, {
+	this_id: _new_id, 
+	type: _type, 
+	x_pos: _x, 
+	y_pos: _y,
+	damage: _damage,
+	angle: _angle, 
+	despawn_timer: _despawn_time, 
+	ghost: _ghost, 
+	owner: _owner, 
+	hit_enemies: [],});
 	ds_map_add(bullets_to_id, _new_id, _bullet);
 }

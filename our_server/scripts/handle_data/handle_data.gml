@@ -16,6 +16,7 @@ function handle_data() {
 			var _will_shoot = read_packet(_packet, buffer_bool);
 			var _bullet_type = read_packet(_packet, buffer_u8);
 			var _died = read_packet(_packet, buffer_bool);
+			var _bullet_damage = read_packet(_packet, buffer_u16);
 			
 		
 			
@@ -39,7 +40,7 @@ function handle_data() {
 					handle_loss();
 				}
 				if (_will_shoot) {
-					handle_shooting(_player_x, _player_y, _bullet_type, _player_angle, player_infos[_player].ghost, _player_id);
+					handle_shooting(_player_x, _player_y, _bullet_damage, _bullet_type, _player_angle, player_infos[_player].ghost, _player_id);
 				
 				}
 				break;

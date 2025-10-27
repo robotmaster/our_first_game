@@ -41,13 +41,13 @@ function simulate_bullets() {
 		if (ds_list_size(_obj_list) != 0) {
 			switch (type) {
 				case bullets.basic:
-					damage_enemy(ds_list_find_value(_obj_list, 0), _bullet_info_index, 1);
+					damage_enemy(ds_list_find_value(_obj_list, 0), _bullet_info_index, other.bullet_infos[_bullet_info_index].damage);
 				break;
 				case bullets.pierce:
 					for (var _enemy_index = 0; _enemy_index < ds_list_size(_obj_list); _enemy_index++) {
 						var _obj = ds_list_find_value(_obj_list, _enemy_index);
 						if (!array_contains(other.bullet_infos[_bullet_info_index].hit_enemies, _obj.this_id)) {
-							if (damage_enemy(ds_map_find_value(other.enemies_to_id, _obj.this_id), _bullet_info_index, 3)) {
+							if (damage_enemy(ds_map_find_value(other.enemies_to_id, _obj.this_id), _bullet_info_index, other.bullet_infos[_bullet_info_index].damage)) {
 								_enemy_index -= 1;
 							}
 							array_push(other.bullet_infos[_bullet_info_index].hit_enemies, _obj.this_id);
