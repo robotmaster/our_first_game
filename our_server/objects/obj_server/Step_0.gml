@@ -28,30 +28,21 @@ while (global.tick_timer > global.tick_timer_max) {
 
 
 
-for (var _i = 0; _i < array_length(player_ids); _i++) {
-	var _id = player_ids[_i];
-	if (ds_map_exists(player_ids_to_ping, _id)) {
-		var _elapsed_time = ds_map_find_value(player_ids_to_ping, _id);
-		if (_elapsed_time >= ping_timer_max) {
+for (var _i = 0; _i < array_length(player_infos); _i++) {
+	player_infos[_i].ping_timer += _delta;
+	if (player_infos[_i].ping_timer < ping_timer_max) {
+		continue;
+	}
 			
-			for (var _i = 0; _i < ds_list_size(player_socket_list); _i++) {
-				var _socket = ds_list_find_value(player_socket_list, _i);
-				if (ds_map_find_value(player_list, _socket) == _id) {
-					disconnect_player(_socket);
-					handle_loss();
-					break;
-				}
-			}
-			
-			
-			
+	for (var _i = 0; _i < ds_list_size(player_socket_list); _i++) {
+		var _socket = ds_list_find_value(player_socket_list, _i);
+		if (ds_map_find_value(player_list, _socket) == player_infos[_i].this_id) {
+			disconnect_player(_socket);
+			handle_loss();
 			break;
 		}
-		ds_map_replace(player_ids_to_ping, _id, _elapsed_time + _delta);
 	}
-	else {
-		show_debug_message("Mismatch between player_ids_to_ping and player_ids, id: " + string(_id));
-	}
+	
 }
 if (array_length(bullet_infos) != ds_map_size(bullets_to_id)) {
 	show_debug_message("Broken bullets")

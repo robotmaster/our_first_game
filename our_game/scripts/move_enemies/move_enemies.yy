@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"move_enemies",
   "parent":{
-    "name":"our_game",
-    "path":"our_game.yyp",
+    "name":"enemy code",
+    "path":"folders/enemy code.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

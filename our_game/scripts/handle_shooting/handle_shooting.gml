@@ -7,16 +7,17 @@ function handle_shooting() {
 	}
 	
 	shoot_cooldown = timer(shoot_cooldown, 1);
-	if (mouse_check_button(mb_left) && shoot_cooldown <= 0) {
-		shoot_cooldown = shoot_cooldown_max;
-		if (player_mag_capacity > 0) {
-			player_mag_capacity--;
-			if (player_mag_capacity <= 0) {
-				if (reload_cooldown <= 0) 
-					reload_cooldown = reload_cooldown_max;
-			}
-			return true;
-		}
+	if (!mouse_check_button(mb_left) || shoot_cooldown > 0) {
+		return false;
 	}
-	return false;
+	shoot_cooldown = shoot_cooldown_max;
+	if (player_mag_capacity <= 0) {
+		return false;
+	}
+	
+	player_mag_capacity--;
+	if (player_mag_capacity <= 0 && reload_cooldown <= 0) {
+		reload_cooldown = reload_cooldown_max;
+	}
+	return true;
 }

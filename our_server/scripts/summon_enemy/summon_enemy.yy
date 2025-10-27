@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"summon_enemy",
   "parent":{
-    "name":"our_server",
-    "path":"our_server.yyp",
+    "name":"enemy code",
+    "path":"folders/enemy code.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

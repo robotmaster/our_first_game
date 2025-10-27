@@ -11,8 +11,8 @@
   "name":"obj_dead_enemy_effect",
   "overriddenProperties":[],
   "parent":{
-    "name":"our_game",
-    "path":"our_game.yyp",
+    "name":"enemies",
+    "path":"folders/enemies.yy",
   },
   "parentObjectId":null,
   "persistent":false,

@@ -29,7 +29,7 @@ function simulate_bullets() {
 				var _bullet_info_index = _bullet_index;
 			}
 		}
-		var _obj_list = ds_list_create();;
+		var _obj_list = ds_list_create();
 		if (other.bullet_infos[_bullet_info_index].ghost) {
 			instance_place_list(x, y, obj_enemy_no_death_parent, _obj_list, false);
 		}
@@ -40,17 +40,17 @@ function simulate_bullets() {
 		
 		if (ds_list_size(_obj_list) != 0) {
 			switch (type) {
-				case 0:
+				case bullets.basic:
 					damage_enemy(ds_list_find_value(_obj_list, 0), _bullet_info_index, 1);
 				break;
-				case 1:
-					for (var _enemy_index = 0; _enemy_index < array_length(other.enemy_infos); _enemy_index++) {
-						var _enemy = other.enemy_infos[_enemy_index];
-						if (!array_contains(other.bullet_infos[_bullet_info_index].hit_enemies, _enemy.this_id)) {
-							if (damage_enemy(ds_map_find_value(other.enemies_to_id, other.enemy_infos[_enemy_index].this_id), _bullet_info_index, 3)) {
+				case bullets.pierce:
+					for (var _enemy_index = 0; _enemy_index < ds_list_size(_obj_list); _enemy_index++) {
+						var _obj = ds_list_find_value(_obj_list, _enemy_index);
+						if (!array_contains(other.bullet_infos[_bullet_info_index].hit_enemies, _obj.this_id)) {
+							if (damage_enemy(ds_map_find_value(other.enemies_to_id, _obj.this_id), _bullet_info_index, 3)) {
 								_enemy_index -= 1;
 							}
-							array_push(other.bullet_infos[_bullet_info_index].hit_enemies, _enemy.this_id);
+							array_push(other.bullet_infos[_bullet_info_index].hit_enemies, _obj.this_id);
 						}
 					}
 				break;
@@ -58,7 +58,7 @@ function simulate_bullets() {
 			
 			
 			
-			if (type == 0) {
+			if (type != bullets.pierce) {
 				ds_map_delete(other.bullets_to_id, this_id);
 				array_delete(other.bullet_infos, _bullet_info_index, 1);
 				instance_destroy();

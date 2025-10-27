@@ -14,8 +14,8 @@
   "exportDir":"",
   "name":"snd_death",
   "parent":{
-    "name":"our_game",
-    "path":"our_game.yyp",
+    "name":"sounds",
+    "path":"folders/sounds.yy",
   },
   "preload":false,
   "resourceType":"GMSound",

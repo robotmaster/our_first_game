@@ -1,7 +1,7 @@
 /// @description Insert description here
 // You can write your code in this editor
-global.tick_timer_max = 1;
-global.tick_timer = 0;
+global.tick_timer_max = 1; //how many 60th of a second each tick is
+global.tick_timer = 0; //current timer, set to 0
 
 enum Powerup {
 	Bigshot
@@ -13,9 +13,10 @@ stats = {
 total_killed: 0,
 my_killed: 0
 };
+
 phy_fixed_rotation = true;
 
-hurt_timer = 0;
+hurt_timer = 0; // for hurt sound effect
 hurt_timer_max = 60;
 
 actual_x = x;

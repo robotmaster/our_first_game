@@ -13,10 +13,10 @@ function handle_shooting(_x, _y, _type, _angle, _ghost, _owner) {
 	}
 	var _bullet = noone;
 	switch (_type) {
-		case 0:
+		case bullets.basic:
 			_bullet = instance_create_layer(_x, _y, "collision_check", obj_bullet);
 		break;
-		case 1:
+		case bullets.pierce:
 			_bullet = instance_create_layer(_x, _y, "collision_check", obj_bullet_pierce);
 		break;
 	}

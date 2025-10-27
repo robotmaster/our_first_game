@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"handle_shooting",
   "parent":{
-    "name":"our_game",
-    "path":"our_game.yyp",
+    "name":"bullet code",
+    "path":"folders/bullet code.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

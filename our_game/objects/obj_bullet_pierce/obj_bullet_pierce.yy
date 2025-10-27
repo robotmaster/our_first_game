@@ -10,8 +10,8 @@
   "name":"obj_bullet_pierce",
   "overriddenProperties":[],
   "parent":{
-    "name":"our_game",
-    "path":"our_game.yyp",
+    "name":"bullets",
+    "path":"folders/bullets.yy",
   },
   "parentObjectId":{
     "name":"obj_bullet_parent",

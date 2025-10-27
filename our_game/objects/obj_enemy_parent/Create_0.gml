@@ -3,8 +3,8 @@
 flash_timer = 0;
 flash_timer_max = 2;
 
-max_health = 15; 
-enemy_health = 15;
+max_health = 1; 
+enemy_health = 0;
 hpbar_length = 60; 
 actual_x = 0;
 actual_y = 0;

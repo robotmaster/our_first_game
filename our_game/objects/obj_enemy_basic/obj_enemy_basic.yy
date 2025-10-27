@@ -6,8 +6,8 @@
   "name":"obj_enemy_basic",
   "overriddenProperties":[],
   "parent":{
-    "name":"our_game",
-    "path":"our_game.yyp",
+    "name":"enemies",
+    "path":"folders/enemies.yy",
   },
   "parentObjectId":{
     "name":"obj_enemy_no_death_parent",

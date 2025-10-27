@@ -6,8 +6,8 @@
   "name":"obj_enemy_parent",
   "overriddenProperties":[],
   "parent":{
-    "name":"our_server",
-    "path":"our_server.yyp",
+    "name":"enemies",
+    "path":"folders/enemies.yy",
   },
   "parentObjectId":null,
   "persistent":false,

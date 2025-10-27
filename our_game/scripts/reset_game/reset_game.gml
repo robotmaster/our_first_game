@@ -3,7 +3,6 @@
 function reset_game() {
 	connected = false;
 	id_player = -1;
-	player_ids = ds_list_create();
 	players_to_id = ds_map_create();
 	bullet_ids = ds_list_create();
 	bullets_to_id = ds_map_create();

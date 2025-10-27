@@ -8,6 +8,7 @@ function reset_game() {
 	paused = false;
 	enemy_spawn_timer = 0;
 	enemy_spawn_timer_max = 240;
+	enemy_hp_multiplier = 1;
 	rock_spawn_timer = 0;
 	rock_spawn_timer_max = 600;
 	

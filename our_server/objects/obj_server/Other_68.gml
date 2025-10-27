@@ -8,14 +8,17 @@ switch (_data_type) {
 		var _player_socket = async_load[? "socket"];
 		ds_list_add(player_socket_list, _player_socket);
 		for (var _i = 0; _i < max_players; _i++) {
-			if (!array_contains(player_ids, _i)) {
+			var _found_id = false;
+			for (var _player_index = 0; _player_index < array_length(player_infos); _player_index++) {
+				if (player_infos[_player_index].this_id == _i) {
+					_found_id = true;
+				}
+			}
+			if (!_found_id) {
 				var _new_id = _i;
 				break;
 			}
 		}
-		ds_map_add(player_ids_to_ping, _new_id, 0);
-		
-		array_push(player_ids, _new_id);
 		
 		show_debug_message("Connected player " + string(_new_id));
 		
@@ -50,7 +53,8 @@ switch (_data_type) {
 		]);
 		
 		array_push(player_infos, {
-			this_id: _new_id, 
+			this_id: _new_id,
+			ping_timer: 0,
 			x_pos: 0, 
 			y_pos: 0, 
 			angle: 0, 

@@ -40,7 +40,6 @@ switch (_packet_id) {
 		else {
 			var _player = instance_create_layer(0, 0, "other_players", obj_other_player);
 			_player.id_player = _player_id;
-			ds_list_add(player_ids, _player_id);
 			ds_map_add(players_to_id, _player_id, _player);
 		}
 	break;
@@ -58,7 +57,7 @@ switch (_packet_id) {
 		handle_server_info(_packet);
 	break;
 	case networking.lose:
-		if (ds_list_size(player_ids) == 0) {
+		if (ds_map_size(players_to_id) == 0) {
 			audio_play_sound(snd_death, 9999, 0);
 		}
 		else {

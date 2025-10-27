@@ -5,6 +5,7 @@ function summon_enemies() {
 		return;
 	}
 	enemy_spawn_timer_max *= enemy_spawn_multiplier;
+	enemy_hp_multiplier *= enemy_hp_multiplier_multiplier;
 	enemy_spawn_timer -= 1;
 	while (enemy_spawn_timer <= 0) {
 		enemy_spawn_timer += enemy_spawn_timer_max;
