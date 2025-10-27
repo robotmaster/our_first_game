@@ -7,8 +7,6 @@ enum powerup {
 	pierce
 }
 
-powerups = [];
-
 stats = {
 total_killed: 0,
 my_killed: 0,
