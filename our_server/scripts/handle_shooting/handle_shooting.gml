@@ -1,4 +1,4 @@
-// Script assets have changed for v2.3.0 see
+ // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function handle_shooting(_x, _y, _type, _angle, _ghost, _owner) {
 	var _new_id = -1;

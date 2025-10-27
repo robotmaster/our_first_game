@@ -44,10 +44,12 @@ function tick() {
 	else {
 		if (handle_shooting()) {
 			_shot = true;
-			aoe_shot_timer = timer(aoe_shot_timer, 1);
-			if (aoe_shot_timer <= 0) {
-				aoe_shot_timer = aoe_shot_timer_max;
-				_bullet_type = 1;
+			if (array_contains(stats.powerups, powerup.pierce)) {
+				aoe_shot_timer = timer(aoe_shot_timer, 1);
+				if (aoe_shot_timer <= 0) {
+					aoe_shot_timer = aoe_shot_timer_max;
+					_bullet_type = 1;
+				}
 			}
 		}
 	}

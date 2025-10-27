@@ -3,15 +3,16 @@
 global.tick_timer_max = 1; //how many 60th of a second each tick is
 global.tick_timer = 0; //current timer, set to 0
 
-enum Powerup {
-	Bigshot
+enum powerup {
+	pierce
 }
 
 powerups = [];
 
 stats = {
 total_killed: 0,
-my_killed: 0
+my_killed: 0,
+powerups: []
 };
 
 phy_fixed_rotation = true;

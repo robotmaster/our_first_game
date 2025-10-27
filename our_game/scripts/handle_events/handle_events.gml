@@ -26,6 +26,7 @@ function handle_events(_events) {
 						break;
 						case enemies.rock:
 							_effect.sprite_index = spr_rock;
+							array_push(obj_player.stats.powerups, powerup.pierce);
 						break;
 						default:
 							show_debug_message("Got invalid dead enemy in handle_events");
