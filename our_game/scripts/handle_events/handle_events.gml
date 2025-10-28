@@ -26,11 +26,13 @@ function handle_events(_events) {
 						break;
 						case enemies.rock:
 							_effect.sprite_index = spr_rock;
-							if (!ds_map_exists(obj_player.stats.powerups, powerup.pierce)) {
-								add_powerup(powerup.pierce);
-							}
-							else {
-								add_powerup(powerup.attack_damage);
+							if (_event.bullet.owner == id_player) {
+								if (!ds_map_exists(obj_player.stats.powerups, powerup.pierce)) {
+									add_powerup(powerup.pierce);
+								}
+								else {
+									add_powerup(powerup.attack_damage);
+								}
 							}
 						break;
 						default:
