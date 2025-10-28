@@ -24,7 +24,7 @@
   "isEcma":false,
   "LibraryEmitters":[],
   "MetaData":{
-    "IDEVersion":"2024.1400.0.901",
+    "IDEVersion":"2024.1400.0.911",
   },
   "name":"our_game",
   "resources":[
@@ -66,6 +66,8 @@
     {"id":{"name":"snd_loss","path":"sounds/snd_loss/snd_loss.yy",},},
     {"id":{"name":"snd_revive","path":"sounds/snd_revive/snd_revive.yy",},},
     {"id":{"name":"BulletIcon","path":"sprites/BulletIcon/BulletIcon.yy",},},
+    {"id":{"name":"powerUp1","path":"sprites/powerUp1/powerUp1.yy",},},
+    {"id":{"name":"powerUp2","path":"sprites/powerUp2/powerUp2.yy",},},
     {"id":{"name":"spr_background","path":"sprites/spr_background/spr_background.yy",},},
     {"id":{"name":"spr_bullet_piece","path":"sprites/spr_bullet_piece/spr_bullet_piece.yy",},},
     {"id":{"name":"spr_bullet","path":"sprites/spr_bullet/spr_bullet.yy",},},

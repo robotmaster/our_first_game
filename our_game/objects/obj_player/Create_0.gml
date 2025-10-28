@@ -67,6 +67,30 @@ function draw_ammo_textIcon() {
 	}
 }
 
+function draw_powerups() {
+	 var _p1 = ds_map_find_value(stats.powerups, powerup.pierce)
+	 var _p2 = ds_map_find_value(stats.powerups, powerup.attack_damage)
+	 
+	 var listPs = [_p1, _p2]
+	 var count = 0;
+	 // 2 represent # powerups
+	 for (var _i = 0; _i < 2; _i++) {
+		if (listPs[_i] == undefined) {continue}
+		switch (_i) {
+			case 0: 
+				draw_sprite(powerUp1, 0, camera_x + camera_get_view_width(view_camera[0]) - count * 40 - 100, camera_y );
+				break;
+			case 1: 
+				draw_sprite(powerUp2, 0, camera_x + camera_get_view_width(view_camera[0]) - count * 40 - 100, camera_y );
+				break;
+		}
+		if (listPs[_i] != 0){
+			count++
+		}
+	 }
+	 
+}
+
 function draw_health() {
 	draw_rectangle_color(camera_x + 20, camera_y + camera_get_view_height(view_camera[0]) - 90, camera_x + 20 + (max_health * 5), camera_y + camera_get_view_height(view_camera[0]) - 120, c_red, c_red, c_red, c_red, false);
 	draw_rectangle_color(camera_x + 20, camera_y + camera_get_view_height(view_camera[0]) - 90, camera_x + 20 + (player_health * 5), camera_y + camera_get_view_height(view_camera[0]) - 120, c_lime, c_lime, c_lime, c_lime, false);
