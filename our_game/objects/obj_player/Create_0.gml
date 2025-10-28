@@ -77,15 +77,18 @@ function draw_powerups() {
 	 
 	 var listPs = [_p1, _p2]
 	 var count = 0;
+	 var _distanceBetweenTwoPowerUps = 80
 	 // 2 represent # powerups
 	 for (var _i = 0; _i < 2; _i++) {
 		if (listPs[_i] == undefined) {continue}
 		switch (_i) {
 			case 0: 
-				draw_sprite(powerUp1, 0, camera_x + camera_get_view_width(view_camera[0]) - count * 40 - 100, camera_y );
+				draw_sprite(powerUp1, 0, camera_x + camera_get_view_width(view_camera[0]) - count * _distanceBetweenTwoPowerUps - 100, camera_y );
+				draw_text(camera_x + camera_get_view_width(view_camera[0]) - count * _distanceBetweenTwoPowerUps - 120, camera_y + 20, listPs[_i]); 
 				break;
 			case 1: 
-				draw_sprite(powerUp2, 0, camera_x + camera_get_view_width(view_camera[0]) - count * 40 - 100, camera_y );
+				draw_sprite(powerUp2, 0, camera_x + camera_get_view_width(view_camera[0]) - count * _distanceBetweenTwoPowerUps - 100, camera_y );
+				draw_text(camera_x + camera_get_view_width(view_camera[0]) - count * _distanceBetweenTwoPowerUps - 120, camera_y + 20, listPs[_i]); 
 				break;
 		}
 		if (listPs[_i] != 0){
