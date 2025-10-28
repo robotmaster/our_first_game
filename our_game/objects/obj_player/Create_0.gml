@@ -5,7 +5,11 @@ global.tick_timer = 0; //current timer, set to 0
 
 enum powerup {
 	pierce,
-	attack_damage
+	attack_damage,
+	bullet_speed, 
+	ammo, 
+	maxhealth,
+	movementspeed, 
 }
 powerup_attack_damage_multiplier = 2;
 
