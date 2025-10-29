@@ -7,16 +7,20 @@ function handle_data() {
 	
 	switch (_packet_id) {
 		case networking.ticks:
-			var _player_id = read_packet(_packet, buffer_u8);
-			var _player_x = read_packet(_packet, buffer_s32);
-			var _player_y = read_packet(_packet, buffer_s32);
-			var _player_angle = read_packet(_packet, buffer_u16);
-			var _player_health = read_packet(_packet, buffer_u16);
-			var _max_health = read_packet(_packet, buffer_u16);
-			var _will_shoot = read_packet(_packet, buffer_bool);
-			var _bullet_type = read_packet(_packet, buffer_u8);
-			var _died = read_packet(_packet, buffer_bool);
-			var _bullet_damage = read_packet(_packet, buffer_u16);
+		
+			var _player_info = json_parse(read_packet(_packet, buffer_string));
+			var _bullet_info = json_parse(read_packet(_packet, buffer_string));
+			
+			var _player_id = _player_info.this_id;
+			var _player_x = _player_info.x_pos;
+			var _player_y = _player_info.y_pos;
+			var _player_angle = _player_info.angle;
+			var _player_health = _player_info.this_health;
+			var _max_health = _player_info.max_health;
+			var _died = _player_info.died;
+			var _will_shoot = _bullet_info.shot;
+			var _bullet_type = _bullet_info.type;
+			var _bullet_damage = _bullet_info.damage;
 			
 		
 			

@@ -11,7 +11,7 @@ enum powerup {
 	maxhealth,
 	movementspeed, 
 }
-powerup_attack_damage_multiplier = 2;
+powerup_attack_damage_multiplier = 1.05;
 
 stats = {
 total_killed: 0,
