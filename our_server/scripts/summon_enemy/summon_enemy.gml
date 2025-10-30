@@ -15,18 +15,18 @@ function summon_enemy(_x, _y, _enemy_type, _owner) {
 	switch (_enemy_type) {
 		case obj_death:
 			var _type = enemies.death;
-			_hp = 15;
+			_hp = 1500;
 		break;
 		case obj_enemy_basic:
 			var _type = enemies.basic;
-			_hp = round(15 * enemy_hp_multiplier);
+			_hp = round(1500 * enemy_hp_multiplier);
 		break;
 		case obj_enemy_tank:
 			var _type = enemies.tank;
-			_hp = round(25 * enemy_hp_multiplier); 
+			_hp = round(2500 * enemy_hp_multiplier); 
 		case obj_rock:
 			var _type = enemies.rock;
-			_hp = round(40 * enemy_hp_multiplier); 
+			_hp = round(4000 * enemy_hp_multiplier); 
 		break;
 		default:
 			return;
