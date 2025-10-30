@@ -1,0 +1,3 @@
+function damage_number(){
+
+}

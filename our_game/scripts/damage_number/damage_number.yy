@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"damage_number",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"damage_number",
+  "parent":{
+    "name":"our_game",
+    "path":"our_game.yyp",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}
