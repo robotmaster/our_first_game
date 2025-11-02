@@ -72,6 +72,7 @@ function draw_ammo_textIcon() {
 }
 
 function draw_powerups() {
+	 draw_set_font(fnt_damage_number)
 	 var _p1 = ds_map_find_value(stats.powerups, powerup.pierce)
 	 var _p2 = ds_map_find_value(stats.powerups, powerup.attack_damage)
 	 
