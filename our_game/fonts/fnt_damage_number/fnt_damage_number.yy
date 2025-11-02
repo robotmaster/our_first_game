@@ -1,6 +1,6 @@
 {
   "$GMFont":"",
-  "%Name":"fnt_stats",
+  "%Name":"fnt_damage_number",
   "AntiAlias":1,
   "applyKerning":0,
   "ascender":44,
@@ -117,7 +117,7 @@
   "last":0,
   "lineHeight":56,
   "maintainGms1Font":false,
-  "name":"fnt_stats",
+  "name":"fnt_damage_number",
   "parent":{
     "name":"fonts",
     "path":"folders/fonts.yy",

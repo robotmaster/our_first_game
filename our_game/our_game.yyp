@@ -12,6 +12,7 @@
   "Folders":[
     {"$GMFolder":"","%Name":"bullet code","folderPath":"folders/bullet code.yy","name":"bullet code","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"bullets","folderPath":"folders/bullets.yy","name":"bullets","resourceType":"GMFolder","resourceVersion":"2.0",},
+    {"$GMFolder":"","%Name":"effects","folderPath":"folders/effects.yy","name":"effects","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"enemies","folderPath":"folders/enemies.yy","name":"enemies","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"enemy code","folderPath":"folders/enemy code.yy","name":"enemy code","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"fonts","folderPath":"folders/fonts.yy","name":"fonts","resourceType":"GMFolder","resourceVersion":"2.0",},
@@ -29,12 +30,14 @@
   "name":"our_game",
   "resources":[
     {"id":{"name":"fnt_connecting","path":"fonts/fnt_connecting/fnt_connecting.yy",},},
+    {"id":{"name":"fnt_damage_number","path":"fonts/fnt_damage_number/fnt_damage_number.yy",},},
     {"id":{"name":"fnt_reloading","path":"fonts/fnt_reloading/fnt_reloading.yy",},},
     {"id":{"name":"fnt_stats","path":"fonts/fnt_stats/fnt_stats.yy",},},
     {"id":{"name":"obj_bullet_parent","path":"objects/obj_bullet_parent/obj_bullet_parent.yy",},},
     {"id":{"name":"obj_bullet_pierce","path":"objects/obj_bullet_pierce/obj_bullet_pierce.yy",},},
     {"id":{"name":"obj_bullet","path":"objects/obj_bullet/obj_bullet.yy",},},
     {"id":{"name":"obj_client","path":"objects/obj_client/obj_client.yy",},},
+    {"id":{"name":"obj_damage_number","path":"objects/obj_damage_number/obj_damage_number.yy",},},
     {"id":{"name":"obj_dead_enemy_effect","path":"objects/obj_dead_enemy_effect/obj_dead_enemy_effect.yy",},},
     {"id":{"name":"obj_death","path":"objects/obj_death/obj_death.yy",},},
     {"id":{"name":"obj_enemy_basic","path":"objects/obj_enemy_basic/obj_enemy_basic.yy",},},

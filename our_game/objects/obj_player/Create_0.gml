@@ -13,7 +13,7 @@ enum powerup {
 }
 powerup_attack_damage_multiplier = 1.05;
 
-stats = {
+stats = {//some game stats
 total_killed: 0,
 my_killed: 0,
 powerups: ds_map_create()

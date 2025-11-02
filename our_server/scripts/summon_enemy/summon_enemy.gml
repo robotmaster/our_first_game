@@ -15,7 +15,7 @@ function summon_enemy(_x, _y, _enemy_type, _owner) {
 	switch (_enemy_type) {
 		case obj_death:
 			var _type = enemies.death;
-			_hp = 1500;
+			_hp = round(1500 * enemy_hp_multiplier);
 		break;
 		case obj_enemy_basic:
 			var _type = enemies.basic;

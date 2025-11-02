@@ -3,6 +3,9 @@
 flash_timer = 0;
 flash_timer_max = 2;
 
+damage_number_cooldown = 0;
+damage_number_cooldown_amount = 0;
+
 max_health = 1; 
 enemy_health = 0;
 hpbar_length = 60; 

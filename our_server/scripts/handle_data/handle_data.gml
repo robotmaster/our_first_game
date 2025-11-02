@@ -10,7 +10,6 @@ function handle_data() {
 		
 			var _player_info = json_parse(read_packet(_packet, buffer_string));
 			var _bullet_info = json_parse(read_packet(_packet, buffer_string));
-			
 			var _player_id = _player_info.this_id;
 			var _player_x = _player_info.x_pos;
 			var _player_y = _player_info.y_pos;
@@ -21,7 +20,6 @@ function handle_data() {
 			var _will_shoot = _bullet_info.shot;
 			var _bullet_type = _bullet_info.type;
 			var _bullet_damage = _bullet_info.damage;
-			
 		
 			
 			

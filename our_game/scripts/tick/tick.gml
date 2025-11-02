@@ -24,10 +24,12 @@ function tick() {
 	actual_x = x;
 	actual_y = y;
 	if (obj_client.paused) {
+		phy_speed_x = 0;
+		phy_speed_y = 0;
 		send_packet(obj_client.client_socket, [
 		[buffer_u8, networking.ticks],
-		[buffer_string, _player_info],
-		[buffer_string, _bullet_info],
+		[buffer_string, json_stringify(_player_info)],
+		[buffer_string, json_stringify(_bullet_info)],
 		]);
 		return;
 	}

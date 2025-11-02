@@ -7,3 +7,5 @@ flash_timer = timer(flash_timer, _delta);
 x = actual_x;
 y = actual_y;
 image_angle = rotation_; 
+
+damage_number_cooldown -= _delta;

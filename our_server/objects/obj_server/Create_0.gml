@@ -48,7 +48,7 @@ game_server = -1;
 player_socket_list = ds_list_create();
 player_list = ds_map_create();
 
-enemy_spawn_multiplier = 0.99994;
+enemy_spawn_multiplier = 0.99990;
 
 ping_timer_max = 120;
 
