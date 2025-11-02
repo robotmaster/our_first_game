@@ -40,6 +40,21 @@ function handle_events(_events) {
 							_effect.sprite_index = spr_enemy;
 					}
 				}
+				var _enemy_instance = ds_map_find_value(enemies_to_id, _event.enemy.this_id);
+				if (is_undefined(_enemy_instance) || !instance_exists(_enemy_instance)) {
+					break;
+				}
+				if (_enemy_instance.damage_number_cooldown <= 0 || _event.bullet.damage > _enemy_instance.damage_number_cooldown_amount) {
+					var _num = instance_create_layer(_event.bullet.x_pos, _event.bullet.y_pos, "damage_nums", obj_damage_number);
+					_num.number = _event.bullet.damage;
+					var _number_speed = 10;
+					_num.speed_x = lengthdir_x(_number_speed, _event.bullet.angle);
+					_num.speed_y = lengthdir_y(_number_speed, _event.bullet.angle);
+					_num.x += _num.speed_x * 2;
+					_num.y += _num.speed_y * 2;
+					_enemy_instance.damage_number_cooldown = 5;
+					_enemy_instance.damage_number_cooldown_amount = _event.bullet.damage;
+				}
 			break;
 			default:
 				show_debug_message("Issue with handle_events");
