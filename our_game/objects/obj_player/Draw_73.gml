@@ -15,6 +15,6 @@ draw_set_valign(fa_top);
 if (reload_cooldown > 0) {
 	draw_reload_text();
 }
-draw_powerups();
 draw_text(camera_x + 10, camera_y + 0, "Total kills: " + string(stats.total_killed));
 draw_text(camera_x + 10, camera_y + 70, "My kills: " + string(stats.my_killed));
+draw_powerups();
