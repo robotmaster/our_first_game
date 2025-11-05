@@ -39,9 +39,9 @@ function handle_server_info(_packet) {
 			}
 		}
 		var _bullet_info = json_parse(read_packet(_packet, buffer_string));
-		move_bullets(_bullet_info);
 		var _enemy_info = json_parse(read_packet(_packet, buffer_string));
-		move_enemies(_enemy_info);
 		var _events = json_parse(read_packet(_packet, buffer_string));
 		handle_events(_events);
+		move_bullets(_bullet_info);
+		move_enemies(_enemy_info);
 }
