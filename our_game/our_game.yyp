@@ -14,7 +14,7 @@
     {"$GMFolder":"","%Name":"bullets","folderPath":"folders/bullets.yy","name":"bullets","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"effects","folderPath":"folders/effects.yy","name":"effects","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"enemies","folderPath":"folders/enemies.yy","name":"enemies","resourceType":"GMFolder","resourceVersion":"2.0",},
-    {"$GMFolder":"","%Name":"enemy code","folderPath":"folders/enemy code.yy","name":"enemy code","resourceType":"GMFolder","resourceVersion":"2.0",},
+    {"$GMFolder":"","%Name":"enemy code","folderPath":"folders/enemies/enemy code.yy","name":"enemy code","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"fonts","folderPath":"folders/fonts.yy","name":"fonts","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"networking","folderPath":"folders/networking.yy","name":"networking","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"sounds","folderPath":"folders/sounds.yy","name":"sounds","resourceType":"GMFolder","resourceVersion":"2.0",},
@@ -25,7 +25,7 @@
   "isEcma":false,
   "LibraryEmitters":[],
   "MetaData":{
-    "IDEVersion":"2024.1400.0.901",
+    "IDEVersion":"2024.1400.0.911",
   },
   "name":"our_game",
   "resources":[
@@ -73,6 +73,7 @@
     {"id":{"name":"powerUp1","path":"sprites/powerUp1/powerUp1.yy",},},
     {"id":{"name":"powerUp2","path":"sprites/powerUp2/powerUp2.yy",},},
     {"id":{"name":"powerUp3","path":"sprites/powerUp3/powerUp3.yy",},},
+    {"id":{"name":"powerUp4","path":"sprites/powerUp4/powerUp4.yy",},},
     {"id":{"name":"spr_background","path":"sprites/spr_background/spr_background.yy",},},
     {"id":{"name":"spr_bullet_piece","path":"sprites/spr_bullet_piece/spr_bullet_piece.yy",},},
     {"id":{"name":"spr_bullet","path":"sprites/spr_bullet/spr_bullet.yy",},},

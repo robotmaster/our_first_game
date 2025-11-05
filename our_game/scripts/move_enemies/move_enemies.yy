@@ -6,7 +6,7 @@
   "name":"move_enemies",
   "parent":{
     "name":"enemy code",
-    "path":"folders/enemy code.yy",
+    "path":"folders/enemies/enemy code.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",
