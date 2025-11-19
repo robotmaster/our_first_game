@@ -7,8 +7,8 @@ function move_enemies(_enemy_info) {
 	for (var _enemy_index = 0; _enemy_index < array_length(_enemy_info); _enemy_index++) {
 		var _enemy_id = _enemy_info[_enemy_index].this_id;
 		var _enemy = ds_map_find_value(enemies_to_id, _enemy_id);
-		if (is_undefined(_enemy) || !instance_exists(_enemy)) {
-			var _enemy_type = _enemy_info[_enemy_index].type;
+		var _enemy_type = _enemy_info[_enemy_index].type;
+		if (is_undefined(_enemy) || !instance_exists(_enemy) || _enemy.type != _enemy_type) {
 			var _x_pos = _enemy_info[_enemy_index].x_pos;
 			var _y_pos = _enemy_info[_enemy_index].y_pos;
 			switch (_enemy_type) {
@@ -43,9 +43,11 @@ function move_enemies(_enemy_info) {
 			_enemy.phy_position_y = _enemy_info[_enemy_index].y_pos;
 		}
 		_enemy.this_id = _enemy_info[_enemy_index].this_id;
+		_enemy.this_id = _enemy_info[_enemy_index].this_id;
 		_enemy.actual_x = _enemy_info[_enemy_index].x_pos;
 		_enemy.actual_y = _enemy_info[_enemy_index].y_pos;
 		_enemy.rotation_ = _enemy_info[_enemy_index].rot;
+		_enemy.type = _enemy_info[_enemy_index].type;
 		if (_enemy.enemy_health > _enemy_info[_enemy_index].this_health) {
 			_enemy.flash_timer = _enemy.flash_timer_max;
 		}
