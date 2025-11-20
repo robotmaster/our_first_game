@@ -15,6 +15,7 @@ enum enemies {
 	rock,
 	basic,
 	tank,
+	_speed
 }
 enum event {
 	hit

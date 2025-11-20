@@ -24,6 +24,9 @@ function handle_events(_events) {
 						case enemies.tank:
 							_effect.sprite_index = spr_enemy_tank;
 						break;
+						case enemies._speed:
+							_effect.sprite_index = spr_enemy_speed;
+						break;
 						case enemies.rock:
 							_effect.sprite_index = spr_rock;
 							if (_event.bullet.owner == id_player) {

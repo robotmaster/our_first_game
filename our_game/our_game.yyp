@@ -43,6 +43,7 @@
     {"id":{"name":"obj_enemy_basic","path":"objects/obj_enemy_basic/obj_enemy_basic.yy",},},
     {"id":{"name":"obj_enemy_no_death_parent","path":"objects/obj_enemy_no_death_parent/obj_enemy_no_death_parent.yy",},},
     {"id":{"name":"obj_enemy_parent","path":"objects/obj_enemy_parent/obj_enemy_parent.yy",},},
+    {"id":{"name":"obj_enemy_speed","path":"objects/obj_enemy_speed/obj_enemy_speed.yy",},},
     {"id":{"name":"obj_enemy_tank","path":"objects/obj_enemy_tank/obj_enemy_tank.yy",},},
     {"id":{"name":"obj_other_player","path":"objects/obj_other_player/obj_other_player.yy",},},
     {"id":{"name":"obj_player","path":"objects/obj_player/obj_player.yy",},},

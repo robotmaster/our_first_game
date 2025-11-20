@@ -25,6 +25,10 @@ function summon_enemy(_x, _y, _enemy_type, _owner) {
 			var _type = enemies.tank;
 			_hp = round(2500 * enemy_hp_multiplier); 
 		break;
+		case obj_enemy_speed:
+			var _type = enemies._speed;
+			_hp = round(1000 * enemy_hp_multiplier); 
+		break;
 		case obj_rock:
 			var _type = enemies.rock;
 			_hp = round(4000 * enemy_hp_multiplier); 

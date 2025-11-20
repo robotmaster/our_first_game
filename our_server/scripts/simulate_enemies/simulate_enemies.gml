@@ -32,6 +32,7 @@ function simulate_enemies() {
 		switch (_enemy.type) {
 			case enemies.death:
 			break;
+			#region basic
 			case enemies.basic:
 				var _enemy_speed = 7;
 				//var _dist_to_stop = 150; 		
@@ -48,12 +49,17 @@ function simulate_enemies() {
 				
 					}
 				}
+				if (_lowest_dist < _enemy_speed) {
+					_enemy_speed = _lowest_dist;
+				}
 				_enemy_instance.phy_rotation = -_lowest_direction;
 				_enemy_instance.phy_speed_x = lengthdir_x(_enemy_speed * _enemy.speed_multiplier, _lowest_direction) / game_speed * 60;
 				_enemy_instance.phy_speed_y = lengthdir_y(_enemy_speed * _enemy.speed_multiplier, _lowest_direction) / game_speed * 60;
 				_enemy.speed_x = lengthdir_x(_enemy_speed * _enemy.speed_multiplier, _lowest_direction);
 				_enemy.speed_y = lengthdir_y(_enemy_speed * _enemy.speed_multiplier, _lowest_direction);
 			break;
+			#endregion
+			#region tank
 			case enemies.tank:
 				var _enemy_speed = 6;
 				var _lowest_dist = infinity;
@@ -69,15 +75,47 @@ function simulate_enemies() {
 				
 					}
 				}
+				if (_lowest_dist < _enemy_speed) {
+					_enemy_speed = _lowest_dist;
+				}
 				_enemy_instance.phy_rotation = -_lowest_direction;
 				_enemy_instance.phy_speed_x = lengthdir_x(_enemy_speed * _enemy.speed_multiplier, _lowest_direction) / game_speed * 60;
 				_enemy_instance.phy_speed_y = lengthdir_y(_enemy_speed * _enemy.speed_multiplier, _lowest_direction) / game_speed * 60;
 				_enemy.speed_x = lengthdir_x(_enemy_speed * _enemy.speed_multiplier, _lowest_direction);
 				_enemy.speed_y = lengthdir_y(_enemy_speed * _enemy.speed_multiplier, _lowest_direction);
 			break;
+			#endregion
+			#region speed
+			case enemies._speed:
+				var _enemy_speed = 15;
+				var _lowest_dist = infinity;
+				var _lowest_direction = -1;
+				for (var _player_index = 0; _player_index < array_length(player_infos); _player_index++) {
+					if (player_infos[_player_index].ghost) {
+						continue;
+					}
+					var _dist = point_distance(player_infos[_player_index].x_pos, player_infos[_player_index].y_pos, _enemy.x_pos, _enemy.y_pos);
+					if (_dist < _lowest_dist) {
+						_lowest_dist = _dist;
+						_lowest_direction = point_direction(_enemy.x_pos, _enemy.y_pos, player_infos[_player_index].x_pos, player_infos[_player_index].y_pos);
+				
+					}
+				}
+				if (_lowest_dist < _enemy_speed) {
+					_enemy_speed = _lowest_dist;
+				}
+				_enemy_instance.phy_rotation = -_lowest_direction;
+				_enemy_instance.phy_speed_x = lengthdir_x(_enemy_speed * _enemy.speed_multiplier, _lowest_direction);
+				_enemy_instance.phy_speed_y = lengthdir_y(_enemy_speed * _enemy.speed_multiplier, _lowest_direction);
+				_enemy.speed_x = lengthdir_x(_enemy_speed * _enemy.speed_multiplier, _lowest_direction);
+				_enemy.speed_y = lengthdir_y(_enemy_speed * _enemy.speed_multiplier, _lowest_direction);
+			break;
+			#endregion
+			#region rock
 			case enemies.rock:
 				_enemy_instance.phy_speed_x = 0;
 				_enemy_instance.phy_speed_y = 0;
+			#endregion
 			break;
 		}
 		if (_enemy.evolution_time <= 0 && global.evolution_info[_enemy.type].next != noone) {

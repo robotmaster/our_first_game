@@ -21,6 +21,9 @@ function move_enemies(_enemy_info) {
 				case enemies.tank:
 					_enemy = instance_create_layer(_x_pos, _y_pos, "enemies", obj_enemy_tank);
 				break;
+				case enemies._speed:
+					_enemy = instance_create_layer(_x_pos, _y_pos, "enemies", obj_enemy_speed);
+				break;
 				case enemies.rock:
 					_enemy = instance_create_layer(_x_pos, _y_pos, "enemies", obj_rock);
 				break;

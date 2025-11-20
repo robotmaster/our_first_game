@@ -17,6 +17,9 @@ function handle_damage() {
 		else if (object_index == obj_enemy_tank) {
 			obj_player.player_health -= 3;
 		}
+		else if (object_index == obj_enemy_speed) {
+			obj_player.player_health -= 0.5;
+		}
 		_hurt = true;
 	}
 	

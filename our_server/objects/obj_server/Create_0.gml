@@ -16,6 +16,7 @@ enum enemies {
 	rock,
 	basic,
 	tank,
+	_speed
 }
 enum bullets {
 	basic,
@@ -29,7 +30,8 @@ global.evolution_info = [];
 global.evolution_info[enemies.death] = {next: noone, time: -1};
 global.evolution_info[enemies.rock] = {next: noone, time: -1};
 global.evolution_info[enemies.basic] = {next: obj_enemy_tank, time: 1200};
-global.evolution_info[enemies.tank] = {next: noone, time: -1};
+global.evolution_info[enemies.tank] = {next: obj_enemy_speed, time: 1800};
+global.evolution_info[enemies._speed] = {next: noone, time: -1};
 
 game_speed = 60;
 game_set_speed(game_speed, gamespeed_fps);
