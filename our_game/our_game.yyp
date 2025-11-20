@@ -79,6 +79,8 @@
     {"id":{"name":"spr_bullet","path":"sprites/spr_bullet/spr_bullet.yy",},},
     {"id":{"name":"spr_death","path":"sprites/spr_death/spr_death.yy",},},
     {"id":{"name":"spr_enemy_hitbox","path":"sprites/spr_enemy_hitbox/spr_enemy_hitbox.yy",},},
+    {"id":{"name":"spr_enemy_speed_hitbox","path":"sprites/spr_enemy_speed_hitbox/spr_enemy_speed_hitbox.yy",},},
+    {"id":{"name":"spr_enemy_speed","path":"sprites/spr_enemy_speed/spr_enemy_speed.yy",},},
     {"id":{"name":"spr_enemy_tank_hitbox","path":"sprites/spr_enemy_tank_hitbox/spr_enemy_tank_hitbox.yy",},},
     {"id":{"name":"spr_enemy_tank","path":"sprites/spr_enemy_tank/spr_enemy_tank.yy",},},
     {"id":{"name":"spr_enemy","path":"sprites/spr_enemy/spr_enemy.yy",},},

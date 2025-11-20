@@ -25,6 +25,11 @@ enum bullets {
 enum event {
 	hit
 }
+global.evolution_info = [];
+global.evolution_info[enemies.death] = {next: noone, time: -1};
+global.evolution_info[enemies.rock] = {next: noone, time: -1};
+global.evolution_info[enemies.basic] = {next: obj_enemy_tank, time: 1200};
+global.evolution_info[enemies.tank] = {next: noone, time: -1};
 
 game_speed = 60;
 game_set_speed(game_speed, gamespeed_fps);

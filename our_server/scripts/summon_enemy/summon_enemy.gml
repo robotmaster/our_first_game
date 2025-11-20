@@ -43,7 +43,8 @@ function summon_enemy(_x, _y, _enemy_type, _owner) {
 	type: _type,
 	this_health: _hp,
 	max_health: _hp,
-	owner: _owner});
+	owner: _owner,
+	evolution_time: global.evolution_info[_type].time});
 	
 	
 	var _enemy = instance_create_layer(_x, _y, "collision_check", _enemy_type);

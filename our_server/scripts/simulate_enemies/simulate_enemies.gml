@@ -6,6 +6,7 @@ function simulate_enemies() {
 	with (obj_enemy_parent) {
 		exists = false;
 	}
+	var _evolution_summon_queue = [];
 	for (var _enemy_index = 0; _enemy_index < array_length(enemy_infos); _enemy_index++) {
 		var _enemy = enemy_infos[_enemy_index];
 		var _enemy_instance = ds_map_find_value(enemies_to_id, _enemy.this_id);
@@ -27,6 +28,7 @@ function simulate_enemies() {
 		_enemy.x_pos = _enemy_instance.x;
 		_enemy.y_pos = _enemy_instance.y;
 		_enemy.rot = _enemy_instance.image_angle;
+		_enemy.evolution_time -= _delta;
 		switch (_enemy.type) {
 			case enemies.death:
 			break;
@@ -78,6 +80,13 @@ function simulate_enemies() {
 				_enemy_instance.phy_speed_y = 0;
 			break;
 		}
+		if (_enemy.evolution_time <= 0 && global.evolution_info[_enemy.type].next != noone) {
+			array_push(_evolution_summon_queue, {x_pos: _enemy.x_pos, y_pos: _enemy.y_pos, type: global.evolution_info[_enemy.type].next});
+			instance_destroy(_enemy_instance);
+			ds_map_delete(obj_server.enemies_to_id, _enemy.this_id);
+			array_delete(obj_server.enemy_infos, _enemy_index, 1);
+			_enemy_index--;
+		}
 		
 		
 	}
@@ -85,5 +94,9 @@ function simulate_enemies() {
 		if (!exists) {
 			instance_destroy();
 		}
+	}
+	for (var _i = 0; _i < array_length(_evolution_summon_queue); _i++) {
+		var _info = _evolution_summon_queue[_i];
+		summon_enemy(_info.x_pos, _info.y_pos, _info.type, -1);
 	}
 }

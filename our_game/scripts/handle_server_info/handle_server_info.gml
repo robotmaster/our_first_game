@@ -21,7 +21,9 @@ function handle_server_info(_packet) {
 					audio_play_sound(snd_revive, 999, 0);
 					obj_player.invincibility_frames = 180;
 					obj_player.actual_x = _player_info[_player_index].revive_x;
+					obj_player.phy_position_x = _player_info[_player_index].revive_x;
 					obj_player.actual_y = _player_info[_player_index].revive_y;
+					obj_player.phy_position_y = _player_info[_player_index].revive_y;
 					obj_player.player_health = obj_player.max_health;
 					
 				}

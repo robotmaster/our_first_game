@@ -24,6 +24,8 @@ function summon_enemies() {
 			summon_enemy(player_infos[_player_index].x_pos + _offset_x, player_infos[_player_index].y_pos + _offset_y, obj_enemy_basic, -1);
 		}
 	}
+		
+	
 	rock_spawn_timer -= 1;
 	while (rock_spawn_timer <= 0) {
 		rock_spawn_timer += rock_spawn_timer_max;
